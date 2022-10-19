@@ -1,7 +1,7 @@
 {
   "name": "thesmiths",
   "version": "0.1.0",
-  "homepage": "https://Lfreeman124.github.io/thesmiths",
+  "homepage": "https://lfreeman124.github.io/TheSmiths",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
