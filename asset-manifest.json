@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/thesmiths/static/js/main.ef5541a5.js",
+    "static/media/us.jpg": "/thesmiths/static/media/us.02da3c816801507b228d.jpg",
+    "static/media/restaurant.png": "/thesmiths/static/media/restaurant.83bd929c543ef9729fa0.png",
+    "static/media/wedderlie.png": "/thesmiths/static/media/wedderlie.efc6942a0bc3daa0349e.png",
+    "static/media/map.png": "/thesmiths/static/media/map.97f1f3430555c2b74ba6.png",
+    "static/media/crest.png": "/thesmiths/static/media/crest.96c8c8186e6fdb248add.png",
+    "static/media/ellos.png": "/thesmiths/static/media/ellos.d8b22706c8037ce2a400.png",
+    "static/media/beach.jpg": "/thesmiths/static/media/beach.ca11cf96e11154f46b23.jpg",
+    "static/media/amazon.svg": "/thesmiths/static/media/amazon.1591be663b8d504de66fdf060bd3b64e.svg",
+    "index.html": "/thesmiths/index.html",
+    "main.ef5541a5.js.map": "/thesmiths/static/js/main.ef5541a5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ef5541a5.js"
+  ]
+}
