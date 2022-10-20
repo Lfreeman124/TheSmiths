@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/TheSmiths/static/js/main.692298bb.js",
+    "main.js": "/TheSmiths/static/js/main.e4a5cc89.js",
     "static/media/us.jpg": "/TheSmiths/static/media/us.02da3c816801507b228d.jpg",
     "static/media/restaurant.png": "/TheSmiths/static/media/restaurant.83bd929c543ef9729fa0.png",
     "static/media/wedderlie.png": "/TheSmiths/static/media/wedderlie.efc6942a0bc3daa0349e.png",
@@ -10,9 +10,9 @@
     "static/media/beach.jpg": "/TheSmiths/static/media/beach.ca11cf96e11154f46b23.jpg",
     "static/media/amazon.svg": "/TheSmiths/static/media/amazon.1591be663b8d504de66fdf060bd3b64e.svg",
     "index.html": "/TheSmiths/index.html",
-    "main.692298bb.js.map": "/TheSmiths/static/js/main.692298bb.js.map"
+    "main.e4a5cc89.js.map": "/TheSmiths/static/js/main.e4a5cc89.js.map"
   },
   "entrypoints": [
-    "static/js/main.692298bb.js"
+    "static/js/main.e4a5cc89.js"
   ]
 }
