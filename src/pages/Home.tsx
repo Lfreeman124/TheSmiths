@@ -10,10 +10,10 @@ const Home: React.FC = () => {
       <h1>--- Mr & Mrs ---</h1>
       <nav>
         <Link to="/venue">Venue</Link>
-        <Link to="ontheday">On the Day</Link>
-        <Link to="rsvp">RSVP</Link>
-        <Link to="edinburgh">Edinburgh</Link>
-        <Link to="registry">Registry</Link>
+        <Link to="/ontheday">On the Day</Link>
+        <Link to="/rsvp">RSVP</Link>
+        <Link to="/edinburgh">Edinburgh</Link>
+        <Link to="/registry">Registry</Link>
         <Link to="/faq">FAQ</Link>
       </nav>
       <img src={us} alt=""></img>
