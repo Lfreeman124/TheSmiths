@@ -4,7 +4,7 @@ import map from "../images/map.png";
 import styled from "styled-components";
 import NavBar from "../components/NavBar";
 import DistancesTable from "../components/DistancesTable";
-import InstagramIcon from "@mui/icons-material/Instagram";
+// import InstagramIcon from "@mui/icons-material/Instagram";
 import crest from "../images/crest.png";
 
 const Venue: React.FC = () => {
@@ -24,10 +24,7 @@ const Venue: React.FC = () => {
             Check out their website and social media for more sneak peeks!
           </p>
 
-          <div className="links">
-            <a></a>
-            <a></a>
-          </div>
+          <div className="links"></div>
         </div>
       </div>
 
