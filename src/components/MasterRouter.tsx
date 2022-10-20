@@ -12,7 +12,7 @@ const MasterRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/TheSmiths" element={<Home />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/venue" element={<Venue />} />
         <Route path="/ontheday" element={<OnTheDay />} />
