@@ -29,7 +29,6 @@ const Banner = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: blue;
   * {
     max-width: 90%;
   }
