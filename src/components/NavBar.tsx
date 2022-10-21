@@ -23,6 +23,6 @@ const Container = styled.div`
   justify-content: flex-end;
   width: 100%;
   * {
-    margin: 10px;
+    margin: 5px;
   }
 `;

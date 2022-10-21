@@ -38,17 +38,17 @@ const Countdown: React.FC = () => {
         <p className="number">{state.days}</p>
         <p className="label">Days</p>
       </div>
-      <div className="colon">:</div>
+      <p className="colon">:</p>
       <div className="tile">
         <p className="number">{state.hours}</p>
         <p className="label">Hours</p>
       </div>
-      <div className="colon">:</div>
+      <p className="colon">:</p>
       <div className="tile">
         <p className="number">{state.minutes}</p>
         <p className="label">Minutes</p>
       </div>
-      <div className="colon">:</div>
+      <p className="colon">:</p>
       <div className="tile">
         <p className="number">{state.seconds}</p>
         <p className="label">Seconds</p>
@@ -61,26 +61,28 @@ export default Countdown;
 
 const Container = styled.div`
   display: flex;
-  margin-top: 50px;
+  margin: 2rem auto;
   .tile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
+    width: 5rem;
   }
   .tile,
   .colon {
-    height: 200px;
+    height: 2rem;
   }
   .number {
-    font-size: 72px;
+    font-size: 2.5rem;
+    padding-top: 0.2rem;
     margin: 0;
   }
   .colon {
-    font-size: 60px;
+    font-size: 2.5rem;
+    margin-top: 0;
   }
   .label {
-    font-size: 40px;
+    font-size: 1rem;
     margin-top: 10px;
   }
 `;

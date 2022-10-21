@@ -28,12 +28,12 @@ const Banner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   * {
     max-width: 90%;
   }
   h1 {
-    font-size: 60px;
+    font-size: 3rem;
   }
   img {
     width: 60%;
@@ -41,7 +41,7 @@ const Banner = styled.div`
   nav {
     margin: 20px;
     > a {
-      margin: 20px;
+      margin: 10px;
     }
   }
 `;
