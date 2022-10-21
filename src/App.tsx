@@ -1,9 +1,10 @@
-import MasterRouter from "./components/MasterRouter";
+// import MasterRouter from "./components/MasterRouter";
 
 function App() {
   return (
     <div className="App">
-      <MasterRouter />
+      <h1>Hello!</h1>
+      {/* <MasterRouter /> */}
     </div>
   );
 }
