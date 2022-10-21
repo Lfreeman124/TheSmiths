@@ -34,6 +34,7 @@ const Banner = styled.div`
   }
   h1 {
     font-size: 3rem;
+    margin: 10px auto;
   }
   img {
     width: 60%;
