@@ -28,11 +28,9 @@ const DistancesTable: React.FC = () => {
       <Table sx={{ width: "100%" }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>
+            <TableCell colSpan={3}>
               <h2>Distance from...</h2>
             </TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

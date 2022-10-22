@@ -26,11 +26,27 @@ const OnTheDay: React.FC = () => {
       image: ellos,
       link: "https://www.ellos.se/presentkort",
     },
-    { id: "honeymoon", name: "Honeymoon Fund Contribution", image: beach },
+    {
+      id: "honeymoon",
+      name: "Honeymoon Fund Contribution",
+      image: beach,
+      description:
+        "If you would like to help us fund our honeymoon, we will humbly accept monetary gifts in Scotland. We haven't decided what we'll do yet but it will either be a road trip through Europe or Bali! Check back here for updates!",
+    },
     {
       id: "restaurant",
       name: "Restaurant Gift Card / Suggestion",
       image: restaurant,
+      description: `We love food, and always appreciate a night out. ${(
+        <a
+          href="https://www.google.com/maps/search/Restaurants/@59.3255176,18.023726,13z/data=!3m1!4b1"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Find a restaurant
+        </a>
+      )} in Stockholm that you think we would enjoy and treat us to
+      dessert or a drink.`,
     },
   ];
   return (
@@ -44,12 +60,7 @@ const OnTheDay: React.FC = () => {
           and that is in itself a generous gift and we are honored you take the
           time and commitment to travel and be with us.
         </p>
-        <p>
-          We've lived together for nine years and have everything we need, and
-          certainly don't want to deal with sending blenders and cutting boards
-          from Edinburgh to Stockholm. We're also moving in the months before
-          the wedding, so ordering online and delivery may become complicated.
-        </p>
+
         <p>
           If you're adamant about giving us a gift, here are some options to
           give you some inspiration. Please don't bring anything bigger/heavier
@@ -69,7 +80,10 @@ const OnTheDay: React.FC = () => {
             <div className="image-container" id={each.id}>
               <img src={each.image} alt={each.name} />
             </div>
-            <h3>{each.name}</h3>
+            <h2>{each.name}</h2>
+            <p className="description">
+              {each.description && each.description}
+            </p>
           </a>
         ))}
       </div>
@@ -84,24 +98,6 @@ const OnTheDay: React.FC = () => {
             translate the page
           </a>
           . Amazon and Ellos should accept foreign cards.
-        </p>
-        <p>
-          If you would like to help us fund our honeymoon, we will humbly accept
-          monetary gifts in Scotland. We haven't decided what we'll do yet but
-          it will either be a road trip through Europe or Bali! Check back here
-          for updates!
-        </p>
-        <p>
-          We love food, and always appreciate a night out.&nbsp;
-          <a
-            href="https://www.google.com/maps/search/Restaurants/@59.3255176,18.023726,13z/data=!3m1!4b1"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Find a restaurant
-          </a>
-          &nbsp;in Stockholm that you think we would enjoy and treat us to
-          dessert or a drink.
         </p>
       </div>
     </Container>
@@ -119,9 +115,12 @@ const Container = styled.div`
   .header,
   .notes {
     font-size: 20px;
-    width: 70%;
-    margin: 50px auto;
+    width: 90%;
+    margin: 2rem auto;
     text-align: center;
+  }
+  .header p {
+    margin: 1rem 0;
   }
   .options {
     width: 100%;
@@ -129,6 +128,7 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     .options-tile {
+      margin: 1rem;
       width: 200px;
       .image-container {
         margin: 0 auto;
@@ -139,7 +139,7 @@ const Container = styled.div`
         overflow: hidden;
       }
     }
-    h3 {
+    h2 {
       width: 100%;
       text-align: center;
       color: black;
@@ -170,6 +170,10 @@ const Container = styled.div`
     }
     #restaurant img {
       height: 100%;
+    }
+    .description {
+      margin-top: 0.5rem;
+      text-align: center;
     }
   }
 `;

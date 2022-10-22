@@ -8,6 +8,9 @@ const OnTheDay: React.FC = () => {
       <NavBar />
       <header>
         <h1>Welcome to Edinburgh!</h1>
+        <h2>James and Laura recommend...</h2>
+        <h2>Christopher and Julie recommend...</h2>
+        <h2>Jonathan and Sinead recommend...</h2>
       </header>
     </Container>
   );
