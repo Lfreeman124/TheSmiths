@@ -59,7 +59,7 @@ export default Venue;
 
 const Container = styled.div`
   width: 90%;
-  margin: 0 5%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
