@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
-import { Link } from "react-router-dom";
 
 const Accomodation: React.FC = () => {
   const options = [
