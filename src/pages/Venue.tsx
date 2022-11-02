@@ -58,8 +58,8 @@ const Venue: React.FC = () => {
 export default Venue;
 
 const Container = styled.div`
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,19 +94,14 @@ const Container = styled.div`
     margin-bottom: 1rem;
   }
 
-  #wedderlie {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .image-container {
-    width: 100%;
-    #map {
-      width: 100%;
-    }
-  }
+  #wedderlie,
+  .image-container,
+  #map,
   .table-container {
     width: 100%;
+  }
+
+  .table-container {
     margin-top: 1rem;
   }
 `;

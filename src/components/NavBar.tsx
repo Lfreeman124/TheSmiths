@@ -22,6 +22,7 @@ const NavBar: React.FC = () => {
     <div className="links">
       <Link to="/">Home</Link>
       <Link to="/venue">Venue</Link>
+      <Link to="/accomodation">Accomodation</Link>
       <Link to="/ontheday">On the day</Link>
       <Link to="/rsvp">RSVP</Link>
       <Link to="/registry">Registry</Link>

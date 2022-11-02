@@ -1,10 +1,24 @@
 import MasterRouter from "./components/MasterRouter";
 import styled from "styled-components";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#c0694b",
+    },
+    secondary: {
+      main: "#34434d",
+    },
+  },
+});
 
 function App() {
   return (
     <Container>
-      <MasterRouter />
+      <ThemeProvider theme={theme}>
+        <MasterRouter />
+      </ThemeProvider>
     </Container>
   );
 }
@@ -13,6 +27,7 @@ export default App;
 
 const Container = styled.div`
   width: 100%;
+  margin: 0;
   *,
   *::before,
   *::after {

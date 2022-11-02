@@ -61,7 +61,7 @@ export default Countdown;
 
 const Container = styled.div`
   display: flex;
-  margin: 2rem auto;
+  margin-top: 2rem;
   .tile {
     display: flex;
     flex-direction: column;
