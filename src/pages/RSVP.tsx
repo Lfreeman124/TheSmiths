@@ -258,7 +258,7 @@ const RSVP: React.FC = () => {
             value={formInfo.food}
             fullWidth
             id="food"
-            label="Dieraty Requirements or Allergies"
+            label="Dietary Requirements or Allergies"
             onChange={handleInputChange}
           />
         </FormControl>

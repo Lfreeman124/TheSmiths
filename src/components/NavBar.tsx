@@ -65,6 +65,7 @@ export default NavBar;
 
 const Container = styled.div`
   width: 100%;
+
   .mobile-menu {
     width: 100%;
   }
@@ -84,6 +85,7 @@ const Container = styled.div`
 const StyledMenu = styled.div`
   background: #eccdac;
   /* width: 100%; */
+  height: 100vh;
   position: absolute;
   left: 0;
   z-index: 99;

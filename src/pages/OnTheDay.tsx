@@ -23,9 +23,18 @@ const OnTheDay: React.FC = () => {
 export default OnTheDay;
 
 const Container = styled.div`
+  background: #eae8e8;
+  height: 100vh;
   .schedule {
     width: 70%;
     margin: 0 auto;
     text-align: center;
+    h1 {
+      margin: 2rem;
+      text-decoration: underline;
+    }
+    p {
+      line-height: 2rem;
+    }
   }
 `;
