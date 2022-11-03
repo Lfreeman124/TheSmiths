@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import NavBar from "../components/NavBar";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Honeymoon from "../components/Honeymoon";
 
 const Home: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
     <React.Fragment>
       {isMobile && <NavBar />}
       <Banner>
-        <h4>The best day of our lives</h4>
+        <h3>The best day of our lives</h3>
         <h1>--- Mr & Mrs ---</h1>
         {!isMobile && (
           <nav>
@@ -32,6 +33,7 @@ const Home: React.FC = () => {
         <img src={us} alt=""></img>
         <Countdown />
       </Banner>
+      <Honeymoon />
     </React.Fragment>
   );
 };
@@ -45,6 +47,9 @@ const Banner = styled.div`
   width: 100vw;
   * {
     max-width: 90%;
+  }
+  h3 {
+    font-family: "gwendolyn";
   }
   h1 {
     font-size: 3rem;
