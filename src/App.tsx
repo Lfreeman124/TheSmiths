@@ -11,6 +11,9 @@ const theme = createTheme({
       main: "#34434d",
     },
   },
+  typography: {
+    fontFamily: "Raleway",
+  },
 });
 
 function App() {
@@ -27,9 +30,11 @@ export default App;
 
 const Container = styled.div`
   width: 100%;
-  *,
-  *::before,
-  *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+  * {
     box-sizing: border-box;
     margin: 0;
   }

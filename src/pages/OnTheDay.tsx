@@ -9,7 +9,7 @@ const OnTheDay: React.FC = () => {
       <div className="schedule">
         <h1>Schedule</h1>
         <p>13:00 - Ceremony</p>
-        <p>13:30 - Photos, drinks, canapes, lawn games, schmoozing</p>
+        <p>14:00 - Photos, drinks, canapes, lawn games, schmoozing</p>
         <p>16:30 - Speeches</p>
         <p>17:00 - Wedding Breakfast</p>
         <p>20:00 - First Dance</p>

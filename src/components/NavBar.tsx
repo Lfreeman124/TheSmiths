@@ -18,58 +18,55 @@ const NavBar: React.FC = () => {
     setShowMobileMenu((prev) => !prev);
   };
 
+  const pages = [
+    { link: "/", text: "Home" },
+    { link: "/venue", text: "Venue" },
+    { link: "/accommodation", text: "Accommodation" },
+    { link: "/ontheday", text: "On the day" },
+    { link: "/rsvp", text: "RSVP" },
+    { link: "/registry", text: "Registry" },
+    { link: "/edinburgh", text: "Edinburgh" },
+    { link: "/faq", text: "FAQ" },
+  ];
+
   const navLinks = (
     <div className="links">
-      <Link to="/">Home</Link>
-      <Link to="/venue">Venue</Link>
-      <Link to="/accomodation">Accomodation</Link>
-      <Link to="/ontheday">On the day</Link>
-      <Link to="/rsvp">RSVP</Link>
-      <Link to="/registry">Registry</Link>
-      <Link to="/edinburgh">Edinburgh</Link>
-      <Link to="/faq">FAQ</Link>
+      {pages.map((each: any, index) => {
+        return (
+          <Link key={index} onClick={toggleMobileMenu} to={each.link}>
+            {each.text}
+          </Link>
+        );
+      })}
     </div>
   );
 
-  return (
-    <Container>
-      {isMobile ? (
-        <div className="mobile-menu">
-          <div
-            className="hamburger"
-            style={{ background: showMobileMenu ? "#eccdac" : "white" }}
-          >
-            {showMobileMenu ? (
-              <CloseIcon onClick={toggleMobileMenu} />
-            ) : (
-              <MenuIcon onClick={toggleMobileMenu} />
-            )}
+  return isMobile ? (
+    <MobileContainer>
+      {showMobileMenu ? (
+        <StyledMenu>
+          <div className="icon">
+            <CloseIcon onClick={toggleMobileMenu} />
           </div>
-          <StyledMenu
-            style={{
-              display: showMobileMenu ? "block" : "none",
-              width: "calc(100% - 1rem)",
-            }}
-          >
-            {navLinks}
-          </StyledMenu>
-        </div>
+          {navLinks}
+        </StyledMenu>
       ) : (
-        <React.Fragment>{navLinks}</React.Fragment>
+        <div className="icon">
+          <MenuIcon onClick={toggleMobileMenu} />
+        </div>
       )}
-    </Container>
+    </MobileContainer>
+  ) : (
+    <Container>{navLinks}</Container>
   );
 };
 
 export default NavBar;
 
-const Container = styled.div`
+const MobileContainer = styled.div`
   width: 100%;
-
-  .mobile-menu {
+  .icon {
     width: 100%;
-  }
-  .hamburger {
     text-align: right;
     height: 3rem;
     * {
@@ -82,14 +79,15 @@ const Container = styled.div`
   }
 `;
 
+const Container = styled.div``;
+
 const StyledMenu = styled.div`
   background: #eccdac;
-  /* width: 100%; */
   height: 100vh;
-  position: absolute;
-  left: 0;
+  width: 100%;
+  /* position: absolute;
+  left: 0; */
   z-index: 99;
-  left: 0.5rem;
   .links {
     display: flex;
     flex-direction: column;

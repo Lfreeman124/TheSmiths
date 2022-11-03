@@ -7,7 +7,7 @@ import OnTheDay from "../pages/OnTheDay";
 import RSVP from "../pages/RSVP";
 import Edinburgh from "../pages/Edinburgh";
 import Registry from "../pages/Registry";
-import Accomodation from "../pages/Accomodation";
+import Accommodation from "../pages/Accommodation";
 
 const MasterRouter = () => {
   return (
@@ -16,7 +16,7 @@ const MasterRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/venue" element={<Venue />} />
-        <Route path="/accomodation" element={<Accomodation />} />
+        <Route path="/accommodation" element={<Accommodation />} />
         <Route path="/ontheday" element={<OnTheDay />} />
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/edinburgh" element={<Edinburgh />} />
