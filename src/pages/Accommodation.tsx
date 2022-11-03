@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
-import { SocialDistanceTwoTone } from "@mui/icons-material";
 
 const Accommodation: React.FC = () => {
   const options = [
