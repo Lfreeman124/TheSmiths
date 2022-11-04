@@ -89,6 +89,7 @@ const Container = styled.div`
   width: 100%;
   color: black;
   text-decoration: none;
+  padding-bottom: 1rem;
   p {
     line-height: 1.5rem;
   }

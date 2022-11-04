@@ -1,26 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button } from "@mui/material";
 import car1 from "../images/car1.png";
 import beach from "../images/beach.jpg";
+import { db } from "../firebase";
+import {
+  collection,
+  getDocs,
+  updateDoc,
+  doc,
+  increment,
+} from "firebase/firestore";
 
 const Honeymoon: React.FC = () => {
   const [currentVote, setCurrentVote] = useState("");
-  const [votes, setVotes] = useState({
-    bali: 0,
-    road: 0,
-  });
+  const [votes, setVotes] = useState({ road: 0, bali: 0 });
+  const [loading, setLoading] = useState(true);
 
-  const voteNow = () => {
-    if (currentVote === "bali") {
-      setVotes({ ...votes, bali: votes.bali + 1 });
-    } else if (currentVote === "road") {
-      setVotes({ ...votes, road: votes.road + 1 });
-    }
-    setCurrentVote("");
+  const getVotes = async () => {
+    const data = collection(db, "honeymoon");
+    const snapshot = await getDocs(data);
+    const votesData = snapshot.docs.map((doc) => doc.data());
+    setVotes({ road: votesData[0].road, bali: votesData[0].bali });
+    setLoading(false);
   };
 
-  return (
+  useEffect(() => {
+    getVotes();
+  }, []);
+
+  const voteNow = async () => {
+    if (currentVote !== "") {
+      const change = doc(db, "honeymoon", "honeymoon");
+      await updateDoc(change, { [currentVote]: increment(1) });
+      setCurrentVote("");
+      getVotes();
+    }
+  };
+
+  return loading ? (
+    <></>
+  ) : (
     <Container>
       <h2>Where should we go on our honeymoon?</h2>
       <div className="options-container">
@@ -86,8 +106,8 @@ const Container = styled.div`
     width: 100%;
     text-align: center;
     margin: 2rem 0;
-    background: #c0694b;
-    color: white;
+    background: #70877f;
+    color: #eee7dd;
   }
   .options-container {
     .options {
@@ -126,8 +146,7 @@ const Container = styled.div`
     }
   }
   .results-container {
-    padding: 0 1rem;
-    margin-bottom: 2rem;
+    padding: 0 1rem 2rem;
     .results-label {
       margin: 1rem 0 0.5rem;
     }
@@ -137,7 +156,7 @@ const Container = styled.div`
       height: 2rem;
       .results-filling {
         height: 100%;
-        background: #5c8171;
+        background: #70877f;
       }
     }
   }

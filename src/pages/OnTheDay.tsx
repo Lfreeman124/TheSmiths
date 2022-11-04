@@ -23,7 +23,6 @@ const OnTheDay: React.FC = () => {
 export default OnTheDay;
 
 const Container = styled.div`
-  background: #eae8e8;
   height: 100vh;
   .schedule {
     width: 70%;

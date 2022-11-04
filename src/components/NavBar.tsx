@@ -82,7 +82,7 @@ const MobileContainer = styled.div`
 const Container = styled.div``;
 
 const StyledMenu = styled.div`
-  background: #eccdac;
+  background: #e0c6b3;
   height: 100vh;
   width: 100%;
   /* position: absolute;

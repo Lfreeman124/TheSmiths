@@ -59,7 +59,7 @@ export default Venue;
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
