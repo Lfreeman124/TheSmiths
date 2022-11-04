@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.19636d68.css",
-    "main.js": "/static/js/main.8a530ab3.js",
+    "main.js": "/static/js/main.4a057c8a.js",
     "static/media/car1.png": "/static/media/car1.a7d470bd84645c792949.png",
     "static/media/wedderlie3.png": "/static/media/wedderlie3.7887b249faa3f4c40990.png",
     "static/media/us.jpg": "/static/media/us.02da3c816801507b228d.jpg",
@@ -17,10 +17,10 @@
     "static/media/amazon.svg": "/static/media/amazon.1591be663b8d504de66fdf060bd3b64e.svg",
     "index.html": "/index.html",
     "main.19636d68.css.map": "/static/css/main.19636d68.css.map",
-    "main.8a530ab3.js.map": "/static/js/main.8a530ab3.js.map"
+    "main.4a057c8a.js.map": "/static/js/main.4a057c8a.js.map"
   },
   "entrypoints": [
     "static/css/main.19636d68.css",
-    "static/js/main.8a530ab3.js"
+    "static/js/main.4a057c8a.js"
   ]
 }
