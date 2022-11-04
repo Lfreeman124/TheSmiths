@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.19636d68.css",
-    "main.js": "/static/js/main.4a057c8a.js",
+    "main.css": "/static/css/main.bea2addf.css",
+    "main.js": "/static/js/main.df2dea24.js",
     "static/media/car1.png": "/static/media/car1.a7d470bd84645c792949.png",
     "static/media/wedderlie3.png": "/static/media/wedderlie3.7887b249faa3f4c40990.png",
     "static/media/us.jpg": "/static/media/us.02da3c816801507b228d.jpg",
@@ -16,11 +16,11 @@
     "static/media/beach.jpg": "/static/media/beach.ca11cf96e11154f46b23.jpg",
     "static/media/amazon.svg": "/static/media/amazon.1591be663b8d504de66fdf060bd3b64e.svg",
     "index.html": "/index.html",
-    "main.19636d68.css.map": "/static/css/main.19636d68.css.map",
-    "main.4a057c8a.js.map": "/static/js/main.4a057c8a.js.map"
+    "main.bea2addf.css.map": "/static/css/main.bea2addf.css.map",
+    "main.df2dea24.js.map": "/static/js/main.df2dea24.js.map"
   },
   "entrypoints": [
-    "static/css/main.19636d68.css",
-    "static/js/main.4a057c8a.js"
+    "static/css/main.bea2addf.css",
+    "static/js/main.df2dea24.js"
   ]
 }
