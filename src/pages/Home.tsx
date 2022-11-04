@@ -49,7 +49,7 @@ const Banner = styled.div`
     max-width: 90%;
   }
   h3 {
-    font-family: "gwendolyn";
+    font-family: "Gwendolyn";
   }
   h1 {
     font-size: 3rem;
