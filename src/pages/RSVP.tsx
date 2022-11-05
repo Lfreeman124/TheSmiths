@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import NavBar from "../components/MobileMenu";
+import MobileMenu from "../components/MobileMenu";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
@@ -10,7 +10,7 @@ import SendIcon from "@mui/icons-material/Send";
 import emailjs from "emailjs-com";
 import plane from "../images/airplane.png";
 import { useGlobalContext } from "../State";
-import MobileNavBar from "../components/MobileNavBar";
+import NavBar from "../components/NavBar";
 
 import {
   FormControlLabel,
@@ -108,209 +108,215 @@ const RSVP: React.FC = () => {
   };
 
   return showMenu ? (
-    <NavBar />
+    <MobileMenu />
   ) : (
-    <Container>
-      <MobileNavBar />
-      {showing.sent ? (
-        <BodySent>
-          <div className="image-container">
-            <img src={plane} alt="plane" />
-          </div>
-          <p>
-            {formInfo.rsvp === "yes"
-              ? "Yay! \n \n We're so happy you'll join us! \n \nIf you've expressed interest in staying at Wedderlie or The Black Bull, we'll contact you with details. Please let us know if you have any other questions, and in the meantime, vote for our honeymoon, request a song, or check out our fun facts! \n\nLooking forward to the big day!"
-              : "We're sorry to hear you won't join us, but completely understand. Hope you are well and that our paths cross soon, as you are special to us!"}
-          </p>
-        </BodySent>
-      ) : (
-        <Body>
-          <FormLabel>
-            <h3 className="heading">Kindly RSVP before 1 January, 2023</h3>
-          </FormLabel>
-          <TextField
-            value={formInfo.name}
-            fullWidth
-            id="name"
-            label="Names"
-            onChange={handleInputChange}
-            sx={{ m: "1rem 0" }}
-          />
-          <FormControl sx={{ display: "flex" }}>
-            <FormLabel sx={{ textAlign: "center" }}>
-              <h4>Will you be attending?</h4>
+    <React.Fragment>
+      <NavBar />
+
+      <Container>
+        {showing.sent ? (
+          <BodySent>
+            <div className="image-container">
+              <img src={plane} alt="plane" />
+            </div>
+            <p>
+              {formInfo.rsvp === "yes"
+                ? "Yay! \n \n We're so happy you'll join us! \n \nIf you've expressed interest in staying at Wedderlie or The Black Bull, we'll contact you with details. Please let us know if you have any other questions, and in the meantime, vote for our honeymoon, request a song, or check out our fun facts! \n\nLooking forward to the big day!"
+                : "We're sorry to hear you won't join us, but completely understand. Hope you are well and that our paths cross soon, as you are special to us!"}
+            </p>
+          </BodySent>
+        ) : (
+          <Body>
+            <FormLabel>
+              <h3 className="heading">Kindly RSVP before 1 January, 2023</h3>
             </FormLabel>
-            <RadioGroup
-              sx={{ m: "1rem auto" }}
-              id="rsvp"
+            <TextField
+              value={formInfo.name}
+              fullWidth
+              id="name"
+              label="Names"
               onChange={handleInputChange}
-              value={formInfo.rsvp}
-              row
-            >
-              <FormControlLabel
-                value="yes"
-                control={
-                  <Radio
-                    icon={<FavoriteBorder />}
-                    checkedIcon={<Favorite />}
-                    id="rsvp"
-                  />
-                }
-                label="Yes"
-              />
-              <FormControlLabel
-                value="no"
-                control={
-                  <Radio
-                    icon={<HeartBrokenOutlinedIcon />}
-                    checkedIcon={<HeartBrokenIcon />}
-                    id="rsvp"
-                  />
-                }
-                label="No"
-              />
-            </RadioGroup>
-            {formInfo.rsvp === "yes" ? (
-              <Button
-                style={{
-                  display: showing.accom1 ? "none" : "flex",
-                }}
-                sx={{ mr: 0 }}
-                variant="contained"
-                onClick={handleShowAccom1}
+              sx={{ m: "1rem 0" }}
+            />
+            <FormControl sx={{ display: "flex" }}>
+              <FormLabel sx={{ textAlign: "center" }}>
+                <h4>Will you be attending?</h4>
+              </FormLabel>
+              <RadioGroup
+                sx={{ m: "1rem auto" }}
+                id="rsvp"
+                onChange={handleInputChange}
+                value={formInfo.rsvp}
+                row
               >
-                Next
-              </Button>
-            ) : (
-              <Button
-                style={{
-                  display: showing.accom1 ? "none" : "flex",
-                }}
-                sx={{ mr: 0 }}
-                variant="contained"
-                onClick={handleShowAccom1}
-                endIcon={<SendIcon />}
+                <FormControlLabel
+                  value="yes"
+                  control={
+                    <Radio
+                      icon={<FavoriteBorder />}
+                      checkedIcon={<Favorite />}
+                      id="rsvp"
+                    />
+                  }
+                  label="Yes"
+                />
+                <FormControlLabel
+                  value="no"
+                  control={
+                    <Radio
+                      icon={<HeartBrokenOutlinedIcon />}
+                      checkedIcon={<HeartBrokenIcon />}
+                      id="rsvp"
+                    />
+                  }
+                  label="No"
+                />
+              </RadioGroup>
+              {formInfo.rsvp === "yes" ? (
+                <Button
+                  className="button"
+                  style={{
+                    display: showing.accom1 ? "none" : "flex",
+                  }}
+                  sx={{ mr: 0 }}
+                  variant="contained"
+                  onClick={handleShowAccom1}
+                >
+                  Next
+                </Button>
+              ) : (
+                <Button
+                  className="button"
+                  style={{
+                    display: showing.accom1 ? "none" : "flex",
+                  }}
+                  sx={{ mr: 0 }}
+                  variant="contained"
+                  onClick={handleShowAccom1}
+                  endIcon={<SendIcon />}
+                >
+                  Send
+                </Button>
+              )}
+            </FormControl>
+            <FormControl
+              fullWidth
+              style={{ display: showing.accom1 ? "flex" : "none" }}
+            >
+              <InputLabel>Guests</InputLabel>
+              <Select
+                id="number"
+                value={formInfo.number}
+                label="Guests"
+                onChange={handleNumberChange}
               >
-                Send
-              </Button>
-            )}
-          </FormControl>
-          <FormControl
-            fullWidth
-            style={{ display: showing.accom1 ? "flex" : "none" }}
-          >
-            <InputLabel>Guests</InputLabel>
-            <Select
-              id="number"
-              value={formInfo.number}
-              label="Guests"
-              onChange={handleNumberChange}
-            >
-              <MenuItem value={"1"}>1</MenuItem>
-              <MenuItem value={"2"}>2</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl style={{ display: showing.accom1 ? "flex" : "none" }}>
-            <FormLabel sx={{ m: "1rem 0" }}>
-              <h4>What is your preferred accommodation?</h4>
-            </FormLabel>
-            <RadioGroup
-              onChange={(e) => {
-                handleInputChange(e);
-                handleShowAccom2(e);
-              }}
-              value={formInfo.accom1}
-            >
-              <FormControlLabel
-                value="Wedderlie"
-                control={<Radio id="accom1" />}
-                label="Wedderlie"
-              />
-              <FormControlLabel
-                value="Black Bull"
-                control={<Radio id="accom1" />}
-                label="Black Bull"
-              />
-              <FormControlLabel
-                value="Edinburgh"
-                control={<Radio id="accom1" />}
-                label="Edinburgh"
-              />
-            </RadioGroup>
-          </FormControl>
-          <FormControl style={{ display: showing.accom2 ? "flex" : "none" }}>
-            <FormLabel sx={{ m: "1rem 0" }}>
-              <h4>What is your alternative preference?</h4>
-            </FormLabel>
-            <RadioGroup onChange={handleInputChange} value={formInfo.accom2}>
-              {formInfo.accom1 === "Wedderlie" && (
+                <MenuItem value={"1"}>1</MenuItem>
+                <MenuItem value={"2"}>2</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl style={{ display: showing.accom1 ? "flex" : "none" }}>
+              <FormLabel sx={{ m: "1rem 0" }}>
+                <h4>What is your preferred accommodation?</h4>
+              </FormLabel>
+              <RadioGroup
+                onChange={(e) => {
+                  handleInputChange(e);
+                  handleShowAccom2(e);
+                }}
+                value={formInfo.accom1}
+              >
+                <FormControlLabel
+                  value="Wedderlie"
+                  control={<Radio id="accom1" />}
+                  label="Wedderlie"
+                />
                 <FormControlLabel
                   value="Black Bull"
-                  control={<Radio id="accom2" />}
+                  control={<Radio id="accom1" />}
                   label="Black Bull"
                 />
-              )}
-              <FormControlLabel
-                value="Edinburgh"
-                control={<Radio id="accom2" />}
-                label="Edinburgh"
+                <FormControlLabel
+                  value="Edinburgh"
+                  control={<Radio id="accom1" />}
+                  label="Edinburgh"
+                />
+              </RadioGroup>
+            </FormControl>
+            <FormControl style={{ display: showing.accom2 ? "flex" : "none" }}>
+              <FormLabel sx={{ m: "1rem 0" }}>
+                <h4>What is your alternative preference?</h4>
+              </FormLabel>
+              <RadioGroup onChange={handleInputChange} value={formInfo.accom2}>
+                {formInfo.accom1 === "Wedderlie" && (
+                  <FormControlLabel
+                    value="Black Bull"
+                    control={<Radio id="accom2" />}
+                    label="Black Bull"
+                  />
+                )}
+                <FormControlLabel
+                  value="Edinburgh"
+                  control={<Radio id="accom2" />}
+                  label="Edinburgh"
+                />
+              </RadioGroup>
+            </FormControl>
+            <FormControl style={{ display: showing.email ? "flex" : "none" }}>
+              <FormLabel sx={{ m: "1rem 0 0" }}>
+                <h4>
+                  Please leave your email so that we can send further
+                  information about your accommodation details.
+                </h4>
+              </FormLabel>
+              <TextField
+                margin="normal"
+                value={formInfo.email}
+                fullWidth
+                id="email"
+                label="Email"
+                onChange={handleInputChange}
               />
-            </RadioGroup>
-          </FormControl>
-          <FormControl style={{ display: showing.email ? "flex" : "none" }}>
-            <FormLabel sx={{ m: "1rem 0 0" }}>
-              <h4>
-                Please leave your email so that we can send further information
-                about your accommodation details.
-              </h4>
-            </FormLabel>
-            <TextField
-              margin="normal"
-              value={formInfo.email}
+            </FormControl>
+            <FormControl style={{ display: showing.food ? "flex" : "none" }}>
+              <TextField
+                margin="normal"
+                value={formInfo.food}
+                fullWidth
+                id="food"
+                label="Dietary Requirements or Allergies"
+                onChange={handleInputChange}
+              />
+            </FormControl>
+            <FormControl style={{ display: showing.food ? "flex" : "none" }}>
+              <TextField
+                margin="normal"
+                value={formInfo.message}
+                fullWidth
+                multiline
+                minRows={2}
+                maxRows={6}
+                id="message"
+                label="Questions, concerns, thoughts, jokes, etc."
+                onChange={handleInputChange}
+              />
+            </FormControl>
+            <Button
+              className="button"
+              onClick={sendEmail}
               fullWidth
-              id="email"
-              label="Email"
-              onChange={handleInputChange}
-            />
-          </FormControl>
-          <FormControl style={{ display: showing.food ? "flex" : "none" }}>
-            <TextField
-              margin="normal"
-              value={formInfo.food}
-              fullWidth
-              id="food"
-              label="Dietary Requirements or Allergies"
-              onChange={handleInputChange}
-            />
-          </FormControl>
-          <FormControl style={{ display: showing.food ? "flex" : "none" }}>
-            <TextField
-              margin="normal"
-              value={formInfo.message}
-              fullWidth
-              multiline
-              minRows={2}
-              maxRows={6}
-              id="message"
-              label="Questions, concerns, thoughts, jokes, etc."
-              onChange={handleInputChange}
-            />
-          </FormControl>
-          <Button
-            onClick={sendEmail}
-            fullWidth
-            style={{
-              display: showing.food ? "flex" : "none",
-              marginTop: "1rem",
-            }}
-            variant="contained"
-            endIcon={<SendIcon />}
-          >
-            Send
-          </Button>
-        </Body>
-      )}
-    </Container>
+              style={{
+                display: showing.food ? "flex" : "none",
+                marginTop: "1rem",
+              }}
+              variant="contained"
+              endIcon={<SendIcon />}
+            >
+              Send
+            </Button>
+          </Body>
+        )}
+      </Container>
+    </React.Fragment>
   );
 };
 
@@ -318,8 +324,11 @@ export default RSVP;
 
 const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
-  background: #eae8e8;
+  @media only screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Body = styled.div`
@@ -328,6 +337,21 @@ const Body = styled.div`
   h3,
   h4 {
     color: #34434d;
+  }
+  .button:active {
+    background: #70877f;
+    position: relative;
+    top: 2px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin: 0 auto;
+    padding-top: 4rem;
+    width: 50%;
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
   }
 `;
 const BodySent = styled.div`
@@ -344,5 +368,10 @@ const BodySent = styled.div`
     white-space: pre-line;
     margin: 1rem;
     font-size: 1.3rem;
+  }
+  @media only screen and (min-width: 600px) {
+    margin: 0 auto;
+    padding-top: 4rem;
+    width: 60%;
   }
 `;

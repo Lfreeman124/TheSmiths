@@ -1,6 +1,6 @@
 import React from "react";
 import MobileMenu from "../components/MobileMenu";
-import MobileNavBar from "../components/MobileNavBar";
+import MobileNavBar from "../components/NavBar";
 import { useGlobalContext } from "../State";
 
 const FAQ: React.FC = () => {

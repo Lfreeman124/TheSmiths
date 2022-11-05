@@ -73,7 +73,12 @@ const Honeymoon: React.FC = () => {
           </div>
         </div>
         <div className="button-container">
-          <Button fullWidth variant="contained" onClick={voteNow}>
+          <Button
+            className="vote-button"
+            fullWidth
+            variant="contained"
+            onClick={voteNow}
+          >
             Vote!
           </Button>
         </div>
@@ -101,6 +106,11 @@ const Honeymoon: React.FC = () => {
 export default Honeymoon;
 
 const Container = styled.div`
+  width: 100%;
+
+  @media only screen and (min-width: 600px) {
+    width: 60%;
+  }
   h2 {
     padding: 1rem;
     width: 100%;
@@ -143,6 +153,11 @@ const Container = styled.div`
     .button-container {
       width: 50%;
       margin: 2rem auto;
+      .vote-button:active {
+        background: #70877f;
+        position: relative;
+        top: 2px;
+      }
     }
   }
   .results-container {

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MasterRouter from "./components/MasterRouter";
 import styled from "styled-components";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { UserContext } from "./State";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const theme = createTheme({
   palette: {
@@ -22,10 +23,17 @@ const theme = createTheme({
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const matches = useMediaQuery("(max-width:600px)");
+
+  useEffect(() => {
+    setIsMobile(matches);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Container>
-      <UserContext.Provider value={{ showMenu, setShowMenu }}>
+      <UserContext.Provider value={{ showMenu, setShowMenu, isMobile }}>
         <ThemeProvider theme={theme}>
           <MasterRouter />
         </ThemeProvider>

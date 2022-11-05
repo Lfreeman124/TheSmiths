@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useGlobalContext } from "../State";
-import MobileNavBar from "./MobileNavBar";
+import MobileNavBar from "./NavBar";
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);

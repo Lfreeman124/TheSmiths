@@ -1,28 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import us from "../images/us.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import MobileMenu from "../components/MobileMenu";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Honeymoon from "../components/Honeymoon";
 import { useGlobalContext } from "../State";
-import MobileNavBar from "../components/MobileNavBar";
+import NavBar from "../components/NavBar";
 
 const Home: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const matches = useMediaQuery("(max-width:600px)");
-  const { showMenu } = useGlobalContext();
+  const { showMenu, isMobile } = useGlobalContext();
 
-  useEffect(() => {
-    setIsMobile(matches);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <React.Fragment>
-      {isMobile && <MobileNavBar />}
+    <Container>
+      {isMobile && <NavBar />}
       <Banner>
         <h3>The best day of our lives</h3>
         <h2>--- Mr & Mrs ---</h2>
@@ -33,24 +26,36 @@ const Home: React.FC = () => {
             <Link to="/rsvp">RSVP</Link>
             <Link to="/edinburgh">Edinburgh</Link>
             <Link to="/registry">Registry</Link>
-            <Link to="/faq">FAQ</Link>
+            <Link className="last" to="/faq">
+              FAQ
+            </Link>
           </nav>
         )}
         <img src={us} alt=""></img>
         <Countdown />
       </Banner>
       <Honeymoon />
-    </React.Fragment>
+    </Container>
   );
 };
 
 export default Home;
 
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+`;
+
 const Banner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   * {
     max-width: 90%;
   }
@@ -69,6 +74,13 @@ const Banner = styled.div`
     margin: 20px;
     > a {
       margin: 10px;
+      padding-right: 20px;
+      text-decoration: none;
+      color: #4b3b40;
+      border-right: 1px solid #4b3b40;
+    }
+    .last {
+      border-right: none;
     }
   }
 `;

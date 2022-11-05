@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
-import MobileNavBar from "../components/MobileNavBar";
+import MobileNavBar from "../components/NavBar";
 
 const OnTheDay: React.FC = () => {
   const { showMenu } = useGlobalContext();
