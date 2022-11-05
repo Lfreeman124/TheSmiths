@@ -1,6 +1,8 @@
+import React, { useState } from "react";
 import MasterRouter from "./components/MasterRouter";
 import styled from "styled-components";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { UserContext } from "./State";
 
 const theme = createTheme({
   palette: {
@@ -19,11 +21,15 @@ const theme = createTheme({
 });
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <Container>
-      <ThemeProvider theme={theme}>
-        <MasterRouter />
-      </ThemeProvider>
+      <UserContext.Provider value={{ showMenu, setShowMenu }}>
+        <ThemeProvider theme={theme}>
+          <MasterRouter />
+        </ThemeProvider>
+      </UserContext.Provider>
     </Container>
   );
 }

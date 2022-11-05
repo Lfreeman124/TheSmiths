@@ -2,57 +2,56 @@ import React from "react";
 import wedderlie from "../images/wedderlie.png";
 import map from "../images/map.png";
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
 import DistancesTable from "../components/DistancesTable";
 import { Instagram, Language } from "@mui/icons-material";
 import crest from "../images/crest.png";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "../components/MobileNavBar";
 
 const Venue: React.FC = () => {
-  return (
-    <React.Fragment>
-      <NavBar />
+  const { showMenu } = useGlobalContext();
 
-      <Container>
-        <div className="header">
-          <div className="crest-container">
-            <img src={crest} alt="crest" />
-          </div>
-          <header>
-            <h2>Wedderlie House</h2>
-          </header>
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
+    <Container>
+      <MobileNavBar />
+      <div className="header">
+        <div className="crest-container">
+          <img src={crest} alt="crest" />
         </div>
-        <img id="wedderlie" src={wedderlie} alt="" />
-        <div className="blurb">
-          <p>
-            We are so excited to get married here. Wedderlie is a gorgeous
-            estate with a rich history and a beautifully restored interior.
-            Check out their website and social media for a sneak peek!
-          </p>
-        </div>
-        <div className="links">
-          <a
-            href="https://www.instagram.com/wedderliehouse/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram sx={{ color: "black" }} />
-          </a>
-          <a
-            href="https://wedderliehouse.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Language sx={{ color: "black" }} />
-          </a>
-        </div>
-        <div className="image-container">
-          <img id="map" src={map} alt="" />
-        </div>
-        <div className="table-container">
-          <DistancesTable />
-        </div>
-      </Container>
-    </React.Fragment>
+        <header>
+          <h2>Wedderlie House</h2>
+        </header>
+      </div>
+      <img id="wedderlie" src={wedderlie} alt="" />
+      <div className="blurb">
+        <p>
+          We are so excited to get married here. Wedderlie is a gorgeous estate
+          with a rich history and a beautifully restored interior. Check out
+          their website and social media for a sneak peek!
+        </p>
+      </div>
+      <div className="links">
+        <a
+          href="https://www.instagram.com/wedderliehouse/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Instagram sx={{ color: "black" }} />
+        </a>
+        <a href="https://wedderliehouse.com/" target="_blank" rel="noreferrer">
+          <Language sx={{ color: "black" }} />
+        </a>
+      </div>
+      <div className="image-container">
+        <img id="map" src={map} alt="" />
+      </div>
+      <div className="table-container">
+        <DistancesTable />
+      </div>
+    </Container>
   );
 };
 export default Venue;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/MobileMenu";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
@@ -9,6 +9,8 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "emailjs-com";
 import plane from "../images/airplane.png";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "../components/MobileNavBar";
 
 import {
   FormControlLabel,
@@ -41,6 +43,7 @@ const RSVP: React.FC = () => {
     sent: false,
   };
   const [showing, setShowing] = useState(initialState);
+  const { showMenu } = useGlobalContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -104,10 +107,11 @@ const RSVP: React.FC = () => {
     // );
   };
 
-  return (
+  return showMenu ? (
+    <NavBar />
+  ) : (
     <Container>
-      <NavBar />
-
+      <MobileNavBar />
       {showing.sent ? (
         <BodySent>
           <div className="image-container">

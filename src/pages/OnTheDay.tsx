@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "../components/MobileNavBar";
 
 const OnTheDay: React.FC = () => {
-  return (
+  const { showMenu } = useGlobalContext();
+
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
     <Container>
-      <NavBar />
+      <MobileNavBar />
       <div className="schedule">
         <h1>Schedule</h1>
         <p>13:00 - Ceremony</p>

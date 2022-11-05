@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "./MobileNavBar";
 
 const NavBar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { showMenu, setShowMenu } = useGlobalContext();
   const matches = useMediaQuery("(max-width:600px)");
   useEffect(() => {
     setIsMobile(matches);
@@ -15,7 +16,7 @@ const NavBar: React.FC = () => {
   }, []);
 
   const toggleMobileMenu = () => {
-    setShowMobileMenu((prev) => !prev);
+    setShowMenu((prev: any) => !prev);
   };
 
   const pages = [
@@ -42,20 +43,16 @@ const NavBar: React.FC = () => {
   );
 
   return isMobile ? (
-    <MobileContainer>
-      {showMobileMenu ? (
-        <StyledMenu>
-          <div className="icon">
-            <CloseIcon onClick={toggleMobileMenu} />
-          </div>
-          {navLinks}
-        </StyledMenu>
-      ) : (
+    showMenu ? (
+      <StyledMenu>
         <div className="icon">
-          <MenuIcon onClick={toggleMobileMenu} />
+          <CloseIcon onClick={toggleMobileMenu} />
         </div>
-      )}
-    </MobileContainer>
+        {navLinks}
+      </StyledMenu>
+    ) : (
+      <MobileNavBar />
+    )
   ) : (
     <Container>{navLinks}</Container>
   );
@@ -63,8 +60,13 @@ const NavBar: React.FC = () => {
 
 export default NavBar;
 
-const MobileContainer = styled.div`
+const Container = styled.div``;
+
+const StyledMenu = styled.div`
+  background: #e0c6b3;
+  height: 100vh;
   width: 100%;
+  z-index: 99;
   .icon {
     width: 100%;
     text-align: right;
@@ -74,20 +76,6 @@ const MobileContainer = styled.div`
       margin-top: 0.5rem;
     }
   }
-
-  @media only screen and (min-width: 600px) {
-  }
-`;
-
-const Container = styled.div``;
-
-const StyledMenu = styled.div`
-  background: #e0c6b3;
-  height: 100vh;
-  width: 100%;
-  /* position: absolute;
-  left: 0; */
-  z-index: 99;
   .links {
     display: flex;
     flex-direction: column;

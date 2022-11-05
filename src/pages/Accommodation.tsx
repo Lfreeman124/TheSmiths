@@ -1,11 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
+import MobileNavBar from "../components/MobileNavBar";
 import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
+import { useGlobalContext } from "../State";
 
 const Accommodation: React.FC = () => {
+  const { showMenu } = useGlobalContext();
+
   const options = [
     {
       name: "Wedderlie House",
@@ -39,47 +43,48 @@ const Accommodation: React.FC = () => {
       price: "£100-300/nt",
     },
   ];
-  return (
-    <React.Fragment>
-      <NavBar />
-      <Container>
-        <div className="header">
-          <h1>Accommodation</h1>
-          <p>
-            Our hope is to offer everyone the option to stay either at Wedderlie
-            House or The Black Bull. If you can't find the information you need
-            here or on the venue websites, or if you have any concerns, please
-            reach out and we can find a solution.
-          </p>
-        </div>
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
+    <Container>
+      <MobileNavBar />
 
-        {options.map((each, index) => {
-          return (
-            <div key={index} className="accommodation-container">
-              <a href={each.website} target="_blank" rel="noreferrer">
-                <div className="name-and-location">
-                  <h2>{each.name}</h2>
-                  <p>{each.location}</p>
-                </div>
-                <div className="image-container">
-                  <img src={each.image} alt="img" />
-                </div>
-              </a>
-              <p>{each.message}</p>
-              <ul>
-                {each.distanceToEdinburgh && (
-                  <li>Distance to Edinburgh: {each.distanceToEdinburgh}</li>
-                )}
-                {each.distanceToWedderlie && (
-                  <li>Distance to Wedderlie: {each.distanceToWedderlie}</li>
-                )}
-                <li>Price: {each.price}</li>
-              </ul>
-            </div>
-          );
-        })}
-      </Container>
-    </React.Fragment>
+      <div className="header">
+        <h1>Accommodation</h1>
+        <p>
+          Our hope is to offer everyone the option to stay either at Wedderlie
+          House or The Black Bull. If you can't find the information you need
+          here or on the venue websites, or if you have any concerns, please
+          reach out and we can find a solution.
+        </p>
+      </div>
+
+      {options.map((each, index) => {
+        return (
+          <div key={index} className="accommodation-container">
+            <a href={each.website} target="_blank" rel="noreferrer">
+              <div className="name-and-location">
+                <h2>{each.name}</h2>
+                <p>{each.location}</p>
+              </div>
+              <div className="image-container">
+                <img src={each.image} alt="img" />
+              </div>
+            </a>
+            <p>{each.message}</p>
+            <ul>
+              {each.distanceToEdinburgh && (
+                <li>Distance to Edinburgh: {each.distanceToEdinburgh}</li>
+              )}
+              {each.distanceToWedderlie && (
+                <li>Distance to Wedderlie: {each.distanceToWedderlie}</li>
+              )}
+              <li>Price: {each.price}</li>
+            </ul>
+          </div>
+        );
+      })}
+    </Container>
   );
 };
 

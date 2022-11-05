@@ -3,23 +3,29 @@ import us from "../images/us.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Honeymoon from "../components/Honeymoon";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "../components/MobileNavBar";
 
 const Home: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const matches = useMediaQuery("(max-width:600px)");
+  const { showMenu } = useGlobalContext();
+
   useEffect(() => {
     setIsMobile(matches);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return (
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
     <React.Fragment>
-      {isMobile && <NavBar />}
+      {isMobile && <MobileNavBar />}
       <Banner>
         <h3>The best day of our lives</h3>
-        <h1>--- Mr & Mrs ---</h1>
+        <h2>--- Mr & Mrs ---</h2>
         {!isMobile && (
           <nav>
             <Link to="/venue">Venue</Link>
@@ -51,9 +57,10 @@ const Banner = styled.div`
   h3 {
     font-family: "Gwendolyn";
   }
-  h1 {
-    font-size: 3rem;
+  h2 {
+    font-size: 2.5rem;
     margin: 10px auto;
+    font-weight: 200;
   }
   img {
     width: 60%;

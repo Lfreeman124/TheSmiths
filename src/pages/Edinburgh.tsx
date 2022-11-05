@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "../components/MobileNavBar";
 
 const OnTheDay: React.FC = () => {
-  return (
+  const { showMenu } = useGlobalContext();
+
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
     <Container>
-      <NavBar />
+      <MobileNavBar />
       <header>
         <h1>Welcome to Edinburgh!</h1>
         <h2>Graeme and Lauren recommend...</h2>

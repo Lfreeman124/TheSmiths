@@ -1,10 +1,16 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
+import MobileNavBar from "../components/MobileNavBar";
+import { useGlobalContext } from "../State";
 
 const FAQ: React.FC = () => {
-  return (
+  const { showMenu } = useGlobalContext();
+
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
     <div>
-      <NavBar />
+      <MobileNavBar />
       <h1>FAQs</h1>
       <h2>Accommodation</h2>
       <h2>Transportation</h2>

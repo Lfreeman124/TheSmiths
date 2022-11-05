@@ -49,7 +49,7 @@ const Honeymoon: React.FC = () => {
             <div
               style={{
                 boxShadow:
-                  currentVote === "road" ? "0px 0px 10px 10px #f5b617" : "none",
+                  currentVote === "road" ? "0px 0px 10px 10px #d08d4e" : "none",
               }}
               className="circle"
               onClick={() => setCurrentVote("road")}
@@ -62,7 +62,7 @@ const Honeymoon: React.FC = () => {
             <div
               style={{
                 boxShadow:
-                  currentVote === "bali" ? "0px 0px 10px 10px #f5b617" : "none",
+                  currentVote === "bali" ? "0px 0px 10px 10px #d08d4e" : "none",
               }}
               className="circle"
               onClick={() => setCurrentVote("bali")}

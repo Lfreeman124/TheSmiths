@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
 import amazon from "../images/amazon.svg";
 import beach from "../images/beach.jpg";
 import ellos from "../images/ellos.png";
 import restaurant from "../images/restaurant.png";
+import { useGlobalContext } from "../State";
+import MobileNavBar from "../components/MobileNavBar";
 
 const OnTheDay: React.FC = () => {
+  const { showMenu } = useGlobalContext();
+
   const options = [
     {
       id: "amazon1",
@@ -49,9 +53,11 @@ const OnTheDay: React.FC = () => {
       dessert or a drink.`,
     },
   ];
-  return (
+  return showMenu ? (
+    <MobileMenu />
+  ) : (
     <Container>
-      <NavBar />
+      <MobileNavBar />
       <div className="header">
         <h1>Registry</h1>
         <p>
