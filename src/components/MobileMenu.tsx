@@ -26,6 +26,8 @@ const NavBar: React.FC = () => {
     { link: "/ontheday", text: "On the day" },
     { link: "/rsvp", text: "RSVP" },
     { link: "/registry", text: "Registry" },
+    { link: "/honeymoon", text: "Honeymoon" },
+    { link: "/request", text: "Song Requests" },
     { link: "/edinburgh", text: "Edinburgh" },
     { link: "/faq", text: "FAQ" },
   ];

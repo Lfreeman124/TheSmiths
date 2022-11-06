@@ -11,11 +11,15 @@ import {
   doc,
   increment,
 } from "firebase/firestore";
+import NavBar from "./NavBar";
+import MobileMenu from "./MobileMenu";
+import { useGlobalContext } from "../State";
 
 const Honeymoon: React.FC = () => {
   const [currentVote, setCurrentVote] = useState("");
   const [votes, setVotes] = useState({ road: 0, bali: 0 });
   const [loading, setLoading] = useState(true);
+  const { showMenu } = useGlobalContext();
 
   const getVotes = async () => {
     const data = collection(db, "honeymoon");
@@ -40,66 +44,75 @@ const Honeymoon: React.FC = () => {
 
   return loading ? (
     <></>
+  ) : showMenu ? (
+    <MobileMenu />
   ) : (
-    <Container>
-      <h2>Where should we go on our honeymoon?</h2>
-      <div className="options-container">
-        <div className="options">
-          <div id="road" className="option-container">
-            <div
-              style={{
-                boxShadow:
-                  currentVote === "road" ? "0px 0px 10px 10px #d08d4e" : "none",
-              }}
-              className="circle"
-              onClick={() => setCurrentVote("road")}
-            >
-              <img src={car1} alt="car" />
+    <React.Fragment>
+      <NavBar />
+      <Container>
+        <h2>Where should we go on our honeymoon?</h2>
+        <div className="options-container">
+          <div className="options">
+            <div id="road" className="option-container">
+              <div
+                style={{
+                  boxShadow:
+                    currentVote === "road"
+                      ? "0px 0px 10px 10px #d08d4e"
+                      : "none",
+                }}
+                className="circle"
+                onClick={() => setCurrentVote("road")}
+              >
+                <img src={car1} alt="car" />
+              </div>
+              <div className="circle-label">Road Trip</div>
             </div>
-            <div className="circle-label">Road Trip</div>
-          </div>
-          <div id="bali" className="option-container">
-            <div
-              style={{
-                boxShadow:
-                  currentVote === "bali" ? "0px 0px 10px 10px #d08d4e" : "none",
-              }}
-              className="circle"
-              onClick={() => setCurrentVote("bali")}
-            >
-              <img src={beach} alt="beach" />
+            <div id="bali" className="option-container">
+              <div
+                style={{
+                  boxShadow:
+                    currentVote === "bali"
+                      ? "0px 0px 10px 10px #d08d4e"
+                      : "none",
+                }}
+                className="circle"
+                onClick={() => setCurrentVote("bali")}
+              >
+                <img src={beach} alt="beach" />
+              </div>
+              <div className="circle-label">Bali</div>
             </div>
-            <div className="circle-label">Bali</div>
+          </div>
+          <div className="button-container">
+            <Button
+              className="vote-button"
+              fullWidth
+              variant="contained"
+              onClick={voteNow}
+            >
+              Vote!
+            </Button>
           </div>
         </div>
-        <div className="button-container">
-          <Button
-            className="vote-button"
-            fullWidth
-            variant="contained"
-            onClick={voteNow}
-          >
-            Vote!
-          </Button>
+        <div className="results-container">
+          <div className="results-label">Road Trip: {votes.road} </div>
+          <div className="results-bar">
+            <div
+              style={{ width: `${votes.road * 2}%` }}
+              className="results-filling"
+            ></div>
+          </div>
+          <div className="results-label">Bali: {votes.bali}</div>
+          <div className="results-bar">
+            <div
+              style={{ width: `${votes.bali * 2}%` }}
+              className="results-filling"
+            ></div>
+          </div>
         </div>
-      </div>
-      <div className="results-container">
-        <div className="results-label">Road Trip: {votes.road} </div>
-        <div className="results-bar">
-          <div
-            style={{ width: `${votes.road * 2}%` }}
-            className="results-filling"
-          ></div>
-        </div>
-        <div className="results-label">Bali: {votes.bali}</div>
-        <div className="results-bar">
-          <div
-            style={{ width: `${votes.bali * 2}%` }}
-            className="results-filling"
-          ></div>
-        </div>
-      </div>
-    </Container>
+      </Container>
+    </React.Fragment>
   );
 };
 
@@ -107,15 +120,16 @@ export default Honeymoon;
 
 const Container = styled.div`
   width: 100%;
+  padding: 1rem 0;
 
   @media only screen and (min-width: 600px) {
     width: 60%;
   }
   h2 {
+    margin-bottom: 2rem;
     padding: 1rem;
     width: 100%;
     text-align: center;
-    margin: 2rem 0;
     background: #70877f;
     color: #eee7dd;
   }

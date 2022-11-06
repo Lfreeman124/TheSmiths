@@ -53,9 +53,14 @@ const Venue: React.FC = () => {
             <Language sx={{ color: "black" }} />
           </a>
         </div>
-        <div className="image-container">
+        <a
+          href="https://www.google.com/maps/place/Wedderlie+House/@55.9058629,-3.3056523,9z/data=!4m5!3m4!1s0x4887738e9ab230db:0x1083b8feb46b265e!8m2!3d55.7562332!4d-2.5751903"
+          target="_blank"
+          rel="noreferrer"
+          className="image-container"
+        >
           <img id="map" src={map} alt="" />
-        </div>
+        </a>
         <div className="table-container">
           <DistancesTable />
         </div>
@@ -79,6 +84,9 @@ const Container = styled.div`
     width: 35%;
     img {
       border: solid 5px #70877f;
+      @media only screen and (max-width: 600px) {
+        border: solid 3px #70877f;
+      }
 
       width: 70%;
     }

@@ -12,15 +12,27 @@ function createData(location: string, distance: number, time: string) {
 }
 
 const rows = [
-  createData("Ediburgh Airport", 43, "54 minutes"),
-  createData("Downtown Edinburgh", 36, "1 hour"),
+  createData("Airport", 43, "54 minutes"),
+  createData("Edinburgh", 36, "1 hour"),
   createData("Lauder", 10, "16 minutes"),
-  createData("Glasgow", 82, "1 hour, 33 minutes"),
-  createData("London", 379, "6 hours, 33 minutes"),
+  createData("Glasgow", 82, "1.5 hours"),
+  createData("London", 379, "7 hours"),
   createData("Nantes", 586, "3 hours"),
   createData("Colorado", 4405, "15 hours"),
+  createData("California", 6182, "17 hours"),
+  createData("Florida", 4324, "13 hours"),
+  createData("Texas", 4707, "13 hours"),
+  createData("Iowa", 3853, "15 hours"),
   createData("Phuket", 6182, "17 hours"),
+  createData("Shenzhen", 5887, "23 hours"),
+  createData("Kuala Lumpur", 6588, "18 hours"),
+  createData("Manchester", 152, "4 hours"),
+  createData("Ireland", 321, "5 hours"),
+  createData("Middlesbrough", 91, "3 hours"),
+  createData("Oslo", 568, "3 hours"),
 ];
+
+rows.sort((a, b) => a.distance - b.distance);
 
 const DistancesTable: React.FC = () => {
   return (

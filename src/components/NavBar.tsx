@@ -23,6 +23,8 @@ const MobileNavBar: React.FC = () => {
         <Link to="/venue">Venue</Link>
         <Link to="/ontheday">On the Day</Link>
         <Link to="/rsvp">RSVP</Link>
+        <Link to="/honeymoon">Honeymoon</Link>
+        <Link to="/request">Song Requests</Link>
         <Link to="/registry">Registry</Link>
         <Link to="/edinburgh">Edinburgh</Link>
         <Link className="last" to="/faq">

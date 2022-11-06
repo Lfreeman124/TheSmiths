@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
+import frame from "../images/frame.png";
 
 const OnTheDay: React.FC = () => {
   const { showMenu } = useGlobalContext();
@@ -12,8 +13,8 @@ const OnTheDay: React.FC = () => {
   ) : (
     <Container>
       <MobileNavBar />
-      <div className="schedule">
-        <h1>Schedule</h1>
+      <div className="schedule" style={{ backgroundImage: `url(${frame})` }}>
+        <h1>Order of Service</h1>
         <p>13:00 - Ceremony</p>
         <p>14:00 - Photos, drinks, lawn games, schmoozing</p>
         <p>16:30 - Speeches</p>
@@ -31,17 +32,23 @@ export default OnTheDay;
 const Container = styled.div`
   height: 100vh;
   .schedule {
-    background: #e0c6b3;
-    box-shadow: 0px 0px 30px 30px #e0c6b3;
-    width: 50%;
-    margin: 3rem auto;
+    margin-top: -2rem;
+    background-size: 120% 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 600px;
     text-align: center;
     h1 {
+      padding-top: 8rem;
+      font-family: "Gwendolyn";
       margin-bottom: 1rem;
-      font-weight: 300;
+      /* font-weight: 300; */
       font-size: 1.5rem;
     }
     p {
+      width: 100%;
+      padding: 0 25%;
       line-height: 2rem;
     }
   }
