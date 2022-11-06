@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.bea2addf.css",
-    "main.js": "/static/js/main.df2dea24.js",
+    "main.js": "/static/js/main.c001f254.js",
     "static/media/car1.png": "/static/media/car1.a7d470bd84645c792949.png",
     "static/media/wedderlie3.png": "/static/media/wedderlie3.7887b249faa3f4c40990.png",
     "static/media/us.jpg": "/static/media/us.02da3c816801507b228d.jpg",
     "static/media/restaurant.png": "/static/media/restaurant.83bd929c543ef9729fa0.png",
     "static/media/wedderlie.png": "/static/media/wedderlie.efc6942a0bc3daa0349e.png",
+    "static/media/frame.png": "/static/media/frame.e7b8628f56177d0e479e.png",
     "static/media/map.png": "/static/media/map.97f1f3430555c2b74ba6.png",
     "static/media/victoriastreet.jpg": "/static/media/victoriastreet.1c445ef013f557f9813f.jpg",
     "static/media/crest.png": "/static/media/crest.96c8c8186e6fdb248add.png",
@@ -17,10 +18,10 @@
     "static/media/amazon.svg": "/static/media/amazon.1591be663b8d504de66fdf060bd3b64e.svg",
     "index.html": "/index.html",
     "main.bea2addf.css.map": "/static/css/main.bea2addf.css.map",
-    "main.df2dea24.js.map": "/static/js/main.df2dea24.js.map"
+    "main.c001f254.js.map": "/static/js/main.c001f254.js.map"
   },
   "entrypoints": [
     "static/css/main.bea2addf.css",
-    "static/js/main.df2dea24.js"
+    "static/js/main.c001f254.js"
   ]
 }
