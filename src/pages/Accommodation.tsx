@@ -101,7 +101,9 @@ const Container = styled.div`
   }
   .header {
     h1 {
+      font-family: "Gwendolyn";
       margin-bottom: 1rem;
+      font-size: 3rem;
     }
     padding: 1rem;
   }
@@ -115,6 +117,9 @@ const Container = styled.div`
     .name-and-location {
       display: flex;
       justify-content: space-between;
+      h2 {
+        font-weight: 300;
+      }
     }
   }
   .image-container {

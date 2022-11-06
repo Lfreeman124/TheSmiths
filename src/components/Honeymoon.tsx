@@ -125,9 +125,11 @@ const Container = styled.div`
     width: 60%;
   }
   h2 {
-    margin-bottom: 2rem;
+    font-family: "Gwendolyn";
     padding: 1rem;
-    width: 90%;
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 300;
     margin: 0 auto 1rem;
     text-align: center;
     background: #70877f;
@@ -137,15 +139,16 @@ const Container = styled.div`
     .options {
       width: 100%;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       .option-container {
+        margin: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         .circle {
           border: 2px solid black;
-          height: 10rem;
-          width: 10rem;
+          height: 9rem;
+          width: 9rem;
           border-radius: 50%;
           overflow: hidden;
           margin-bottom: 0.5rem;
@@ -166,7 +169,7 @@ const Container = styled.div`
     }
     .button-container {
       width: 50%;
-      margin: 2rem auto;
+      margin: 1rem auto 2rem;
       .vote-button:active {
         background: #70877f;
         position: relative;

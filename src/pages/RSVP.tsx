@@ -97,14 +97,6 @@ const RSVP: React.FC = () => {
       "1q3_dbUeeoCs5TYLT"
     );
     setShowing({ ...showing, sent: true });
-    // .then(
-    //   (result) => {
-    //     console.log(result.text);
-    //   },
-    //   (error) => {
-    //     console.log(error.text);
-    //   }
-    // );
   };
 
   return showMenu ? (
@@ -343,15 +335,15 @@ const Body = styled.div`
     position: relative;
     top: 2px;
   }
+  h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
   @media only screen and (min-width: 600px) {
     margin: 0 auto;
     padding-top: 4rem;
     width: 50%;
-    h3 {
-      font-size: 1.3rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
   }
 `;
 const BodySent = styled.div`
