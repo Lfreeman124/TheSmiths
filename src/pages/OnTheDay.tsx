@@ -30,7 +30,7 @@ const OnTheDay: React.FC = () => {
 export default OnTheDay;
 
 const Container = styled.div`
-  height: 100vh;
+  height: 700px;
   .schedule {
     margin-top: -2rem;
     background-size: 120% 600px;
@@ -40,7 +40,7 @@ const Container = styled.div`
     height: 600px;
     text-align: center;
     h1 {
-      padding-top: 8rem;
+      padding-top: 7.5rem;
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
       /* font-weight: 300; */

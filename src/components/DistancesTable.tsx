@@ -19,7 +19,7 @@ const rows = [
   createData("London", 379, "7 hours"),
   createData("Nantes", 586, "3 hours"),
   createData("Colorado", 4405, "15 hours"),
-  createData("California", 6182, "17 hours"),
+  createData("California", 5176, "15 hours"),
   createData("Florida", 4324, "13 hours"),
   createData("Texas", 4707, "13 hours"),
   createData("Iowa", 3853, "15 hours"),

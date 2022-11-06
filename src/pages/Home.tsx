@@ -6,6 +6,7 @@ import Countdown from "../components/Countdown";
 import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
+import { Button } from "@mui/material";
 
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -35,6 +36,13 @@ const Home: React.FC = () => {
         <img src={us} alt=""></img>
         <Countdown />
       </Banner>
+      <div className="button-container">
+        <Link to="/rsvp">
+          <Button size="large" fullWidth variant="contained">
+            RSVP
+          </Button>
+        </Link>
+      </div>
     </Container>
   );
 };
@@ -49,9 +57,14 @@ const Container = styled.div`
   @media only screen and (min-width: 600px) {
     padding-top: 4rem;
   }
+  .button-container {
+    margin: 1rem;
+    width: 50%;
+  }
 `;
 
 const Banner = styled.div`
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,10 +77,11 @@ const Banner = styled.div`
   }
   h2 {
     font-size: 2.5rem;
-    margin: 10px auto;
+    margin: 1rem auto;
     font-weight: 200;
   }
   img {
+    margin: 1rem;
     width: 60%;
   }
   nav {

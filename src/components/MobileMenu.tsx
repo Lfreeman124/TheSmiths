@@ -66,7 +66,7 @@ const Container = styled.div``;
 
 const StyledMenu = styled.div`
   background: #e0c6b3;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   z-index: 99;
   .icon {
@@ -88,8 +88,8 @@ const StyledMenu = styled.div`
       color: black;
       text-decoration: none;
       width: 100%;
-      height: 4rem;
-      font-size: 1.5rem;
+      height: 3rem;
+      font-size: 1rem;
     }
   }
 `;

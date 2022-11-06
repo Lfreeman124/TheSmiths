@@ -16,7 +16,7 @@ const Accommodation: React.FC = () => {
       location: "Gordon",
       distanceToEdinburgh: "1hr",
       image: Wedderlie,
-      website: "https://wedderliehouse.com/accommodation/",
+      website: "https://wedderliehouse.com/accomodation/",
       message:
         "If you received a message in your invitation with information for staying at Wedderlie House, we hope you can stay with us on site.",
       price:
@@ -37,7 +37,8 @@ const Accommodation: React.FC = () => {
       name: "Edinburgh",
       distanceToWedderlie: "1 hr",
       image: Edinburgh,
-      website: "booking.com",
+      website:
+        "https://www.booking.com/index.en-gb.html?label=gen173nr-1DCAEoggI46AdIM1gEaMgBiAEBmAEJuAEHyAEM2AED6AEBiAIBqAIDuALP16CbBsACAdICJDYwZTU4MGIxLWE0YzYtNDE5Ni1hMGI2LTQ3OWE3ODhjYjgxY9gCBOACAQ&sid=67efeac07628c652335a4c0938833593&sb_price_type=total&changed_currency=1&selected_currency=USD&top_currency=1",
       message:
         "Perhaps you prefer to stay in the the city to make the most of your weekend away. Check out the suggestions from our friends on the Edinburgh page!",
       price: "£100-300/nt",

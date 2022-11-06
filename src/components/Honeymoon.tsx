@@ -128,7 +128,8 @@ const Container = styled.div`
   h2 {
     margin-bottom: 2rem;
     padding: 1rem;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto 1rem;
     text-align: center;
     background: #70877f;
     color: #eee7dd;
