@@ -103,7 +103,7 @@ const Container = styled.div`
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
-      font-size: 3rem;
+      font-size: 2rem;
     }
     padding: 1rem;
   }
