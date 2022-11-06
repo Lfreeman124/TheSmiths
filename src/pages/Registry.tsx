@@ -123,7 +123,7 @@ const Container = styled.div`
   align-items: center;
   h1 {
     font-family: "Gwendolyn";
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .header,
@@ -134,6 +134,8 @@ const Container = styled.div`
     text-align: center;
   }
   .header p {
+    font-size: 1rem;
+    line-height: 1.5rem;
     margin: 1rem 0;
   }
   .options {
