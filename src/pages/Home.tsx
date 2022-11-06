@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import MobileMenu from "../components/MobileMenu";
-import Honeymoon from "../components/Honeymoon";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 
@@ -36,7 +35,6 @@ const Home: React.FC = () => {
         <img src={us} alt=""></img>
         <Countdown />
       </Banner>
-      <Honeymoon />
     </Container>
   );
 };
