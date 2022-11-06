@@ -32,7 +32,7 @@ export default OnTheDay;
 const Container = styled.div`
   height: 700px;
   .schedule {
-    margin-top: -2rem;
+    margin-top: -3rem;
     background-size: 120% 600px;
     background-repeat: no-repeat;
     background-position: center;
@@ -42,7 +42,7 @@ const Container = styled.div`
     h1 {
       padding-top: 7.5rem;
       font-family: "Gwendolyn";
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       /* font-weight: 300; */
       font-size: 1.5rem;
     }

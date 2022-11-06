@@ -38,7 +38,7 @@ const Home: React.FC = () => {
       </Banner>
       <div className="button-container">
         <Link to="/rsvp">
-          <Button size="large" fullWidth variant="contained">
+          <Button className="button" size="large" fullWidth variant="contained">
             RSVP
           </Button>
         </Link>
@@ -60,6 +60,9 @@ const Container = styled.div`
   .button-container {
     margin: 1rem;
     width: 50%;
+    .button {
+      text-decoration: none;
+    }
   }
 `;
 

@@ -31,7 +31,7 @@ const Requests: React.FC = () => {
 export default Requests;
 
 const Container = styled.div`
-  padding-top: 1rem;
+  padding: 1rem 0;
   h1 {
     width: 100%;
     text-align: center;

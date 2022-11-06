@@ -128,7 +128,7 @@ const RSVP: React.FC = () => {
         ) : (
           <Body>
             <FormLabel>
-              <h3 className="heading">Kindly RSVP before 1 January, 2023</h3>
+              <h3 className="heading">Kindly RSVP before 31 January, 2023</h3>
             </FormLabel>
             <TextField
               value={formInfo.name}
