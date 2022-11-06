@@ -60,7 +60,7 @@ const Container = styled.div`
   .button-container {
     margin: 1rem;
     width: 50%;
-    .button {
+    a {
       text-decoration: none;
     }
   }
