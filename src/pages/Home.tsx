@@ -58,8 +58,14 @@ const Container = styled.div`
     padding-top: 4rem;
   }
   .button-container {
-    margin: 1rem;
+    margin: 1rem auto 5rem;
     width: 50%;
+
+    .button:active {
+      background: #70877f;
+      position: relative;
+      top: 2px;
+    }
     a {
       text-decoration: none;
     }
@@ -95,6 +101,7 @@ const Banner = styled.div`
       text-decoration: none;
       color: #4b3b40;
       border-right: 1px solid #4b3b40;
+      font-size: 0.9rem;
     }
     .last {
       border-right: none;

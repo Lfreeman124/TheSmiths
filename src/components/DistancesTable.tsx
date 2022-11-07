@@ -41,7 +41,7 @@ const DistancesTable: React.FC = () => {
         <TableHead>
           <TableRow>
             <TableCell colSpan={3}>
-              <h2>Distance from...</h2>
+              <h2 style={{ fontWeight: "200" }}>Distance from...</h2>
             </TableCell>
           </TableRow>
         </TableHead>

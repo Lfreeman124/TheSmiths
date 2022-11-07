@@ -54,11 +54,16 @@ const Container = styled.div`
   }
   @media only screen and (min-width: 600px) {
     .schedule {
-      margin-top: 3rem;
+      margin-top: 1rem;
+      background-size: 80% 700px;
       padding: 2rem;
+      h1 {
+        padding-top: 4.5rem;
+        font-size: 2rem;
+      }
     }
     .schedule p {
-      line-height: 3rem;
+      line-height: 2.5rem;
     }
   }
 `;

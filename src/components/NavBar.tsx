@@ -21,6 +21,7 @@ const MobileNavBar: React.FC = () => {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/venue">Venue</Link>
+        <Link to="/accommodation">Accommodation</Link>
         <Link to="/ontheday">On the Day</Link>
         <Link to="/rsvp">RSVP</Link>
         <Link to="/honeymoon">Honeymoon</Link>
@@ -52,12 +53,12 @@ const MobileContainer = styled.div`
 const DesktopContainer = styled.div`
   display: flex;
   justify-content: right;
-  padding: 1rem 0;
   nav {
     margin: 20px;
     > a {
-      margin: 10px;
-      padding-right: 20px;
+      font-size: 0.8rem;
+      margin: 5px;
+      padding-right: 10px;
       text-decoration: none;
       color: #4b3b40;
       border-right: 1px solid #4b3b40;

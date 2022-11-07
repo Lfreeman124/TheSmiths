@@ -47,45 +47,47 @@ const Accommodation: React.FC = () => {
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <Container>
+    <React.Fragment>
+      {" "}
       <MobileNavBar />
+      <Container>
+        <div className="header">
+          <h1>Accommodation</h1>
+          <p>
+            Our hope is to offer everyone the option to stay either at Wedderlie
+            House or The Black Bull. If you can't find the information you need
+            here or on the venue websites, or if you have any concerns, please
+            reach out and we can find a solution.
+          </p>
+        </div>
 
-      <div className="header">
-        <h1>Accommodation</h1>
-        <p>
-          Our hope is to offer everyone the option to stay either at Wedderlie
-          House or The Black Bull. If you can't find the information you need
-          here or on the venue websites, or if you have any concerns, please
-          reach out and we can find a solution.
-        </p>
-      </div>
-
-      {options.map((each, index) => {
-        return (
-          <div key={index} className="accommodation-container">
-            <a href={each.website} target="_blank" rel="noreferrer">
-              <div className="name-and-location">
-                <h2>{each.name}</h2>
-                <p>{each.location}</p>
-              </div>
-              <div className="image-container">
-                <img src={each.image} alt="img" />
-              </div>
-            </a>
-            <p>{each.message}</p>
-            <ul>
-              {each.distanceToEdinburgh && (
-                <li>Distance to Edinburgh: {each.distanceToEdinburgh}</li>
-              )}
-              {each.distanceToWedderlie && (
-                <li>Distance to Wedderlie: {each.distanceToWedderlie}</li>
-              )}
-              <li>Price: {each.price}</li>
-            </ul>
-          </div>
-        );
-      })}
-    </Container>
+        {options.map((each, index) => {
+          return (
+            <div key={index} className="accommodation-container">
+              <a href={each.website} target="_blank" rel="noreferrer">
+                <div className="name-and-location">
+                  <h2>{each.name}</h2>
+                  <p>{each.location}</p>
+                </div>
+                <div className="image-container">
+                  <img src={each.image} alt="img" />
+                </div>
+              </a>
+              <p>{each.message}</p>
+              <ul>
+                {each.distanceToEdinburgh && (
+                  <li>Distance to Edinburgh: {each.distanceToEdinburgh}</li>
+                )}
+                {each.distanceToWedderlie && (
+                  <li>Distance to Wedderlie: {each.distanceToWedderlie}</li>
+                )}
+                <li>Price: {each.price}</li>
+              </ul>
+            </div>
+          );
+        })}
+      </Container>
+    </React.Fragment>
   );
 };
 
@@ -100,6 +102,7 @@ const Container = styled.div`
     line-height: 1.5rem;
   }
   .header {
+    background: #c9c3af;
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
@@ -133,6 +136,12 @@ const Container = styled.div`
     margin-top: 1rem;
     li {
       margin: 5px 0 5px -1rem;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 2rem 0;
+    .header {
+      padding: 2rem 20%;
     }
   }
 `;

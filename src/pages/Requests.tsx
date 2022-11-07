@@ -38,4 +38,7 @@ const Container = styled.div`
     font-family: "Gwendolyn";
   }
   width: 100%;
+  @media only screen and (min-width: 600px) {
+    padding: 2rem 20% 4rem;
+  }
 `;

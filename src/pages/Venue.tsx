@@ -72,7 +72,6 @@ export default Venue;
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 1rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,6 +91,7 @@ const Container = styled.div`
     }
   }
   .header {
+    background: #c9c3af;
     width: 100%;
     display: flex;
     header {
@@ -128,8 +128,10 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    padding-top: 3rem;
+    padding-top: 2rem;
     .desktop-layout {
+      padding: 2rem;
+      background: #c9c3af;
       width: 100%;
       display: flex;
       justify-content: center;

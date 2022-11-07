@@ -41,15 +41,7 @@ const OnTheDay: React.FC = () => {
       id: "restaurant",
       name: "Restaurant Gift Card / Suggestion",
       image: restaurant,
-      description: `We love food, and always appreciate a night out. ${(
-        <a
-          href="https://www.google.com/maps/search/Restaurants/@59.3255176,18.023726,13z/data=!3m1!4b1"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Find a restaurant
-        </a>
-      )} in Stockholm that you think we would enjoy and treat us to
+      description: `We love food, and always appreciate a night out. Find a restaurant in Stockholm that you think we would enjoy and treat us to
       dessert or a drink.`,
     },
   ];
@@ -118,6 +110,7 @@ export default OnTheDay;
 
 const Container = styled.div`
   width: 100%;
+  padding: 0 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,11 +118,15 @@ const Container = styled.div`
     font-family: "Gwendolyn";
     font-size: 2rem;
   }
+  .header {
+    background: #c9c3af;
+  }
 
   .header,
   .notes {
+    padding: 1rem;
     font-size: 20px;
-    width: 90%;
+    width: 100%;
     margin: 1rem auto;
     text-align: center;
   }
@@ -157,9 +154,12 @@ const Container = styled.div`
     }
     h2 {
       width: 100%;
+      font-size: 1rem;
+      font-weight: 500;
       text-align: center;
       color: black;
       text-decoration: none;
+      margin: 1rem 0;
     }
     a:link {
       text-decoration: none;
@@ -194,8 +194,11 @@ const Container = styled.div`
   }
   @media only screen and (min-width: 600px) {
     .header {
-      padding: 3rem 3rem 1rem;
+      padding: 2rem 10%;
       margin: 2rem auto;
+    }
+    .notes p {
+      font-size: 1rem;
     }
   }
 `;

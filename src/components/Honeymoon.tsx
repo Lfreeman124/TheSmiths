@@ -121,9 +121,6 @@ export default Honeymoon;
 const Container = styled.div`
   width: 100%;
 
-  @media only screen and (min-width: 600px) {
-    width: 60%;
-  }
   h2 {
     font-family: "Gwendolyn";
     padding: 1rem;
@@ -190,6 +187,13 @@ const Container = styled.div`
         height: 100%;
         background: #70877f;
       }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 2rem 20%;
+    h2 {
+      width: 60%;
+      font-size: 2rem;
     }
   }
 `;

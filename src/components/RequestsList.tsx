@@ -49,7 +49,7 @@ const SongList: React.FC<Props> = (props: any) => {
         <TableHead>
           <TableRow>
             <TableCell colSpan={2}>
-              <h2>Requested Songs</h2>
+              <h2 style={{ fontWeight: "200" }}>Requested Songs</h2>
             </TableCell>
           </TableRow>
         </TableHead>
