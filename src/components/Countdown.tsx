@@ -63,24 +63,24 @@ export default Countdown;
 const Container = styled.div`
   display: flex;
   margin: 2rem 0;
-  height: 100px;
+  height: 80px;
   .tile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 5rem;
+    width: 4rem;
   }
   .tile,
   .colon {
     height: 2rem;
   }
   .number {
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-top: 0.2rem;
     margin: 0;
   }
   .colon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-top: 5px;
   }
   #Seconds {

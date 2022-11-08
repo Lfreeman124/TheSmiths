@@ -12,7 +12,6 @@ const NavBar: React.FC = () => {
   const matches = useMediaQuery("(max-width:600px)");
   useEffect(() => {
     setIsMobile(matches);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleMobileMenu = () => {

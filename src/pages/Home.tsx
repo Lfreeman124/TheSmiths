@@ -7,6 +7,7 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
+import paper from "../images/paper.jpg";
 
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -14,58 +15,73 @@ const Home: React.FC = () => {
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <Container>
+    <React.Fragment>
       {isMobile && <NavBar />}
-      <Banner>
-        <div className="header">
-          <h3>The best day of our lives</h3>
-          <h2>--- Mr & Mrs ---</h2>
-        </div>
+      <OuterContainer>
+        <Container>
+          <Banner>
+            <div className="header">
+              <h3>The best day of our lives</h3>
+              <h2>--- Mr & Mrs ---</h2>
+            </div>
 
-        {!isMobile && (
-          <nav>
-            <Link to="/venue">Venue</Link>
-            <Link to="/ontheday">On the Day</Link>
-            <Link to="/accommodation">Accommodation</Link>
-            <Link to="/rsvp">RSVP</Link>
-            <Link to="/honeymoon">Honeymoon</Link>
-            <Link to="/request">Song Requests</Link>
-            <Link to="/edinburgh">Edinburgh</Link>
-            <Link to="/registry">Registry</Link>
-            <Link className="last" to="/faq">
-              FAQ
+            {!isMobile && (
+              <nav>
+                <Link to="/venue">Venue</Link>
+                <Link to="/ontheday">On the Day</Link>
+                <Link to="/accommodation">Accommodation</Link>
+                <Link to="/rsvp">RSVP</Link>
+                <Link to="/honeymoon">Honeymoon</Link>
+                <Link to="/request">Song Requests</Link>
+                <Link to="/edinburgh">Edinburgh</Link>
+                <Link to="/registry">Registry</Link>
+                <Link className="last" to="/faq">
+                  FAQ
+                </Link>
+              </nav>
+            )}
+            <img src={us} alt=""></img>
+            <Countdown />
+          </Banner>
+          <div className="button-container">
+            <Link to="/rsvp">
+              <Button
+                className="button"
+                size="large"
+                fullWidth
+                variant="contained"
+              >
+                RSVP
+              </Button>
             </Link>
-          </nav>
-        )}
-        <img src={us} alt=""></img>
-        <Countdown />
-      </Banner>
-      <div className="button-container">
-        <Link to="/rsvp">
-          <Button className="button" size="large" fullWidth variant="contained">
-            RSVP
-          </Button>
-        </Link>
-      </div>
-    </Container>
+          </div>
+        </Container>
+      </OuterContainer>
+    </React.Fragment>
   );
 };
 
 export default Home;
+const OuterContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  padding: 0 1rem;
+`;
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
-
+  background: #f5f5f3;
+  background-image: url(${paper});
+  background-size: 100%;
   @media only screen and (min-width: 600px) {
     padding-top: 4rem;
   }
   .button-container {
-    margin: 1rem auto 5rem;
+    margin: 1rem auto 3rem;
     width: 50%;
 
     .button:active {
@@ -89,7 +105,7 @@ const Banner = styled.div`
     padding: 1rem 0 0;
     width: 100%;
     text-align: center;
-    background: #f5f5f3;
+
     opacity: 0.8;
   }
   h3 {

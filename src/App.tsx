@@ -28,7 +28,6 @@ function App() {
 
   useEffect(() => {
     setIsMobile(matches);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

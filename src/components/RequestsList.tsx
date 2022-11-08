@@ -37,7 +37,6 @@ const SongList: React.FC<Props> = (props: any) => {
 
   useEffect(() => {
     props.hasBeenUpdated && getSongs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.hasBeenUpdated]);
 
   return (

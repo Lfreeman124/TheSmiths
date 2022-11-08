@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button } from "@mui/material";
-import car1 from "../images/car1.png";
+import car from "../images/car.jpg";
 import beach from "../images/beach.jpg";
 import { db } from "../firebase";
 import {
@@ -64,7 +64,7 @@ const Honeymoon: React.FC = () => {
                 className="circle"
                 onClick={() => setCurrentVote("road")}
               >
-                <img src={car1} alt="car" />
+                <img src={car} alt="car" />
               </div>
               <div className="circle-label">Road Trip</div>
             </div>
@@ -153,7 +153,6 @@ const Container = styled.div`
       }
       #road {
         img {
-          margin-top: -38%;
           width: 100%;
         }
       }
