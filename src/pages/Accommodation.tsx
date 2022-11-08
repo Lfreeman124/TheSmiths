@@ -97,22 +97,25 @@ const Container = styled.div`
   width: 100%;
   color: black;
   text-decoration: none;
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem;
   p {
     line-height: 1.5rem;
   }
   .header {
-    background: #c9c3af;
+    padding: 2rem;
+    background: #70877f;
+    color: #eee7dd;
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
       font-size: 2rem;
     }
-    padding: 1rem;
   }
   .accommodation-container {
-    width: 90%;
-    margin: 3rem auto;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 3rem;
+    border-top: 5px solid #70877f;
     a {
       color: black;
       text-decoration: none;

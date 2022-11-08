@@ -17,12 +17,16 @@ const Home: React.FC = () => {
     <Container>
       {isMobile && <NavBar />}
       <Banner>
-        <h3>The best day of our lives</h3>
-        <h2>--- Mr & Mrs ---</h2>
+        <div className="header">
+          <h3>The best day of our lives</h3>
+          <h2>--- Mr & Mrs ---</h2>
+        </div>
+
         {!isMobile && (
           <nav>
             <Link to="/venue">Venue</Link>
             <Link to="/ontheday">On the Day</Link>
+            <Link to="/accommodation">Accommodation</Link>
             <Link to="/rsvp">RSVP</Link>
             <Link to="/honeymoon">Honeymoon</Link>
             <Link to="/request">Song Requests</Link>
@@ -51,9 +55,12 @@ export default Home;
 
 const Container = styled.div`
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 1rem;
+
   @media only screen and (min-width: 600px) {
     padding-top: 4rem;
   }
@@ -73,13 +80,17 @@ const Container = styled.div`
 `;
 
 const Banner = styled.div`
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  * {
-    max-width: 90%;
+
+  .header {
+    padding: 1rem 0 0;
+    width: 100%;
+    text-align: center;
+    background: #f5f5f3;
+    opacity: 0.8;
   }
   h3 {
     font-family: "Gwendolyn";

@@ -32,27 +32,28 @@ const Countdown: React.FC = () => {
     flipIt();
   }, 1000);
 
+  const times = [
+    { js: state.days, string: "Days" },
+    { js: state.hours, string: "Hours" },
+    { js: state.minutes, string: "Minutes" },
+    { js: state.seconds, string: "Seconds" },
+  ];
+
   return (
     <Container>
-      <div className="tile">
-        <p className="number">{state.days}</p>
-        <p className="label">Days</p>
-      </div>
-      <p className="colon">:</p>
-      <div className="tile">
-        <p className="number">{state.hours}</p>
-        <p className="label">Hours</p>
-      </div>
-      <p className="colon">:</p>
-      <div className="tile">
-        <p className="number">{state.minutes}</p>
-        <p className="label">Minutes</p>
-      </div>
-      <p className="colon">:</p>
-      <div className="tile">
-        <p className="number">{state.seconds}</p>
-        <p className="label">Seconds</p>
-      </div>
+      {times.map((each: any, index) => {
+        return (
+          <React.Fragment key={index}>
+            <div className="tile">
+              <p className="number">{each.js}</p>
+              <p className="label">{each.string}</p>
+            </div>
+            <p id={each.string} className="colon">
+              :
+            </p>
+          </React.Fragment>
+        );
+      })}
     </Container>
   );
 };
@@ -80,7 +81,10 @@ const Container = styled.div`
   }
   .colon {
     font-size: 2.5rem;
-    margin-top: 0;
+    margin-top: 5px;
+  }
+  #Seconds {
+    display: none;
   }
   .label {
     font-size: 1rem;

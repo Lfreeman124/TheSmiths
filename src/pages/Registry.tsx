@@ -119,7 +119,8 @@ const Container = styled.div`
     font-size: 2rem;
   }
   .header {
-    background: #c9c3af;
+    background: #70877f;
+    color: #eee7dd;
   }
 
   .header,

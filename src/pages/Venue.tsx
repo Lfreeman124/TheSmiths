@@ -5,7 +5,7 @@ import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import DistancesTable from "../components/DistancesTable";
 import { Instagram, Language } from "@mui/icons-material";
-import crest from "../images/crest.png";
+// import crest from "../images/crest.png";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
 
@@ -21,14 +21,16 @@ const Venue: React.FC = () => {
       <Container>
         <div className="desktop-layout">
           <div className="header">
-            <div className="crest-container">
+            {/* <div className="crest-container">
               <img src={crest} alt="crest" />
-            </div>
+            </div> */}
             <header>
               <h1>Wedderlie House</h1>
             </header>
           </div>
-          <img id="wedderlie" src={wedderlie} alt="" />
+          <div className="wedderlie-container">
+            <img id="wedderlie" src={wedderlie} alt="" />
+          </div>
         </div>
         <div className="blurb">
           <p>
@@ -57,7 +59,7 @@ const Venue: React.FC = () => {
           href="https://www.google.com/maps/place/Wedderlie+House/@55.9058629,-3.3056523,9z/data=!4m5!3m4!1s0x4887738e9ab230db:0x1083b8feb46b265e!8m2!3d55.7562332!4d-2.5751903"
           target="_blank"
           rel="noreferrer"
-          className="image-container"
+          className="map-container"
         >
           <img id="map" src={map} alt="" />
         </a>
@@ -72,11 +74,12 @@ export default Venue;
 
 const Container = styled.div`
   width: 100%;
+  padding: 0 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .crest-container {
+  /* .crest-container {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -89,24 +92,28 @@ const Container = styled.div`
 
       width: 70%;
     }
-  }
+  } */
   .header {
-    background: #c9c3af;
+    padding: 1rem;
+    background: #70877f;
+    color: #eee7dd;
     width: 100%;
     display: flex;
     header {
-      width: 65%;
+      width: 100%;
       display: flex;
       align-items: center;
       text-align: center;
       h1 {
+        width: 100%;
+        text-align: center;
         font-family: "Gwendolyn";
       }
     }
   }
 
   .blurb {
-    margin: 2rem 0 0.5rem;
+    margin: 2rem 1rem 0.5rem;
     text-align: center;
   }
   .links {
@@ -116,22 +123,37 @@ const Container = styled.div`
     margin-bottom: 1rem;
   }
 
-  #wedderlie,
-  .image-container,
-  #map,
+  .wedderlie-container {
+    width: 100%;
+    padding: 0 10% 5%;
+    #wedderlie {
+      width: 100%;
+    }
+  }
+  .map-container {
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 3rem;
+    #map {
+      border: 5px solid #70877f;
+      padding: 10px;
+      width: 100%;
+    }
+  }
   .table-container {
     width: 100%;
   }
 
-  .table-container {
-    margin-top: 1rem;
+  .desktop-layout {
+    background: #70877f;
+    color: #eee7dd;
   }
 
   @media only screen and (min-width: 600px) {
     padding-top: 2rem;
     .desktop-layout {
       padding: 2rem;
-      background: #c9c3af;
+      background: #70877f;
       width: 100%;
       display: flex;
       justify-content: center;
