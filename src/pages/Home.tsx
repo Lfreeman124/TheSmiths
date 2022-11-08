@@ -81,7 +81,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
-  background: hsla(35, 33%, 90%, 0.7);
+  background: hsla(35, 33%, 90%, 0.8);
 
   @media only screen and (min-width: 600px) {
     padding-top: 2rem;
