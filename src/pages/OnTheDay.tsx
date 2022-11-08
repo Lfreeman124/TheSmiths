@@ -49,7 +49,7 @@ const Container = styled.div`
     p {
       width: 100%;
       padding: 0 25%;
-      line-height: 1.5rem;
+      line-height: 1.2rem;
     }
   }
   @media only screen and (min-width: 600px) {
