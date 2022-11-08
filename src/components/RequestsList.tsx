@@ -37,11 +37,12 @@ const SongList: React.FC<Props> = (props: any) => {
 
   useEffect(() => {
     props.hasBeenUpdated && getSongs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.hasBeenUpdated]);
 
   return (
     <TableContainer
-      style={{ width: "95%", padding: "0.5rem", margin: "0 auto" }}
+      style={{ width: "100%", padding: "0.5rem", margin: "0 auto" }}
       component={Paper}
     >
       <Table sx={{ width: "100%" }} aria-label="simple table">

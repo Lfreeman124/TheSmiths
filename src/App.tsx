@@ -28,6 +28,7 @@ function App() {
 
   useEffect(() => {
     setIsMobile(matches);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -53,6 +54,5 @@ const Container = styled.div`
   font-family: "Raleway";
   * {
     box-sizing: border-box;
-    margin: 0;
   }
 `;

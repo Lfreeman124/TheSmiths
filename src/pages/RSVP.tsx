@@ -11,6 +11,7 @@ import emailjs from "emailjs-com";
 import plane from "../images/airplane.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
+import background from "../images/background.jpg";
 
 import {
   FormControlLabel,
@@ -102,9 +103,8 @@ const RSVP: React.FC = () => {
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <React.Fragment>
+    <OuterContainer>
       <NavBar />
-
       <Container>
         {showing.sent ? (
           <BodySent>
@@ -308,14 +308,30 @@ const RSVP: React.FC = () => {
           </Body>
         )}
       </Container>
-    </React.Fragment>
+    </OuterContainer>
   );
 };
 
 export default RSVP;
 
-const Container = styled.div`
+const OuterContainer = styled.div`
+  padding: 0 0 3rem;
   width: 100%;
+  min-height: 100vh;
+  background: #d8d6da;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media only screen and (min-width: 600px) {
+    background-size: 45%;
+  }
+`;
+
+const Container = styled.div`
+  margin: 1rem 10%;
+  width: 80%;
+  background: hsla(35, 33%, 90%, 0.8);
+  padding: 0 0 2rem;
   @media only screen and (min-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -343,7 +359,7 @@ const Body = styled.div`
   @media only screen and (min-width: 600px) {
     margin: 0 auto;
     padding-top: 4rem;
-    width: 50%;
+    width: 45%;
   }
 `;
 const BodySent = styled.div`

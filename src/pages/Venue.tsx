@@ -5,7 +5,7 @@ import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import DistancesTable from "../components/DistancesTable";
 import { Instagram, Language } from "@mui/icons-material";
-// import crest from "../images/crest.png";
+import crest from "../images/crest.png";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
 
@@ -21,9 +21,9 @@ const Venue: React.FC = () => {
       <Container>
         <div className="desktop-layout">
           <div className="header">
-            {/* <div className="crest-container">
+            <div className="crest-container">
               <img src={crest} alt="crest" />
-            </div> */}
+            </div>
             <header>
               <h1>Wedderlie House</h1>
             </header>
@@ -79,24 +79,21 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  /* .crest-container {
+  .crest-container {
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
     padding: 10px;
     display: flex;
     justify-content: center;
     width: 35%;
     img {
       border: solid 5px #70877f;
-      @media only screen and (max-width: 600px) {
-        border: solid 3px #70877f;
-      }
-
       width: 70%;
     }
-  } */
+  }
   .header {
-    padding: 1rem;
-    background: #70877f;
-    color: #eee7dd;
+    color: #4b3b40;
     width: 100%;
     display: flex;
     header {
@@ -108,12 +105,14 @@ const Container = styled.div`
         width: 100%;
         text-align: center;
         font-family: "Gwendolyn";
+        background: hsla(25, 42%, 79%, 0.5);
+        padding: 1rem 0;
       }
     }
   }
 
   .blurb {
-    margin: 2rem 1rem 0.5rem;
+    margin: 1rem 1rem 0.5rem;
     text-align: center;
   }
   .links {
@@ -125,8 +124,9 @@ const Container = styled.div`
 
   .wedderlie-container {
     width: 100%;
-    padding: 0 10% 5%;
     #wedderlie {
+      padding: 1rem;
+      border: 5px solid #70877f;
       width: 100%;
     }
   }
@@ -144,22 +144,15 @@ const Container = styled.div`
     width: 100%;
   }
 
-  .desktop-layout {
-    background: #70877f;
-    color: #eee7dd;
-  }
-
   @media only screen and (min-width: 600px) {
     padding-top: 2rem;
     .desktop-layout {
-      padding: 2rem;
-      background: #70877f;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       .header {
         flex-direction: column;
-        width: 30%;
+        width: 15%;
         align-items: center;
         justify-content: center;
         header {
@@ -168,10 +161,16 @@ const Container = styled.div`
         .crest-container {
           width: 100%;
           padding: 0;
+          img {
+            width: 100%;
+          }
         }
       }
+      .wedderlie-container {
+        width: 70%;
+      }
       #wedderlie {
-        width: 60%;
+        width: 100%;
       }
     }
     .blurb {

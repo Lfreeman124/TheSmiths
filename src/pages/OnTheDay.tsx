@@ -33,7 +33,7 @@ const Container = styled.div`
   height: 700px;
   .schedule {
     margin-top: -3rem;
-    background-size: 120% 600px;
+    background-size: 120% 650px;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -49,7 +49,7 @@ const Container = styled.div`
     p {
       width: 100%;
       padding: 0 25%;
-      line-height: 2rem;
+      line-height: 1.5rem;
     }
   }
   @media only screen and (min-width: 600px) {
@@ -58,12 +58,12 @@ const Container = styled.div`
       background-size: 80% 700px;
       padding: 2rem;
       h1 {
-        padding-top: 4.5rem;
+        padding-top: 2rem;
         font-size: 2rem;
       }
     }
     .schedule p {
-      line-height: 2.5rem;
+      line-height: 2rem;
     }
   }
 `;

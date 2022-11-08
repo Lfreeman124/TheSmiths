@@ -31,13 +31,15 @@ const Requests: React.FC = () => {
 export default Requests;
 
 const Container = styled.div`
-  padding: 1rem 0;
+  width: 100%;
+  padding: 0 2rem 2rem;
   h1 {
     width: 100%;
     text-align: center;
     font-family: "Gwendolyn";
+    background: hsla(25, 42%, 79%, 0.5);
+    padding: 1rem;
   }
-  width: 100%;
   @media only screen and (min-width: 600px) {
     padding: 2rem 20% 4rem;
   }

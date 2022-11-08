@@ -48,19 +48,19 @@ const Accommodation: React.FC = () => {
     <MobileMenu />
   ) : (
     <React.Fragment>
-      {" "}
       <MobileNavBar />
       <Container>
         <div className="header">
-          <h1>Accommodation</h1>
-          <p>
-            Our hope is to offer everyone the option to stay either at Wedderlie
-            House or The Black Bull. If you can't find the information you need
-            here or on the venue websites, or if you have any concerns, please
-            reach out and we can find a solution.
-          </p>
+          <div className="header-inside">
+            <h1>Accommodation</h1>
+            <p>
+              Our hope is to offer everyone the option to stay either at
+              Wedderlie House or The Black Bull. If you can't find the
+              information you need here or on the venue websites, or if you have
+              any concerns, please reach out and we can find a solution.
+            </p>
+          </div>
         </div>
-
         {options.map((each, index) => {
           return (
             <div key={index} className="accommodation-container">
@@ -98,13 +98,19 @@ const Container = styled.div`
   color: black;
   text-decoration: none;
   padding: 0 1rem 1rem;
+  /* border-top: 5px solid #70877f; */
+
   p {
     line-height: 1.5rem;
   }
   .header {
-    padding: 2rem;
-    background: #70877f;
-    color: #eee7dd;
+    border-top: 5px solid #70877f;
+    padding-top: 1rem;
+    .header-inside {
+      padding: 1rem 2rem;
+      background: hsla(25, 42%, 79%, 0.5);
+    }
+
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
@@ -116,6 +122,7 @@ const Container = styled.div`
     padding: 1rem;
     margin-top: 3rem;
     border-top: 5px solid #70877f;
+
     a {
       color: black;
       text-decoration: none;
@@ -123,7 +130,9 @@ const Container = styled.div`
     .name-and-location {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       h2 {
+        margin: 0;
         font-weight: 300;
       }
     }

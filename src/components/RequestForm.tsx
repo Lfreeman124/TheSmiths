@@ -55,7 +55,6 @@ const RequestForm: React.FC<Props> = (props: any) => {
 export default RequestForm;
 
 const Container = styled.div`
-  padding: 0 1rem;
   .button {
     margin: 1rem 0 2rem;
   }

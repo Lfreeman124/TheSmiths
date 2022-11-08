@@ -56,7 +56,7 @@ const DesktopContainer = styled.div`
   nav {
     margin: 20px;
     > a {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       margin: 5px;
       padding-right: 10px;
       text-decoration: none;

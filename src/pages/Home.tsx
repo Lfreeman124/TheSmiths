@@ -8,6 +8,7 @@ import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
 import paper from "../images/paper.jpg";
+import background from "../images/background.jpg";
 
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -16,20 +17,20 @@ const Home: React.FC = () => {
     <MobileMenu />
   ) : (
     <React.Fragment>
-      {isMobile && <NavBar />}
       <OuterContainer>
+        {isMobile && <NavBar />}
         <Container>
           <Banner>
             <div className="header">
               <h3>The best day of our lives</h3>
-              <h2>--- Mr & Mrs ---</h2>
+              <h2>-- Mr & Mrs --</h2>
             </div>
 
             {!isMobile && (
               <nav>
                 <Link to="/venue">Venue</Link>
-                <Link to="/ontheday">On the Day</Link>
                 <Link to="/accommodation">Accommodation</Link>
+                <Link to="/ontheday">On the Day</Link>
                 <Link to="/rsvp">RSVP</Link>
                 <Link to="/honeymoon">Honeymoon</Link>
                 <Link to="/request">Song Requests</Link>
@@ -64,21 +65,29 @@ const Home: React.FC = () => {
 export default Home;
 const OuterContainer = styled.div`
   width: 100%;
-  height: 100vh;
-  padding: 0 1rem;
+  min-height: 100vh;
+  background: #d8d6da;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media only screen and (min-width: 600px) {
+    background-size: 45%;
+  }
 `;
 
 const Container = styled.div`
-  width: 100%;
+  margin: 1rem 10% 0;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
-  background: #f5f5f3;
-  background-image: url(${paper});
-  background-size: 100%;
+  background: hsla(35, 33%, 90%, 0.7);
+
   @media only screen and (min-width: 600px) {
-    padding-top: 4rem;
+    padding-top: 2rem;
+    margin: 0 auto;
+    min-height: 100vh;
   }
   .button-container {
     margin: 1rem auto 3rem;
@@ -112,8 +121,8 @@ const Banner = styled.div`
     font-family: "Gwendolyn";
   }
   h2 {
+    margin: 0;
     font-size: 2.5rem;
-    margin: 1rem auto;
     font-weight: 200;
   }
   img {
@@ -121,14 +130,16 @@ const Banner = styled.div`
     width: 60%;
   }
   nav {
+    width: 100%;
     margin: 20px;
+    text-align: center;
     > a {
       margin: 10px;
       padding-right: 20px;
       text-decoration: none;
       color: #4b3b40;
       border-right: 1px solid #4b3b40;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .last {
       border-right: none;
