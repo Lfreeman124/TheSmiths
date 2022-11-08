@@ -7,7 +7,6 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
-import paper from "../images/paper.jpg";
 import background from "../images/background.jpg";
 
 const Home: React.FC = () => {
