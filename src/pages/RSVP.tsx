@@ -105,9 +105,9 @@ const RSVP: React.FC = () => {
   ) : (
     <OuterContainer>
       <NavBar />
-      <Container>
+      <div className="container">
         {showing.sent ? (
-          <BodySent>
+          <div className="body-sent">
             <div className="image-container">
               <img src={plane} alt="plane" />
             </div>
@@ -116,9 +116,9 @@ const RSVP: React.FC = () => {
                 ? "Yay! \n \n We're so happy you'll join us! \n \nIf you've expressed interest in staying at Wedderlie or The Black Bull, we'll contact you with details. Please let us know if you have any other questions, and in the meantime, vote for our honeymoon, request a song, or check out our fun facts! \n\nLooking forward to the big day!"
                 : "We're sorry to hear you won't join us, but completely understand. Hope you are well and that our paths cross soon, as you are special to us!"}
             </p>
-          </BodySent>
+          </div>
         ) : (
-          <Body>
+          <div className="body">
             <FormLabel>
               <h3 className="heading">Kindly RSVP before 31 January, 2023</h3>
             </FormLabel>
@@ -305,9 +305,9 @@ const RSVP: React.FC = () => {
             >
               Send
             </Button>
-          </Body>
+          </div>
         )}
-      </Container>
+      </div>
     </OuterContainer>
   );
 };
@@ -325,61 +325,59 @@ const OuterContainer = styled.div`
   @media only screen and (min-width: 600px) {
     background-size: 45%;
   }
-`;
-
-const Container = styled.div`
-  margin: 1rem 10%;
-  width: 80%;
-  background: hsla(35, 33%, 90%, 0.8);
-  padding: 0 0 2rem;
-  @media only screen and (min-width: 600px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-const Body = styled.div`
-  padding: 1rem;
-  color: #34434d;
-  h3,
-  h4 {
-    color: #34434d;
-  }
-  .button:active {
-    background: #70877f;
-    position: relative;
-    top: 2px;
-  }
-  h3 {
-    font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
-  @media only screen and (min-width: 600px) {
-    margin: 0 auto;
-    padding-top: 4rem;
-    width: 45%;
-  }
-`;
-const BodySent = styled.div`
-  .image-container {
-    width: 100%;
-    text-align: center;
-    img {
-      margin: 2rem;
-      width: 100px;
+  .container {
+    margin: 1rem 10%;
+    width: 80%;
+    background: hsla(35, 33%, 90%, 0.8);
+    padding: 0 0 2rem;
+    @media only screen and (min-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
-  p {
-    text-align: center;
-    white-space: pre-line;
-    margin: 1rem;
-    font-size: 1.3rem;
+  .body {
+    padding: 1rem;
+    color: #34434d;
+    h3,
+    h4 {
+      color: #34434d;
+    }
+    .button:active {
+      background: #70877f;
+      position: relative;
+      top: 2px;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    @media only screen and (min-width: 600px) {
+      margin: 0 auto;
+      padding-top: 4rem;
+      width: 45%;
+    }
   }
-  @media only screen and (min-width: 600px) {
-    margin: 0 auto;
-    padding-top: 4rem;
-    width: 60%;
+  .body-sent {
+    .image-container {
+      width: 100%;
+      text-align: center;
+      img {
+        margin: 2rem;
+        width: 100px;
+      }
+    }
+    p {
+      text-align: center;
+      white-space: pre-line;
+      margin: 1rem;
+      font-size: 1.3rem;
+    }
+    @media only screen and (min-width: 600px) {
+      margin: 0 auto;
+      padding-top: 4rem;
+      width: 60%;
+    }
   }
 `;

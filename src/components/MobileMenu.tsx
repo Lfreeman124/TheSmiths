@@ -56,13 +56,11 @@ const NavBar: React.FC = () => {
       <MobileNavBar />
     )
   ) : (
-    <Container>{navLinks}</Container>
+    <div>{navLinks}</div>
   );
 };
 
 export default NavBar;
-
-const Container = styled.div``;
 
 const StyledMenu = styled.div`
   background: #e0c6b3;

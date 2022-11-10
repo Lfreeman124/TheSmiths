@@ -67,26 +67,26 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 4rem;
+    width: 2rem;
   }
   .tile,
   .colon {
-    height: 2rem;
+    height: 1rem;
   }
   .number {
-    font-size: 2rem;
+    font-size: 1rem;
     padding-top: 0.2rem;
     margin: 0;
   }
   .colon {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-top: 5px;
   }
   #Seconds {
     display: none;
   }
   .label {
-    font-size: 1rem;
+    font-size: 0.5rem;
     margin-top: 10px;
   }
 `;
