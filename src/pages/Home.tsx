@@ -11,10 +11,8 @@ import background from "../images/background.jpg";
 import star from "../images/star.svg";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
-import { useTheme } from "@mui/material/styles";
 
 const Home: React.FC = () => {
-  const theme = useTheme();
   const { showMenu, isMobile } = useGlobalContext();
 
   function reveal() {
