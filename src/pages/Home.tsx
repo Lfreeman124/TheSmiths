@@ -2,7 +2,7 @@ import React from "react";
 import us from "../images/us.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import Countdown from "../components/Countdown";
+import Countdown from "../components/Countdown";
 import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
@@ -19,8 +19,7 @@ const Home: React.FC = () => {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-
-      var elementVisible = 150;
+      var elementVisible = 100;
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active");
       } else {
@@ -34,7 +33,6 @@ const Home: React.FC = () => {
     var windowHeight = window.innerHeight;
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
-    console.log(elementTop, windowHeight, scrollValue);
     if (elementTop && elementTop < windowHeight) {
       slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 200}px`);
     } else {
@@ -74,7 +72,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          {/* <Countdown /> */}
+          <Countdown />
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -218,13 +216,13 @@ const OuterContainer = styled.div`
     width: 100%;
     position: relative;
     height: 500px;
+    overflow: hidden;
     #wedderlie {
       position: absolute;
       top: 0;
       left: 0;
       width: 150%;
       opacity: 0.5;
-      pointer-events: none;
     }
   }
   .bottom {
