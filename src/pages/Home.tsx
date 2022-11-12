@@ -8,9 +8,10 @@ import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
 import background from "../images/background.jpg";
-import star from "../images/star.svg";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
+import concrete from "../images/concrete-min.jpg";
+import hands from "../images/hands.png";
 
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -80,7 +81,8 @@ const Home: React.FC = () => {
               className="button"
               size="large"
               fullWidth
-              variant="contained"
+              variant="outlined"
+              sx={{ borderRadius: "30px" }}
             >
               RSVP
             </Button>
@@ -94,7 +96,8 @@ const Home: React.FC = () => {
             <p>1pm</p>
           </div>
         </div>
-        <img src={star} alt="" />
+        <div className="line"></div>
+        {/* <img src={star} alt="" /> */}
         <div className="info reveal">
           <div className="text">
             <p>Wedderlie House</p>
@@ -102,8 +105,10 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="wedderlie-container">
-        <img id="wedderlie" src={wedderlie} alt="wedderlie" />
+      <section className="wedderlie-image">
+        <div className="wedderlie-container">
+          <img id="wedderlie" src={wedderlie} alt="wedderlie" />
+        </div>
       </section>
       <section className="venue-accom">
         <div className="where venue reverse reveal">
@@ -159,9 +164,11 @@ const Home: React.FC = () => {
       <div className="fade"></div>
       <section className="edinburgh">
         <div className="info">
-          <h2>Just Visiting?</h2>
-          <p>Check out our Edinburgh and Scotland tips!</p>
-          <div className="button-container">
+          <h2 className="reveal first">Just Visiting?</h2>
+          <p className="reveal second">
+            Check out our Edinburgh and Scotland tips!
+          </p>
+          <div className="button-container reveal third">
             <Link
               to="/edinburgh"
               onClick={() => {
@@ -182,9 +189,9 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="fun">
-        <h2>Don't be shy...</h2>
+        <h2 className="reveal still">Don't be shy...</h2>
         <div className="sides">
-          <div className="left">
+          <div className="reveal reverse left">
             <p>Vote for our honeymoon</p>
             <div className="button-container">
               <Link to="/honeymoon">
@@ -209,7 +216,8 @@ const Home: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="right">
+          <div className="reveal up line"></div>
+          <div className="reveal right">
             <p>Request a song</p>
             <div className="button-container">
               <Link to="/request">
@@ -234,6 +242,39 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      <section className="faq">
+        <h2>Any Questions?</h2>
+        <div className="button-container">
+          <Link to="/faq">
+            <Button
+              className="button"
+              size="large"
+              fullWidth
+              variant="outlined"
+              sx={{ borderRadius: "30px" }}
+            >
+              FAQ
+            </Button>
+          </Link>
+        </div>
+      </section>
+      <section className="rsvp">
+        <img className="reveal" src={hands} alt="love" />
+        <h2>So what are you waiting for?</h2>
+        <div className="button-container">
+          <Link to="/rsvp">
+            <Button
+              className="button"
+              size="large"
+              fullWidth
+              variant="contained"
+              sx={{ borderRadius: "30px" }}
+            >
+              RSVP
+            </Button>
+          </Link>
+        </div>
+      </section>
     </OuterContainer>
   );
 };
@@ -247,6 +288,7 @@ const OuterContainer = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   color: #4b3b40;
+  overflow: hidden;
   @media only screen and (min-width: 600px) {
     background-size: 45%;
   }
@@ -326,6 +368,12 @@ const OuterContainer = styled.div`
     padding: 3rem 0;
     text-align: center;
     font-size: 1.5rem;
+    font-family: "Gwendolyn";
+    .line {
+      width: 30%;
+      margin-left: 35%;
+      border-bottom: 1px solid #4b3b40;
+    }
     img {
       width: 20px;
     }
@@ -342,26 +390,35 @@ const OuterContainer = styled.div`
       opacity: 1;
     }
   }
-  .wedderlie-container {
+  .wedderlie-image {
     width: 100%;
-    position: relative;
     height: 400px;
-    overflow: hidden;
-    #wedderlie {
+    position: relative;
+    .border {
+      width: 100%;
+      z-index: 5;
+    }
+    .wedderlie-container {
+      width: 80%;
+      height: 100%;
+      margin: 0 10%;
+      overflow: hidden;
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 120%;
-      opacity: 0.5;
+      #wedderlie {
+        position: absolute;
+        margin-left: 10px;
+        width: 130%;
+        opacity: 0.6;
+      }
     }
   }
+
   .venue-accom {
-    margin-top: 4rem;
     height: 600px;
     .where {
       margin: 1rem 0;
       width: 90%;
-      background: hsla(35, 33%, 90%, 0.8);
+      background: hsla(35, 33%, 90%, 0.7);
       padding: 5px;
       h2 {
         font-family: "Gwendolyn";
@@ -375,6 +432,7 @@ const OuterContainer = styled.div`
     .venue {
       border-top-right-radius: 100px;
       border-bottom-right-radius: 100px;
+      box-shadow: 0px 0px 10px 10px hsla(35, 33%, 90%, 0.7);
       p {
         padding: 0 1rem 1rem 5px;
       }
@@ -389,6 +447,7 @@ const OuterContainer = styled.div`
       margin-left: 10%;
       border-top-left-radius: 100px;
       border-bottom-left-radius: 100px;
+      box-shadow: 0px 0px 10px 10px hsla(35, 33%, 90%, 0.7);
       p {
         text-align: right;
         padding: 0 5px 1rem 1rem;
@@ -438,13 +497,32 @@ const OuterContainer = styled.div`
       text-align: center;
       background: hsla(75, 5%, 85%, 0.7);
       h2 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-family: "Gwendolyn";
       }
       p {
-        font-size: 1.5rem;
+        padding: 0 10%;
+        font-size: 1.2rem;
         font-weight: 500;
+        margin-bottom: 2rem;
       }
+    }
+    .reveal {
+      position: relative;
+      opacity: 0;
+      transition: 1s all ease;
+    }
+    .first {
+      transition-delay: 0.3s;
+    }
+    .second {
+      transition-delay: 0.9s;
+    }
+    .third {
+      transition-delay: 1s;
+    }
+    .reveal.active {
+      opacity: 1;
     }
   }
 
@@ -456,21 +534,24 @@ const OuterContainer = styled.div`
     flex-direction: column;
     align-items: center;
     color: hsla(35, 33%, 90%);
+
     h2 {
       font-size: 3rem;
       font-family: "Gwendolyn";
     }
     .sides {
       width: 100%;
+      height: 50%;
       display: flex;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       text-align: center;
       .left,
       .right {
         width: 50%;
-        padding: 0.5rem;
+        padding: 1rem;
       }
-      .left {
+      .line {
+        height: 100%;
         border-right: 1px solid hsla(35, 33%, 90%);
       }
       .button-container {
@@ -486,6 +567,58 @@ const OuterContainer = styled.div`
           text-decoration: none;
         }
       }
+    }
+    .reveal {
+      position: relative;
+      opacity: 0;
+      transition: 1s all ease;
+      transform: translateX(150px);
+    }
+    .reverse {
+      transform: translateX(-150px);
+    }
+    .up {
+      transform: translateY(150px);
+    }
+    .still {
+      transform: translateY(10px);
+    }
+    .reveal.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .rsvp {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 2rem 4rem;
+    h2 {
+      font-family: "Gwendolyn";
+      font-size: 2rem;
+    }
+    img {
+      margin: -30px 0 -50px;
+      width: 60%;
+    }
+    .reveal {
+      position: relative;
+      opacity: 0;
+      transition: 1.5s all ease;
+      transition-delay: 0.5s;
+    }
+    .reveal.active {
+      opacity: 1;
+    }
+  }
+  .faq {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    background: url(${concrete});
+    background-size: cover;
+    h2 {
+      font-family: "Gwendolyn";
+      font-size: 3rem;
     }
   }
 `;
