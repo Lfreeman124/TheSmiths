@@ -12,6 +12,7 @@ import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands.png";
+import backgroundUpside from "../images/background-upside.jpg";
 
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -21,7 +22,7 @@ const Home: React.FC = () => {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
+      if (elementTop < windowHeight - 150) {
         reveals[i].classList.add("active");
       } else {
         reveals[i].classList.remove("active");
@@ -73,7 +74,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          <Countdown />
+          {/* <Countdown /> */}
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -311,6 +312,7 @@ const OuterContainer = styled.div`
 
   .container {
     margin: 1rem 10% 0;
+    border-radius: 20px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -394,13 +396,15 @@ const OuterContainer = styled.div`
   }
   .wedderlie-image {
     width: 100%;
-    height: 400px;
+    height: 300px;
     position: relative;
+    margin-bottom: 5rem;
     .border {
       width: 100%;
       z-index: 5;
     }
     .wedderlie-container {
+      border-radius: 20px;
       width: 80%;
       height: 100%;
       margin: 0 10%;
@@ -416,7 +420,7 @@ const OuterContainer = styled.div`
   }
 
   .venue-accom {
-    height: 600px;
+    height: 550px;
     .where {
       margin: 1rem 0;
       width: 90%;
@@ -479,7 +483,7 @@ const OuterContainer = styled.div`
     width: 100%;
     position: relative;
     z-index: 5;
-    background: linear-gradient(#d8d6da, #e1e3de);
+    background: linear-gradient(#d8d6da, #d9d8da);
   }
   .edinburgh {
     margin-top: -5px;
@@ -497,7 +501,7 @@ const OuterContainer = styled.div`
       width: 100%;
       height: 600px;
       text-align: center;
-      background: hsla(75, 5%, 85%, 0.7);
+      background: hsla(250, 5%, 81%, 0.7);
       h2 {
         font-size: 3rem;
         font-family: "Gwendolyn";
@@ -532,22 +536,24 @@ const OuterContainer = styled.div`
     width: 80%;
     margin: 10%;
     border-radius: 20px;
-    height: 400px;
+    height: 350px;
     background: #4b3b40;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: hsla(35, 33%, 90%);
+    box-shadow: 0px 0px 60px 90px #d8d6da;
 
     h2 {
       font-size: 3rem;
       font-family: "Gwendolyn";
+      margin-bottom: 1rem;
     }
     .sides {
       width: 100%;
       height: 50%;
       display: flex;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       .left,
       .right {
@@ -598,13 +604,12 @@ const OuterContainer = styled.div`
     padding-top: 2rem;
     text-align: center;
     border-radius: 20px;
-    background-image: url(${background});
+    background-image: url(${backgroundUpside});
     background-repeat: no-repeat;
     background-size: cover;
-    transform: scaleX(-1);
+    background-position: bottom;
 
     .inner-rsvp {
-      transform: scaleX(-1);
       padding: 2rem;
       border-radius: 20px;
       width: 80%;
@@ -641,7 +646,7 @@ const OuterContainer = styled.div`
     background-size: cover;
     h2 {
       font-family: "Gwendolyn";
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
 `;
