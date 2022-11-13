@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      if (elementTop < windowHeight) {
+      if (elementTop < windowHeight - 100) {
         reveals[i].classList.add("active");
       } else {
         reveals[i].classList.remove("active");
@@ -259,20 +259,22 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="rsvp">
-        <img className="reveal" src={hands} alt="love" />
-        <h2>So what are you waiting for?</h2>
-        <div className="button-container">
-          <Link to="/rsvp">
-            <Button
-              className="button"
-              size="large"
-              fullWidth
-              variant="contained"
-              sx={{ borderRadius: "30px" }}
-            >
-              RSVP
-            </Button>
-          </Link>
+        <div className="inner-rsvp">
+          <img className="reveal" src={hands} alt="love" />
+          <h2>So what are you waiting for?</h2>
+          <div className="button-container">
+            <Link to="/rsvp">
+              <Button
+                className="button"
+                size="large"
+                fullWidth
+                variant="contained"
+                sx={{ borderRadius: "30px" }}
+              >
+                RSVP
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </OuterContainer>
@@ -527,7 +529,9 @@ const OuterContainer = styled.div`
   }
 
   .fun {
-    width: 100%;
+    width: 80%;
+    margin: 10%;
+    border-radius: 20px;
     height: 400px;
     background: #4b3b40;
     display: flex;
@@ -590,28 +594,47 @@ const OuterContainer = styled.div`
   }
   .rsvp {
     width: 100%;
+    height: 500px;
+    padding-top: 2rem;
     text-align: center;
-    padding: 2rem 2rem 4rem;
-    h2 {
-      font-family: "Gwendolyn";
-      font-size: 2rem;
+    border-radius: 20px;
+    background-image: url(${background});
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1);
+
+    .inner-rsvp {
+      transform: scaleX(-1);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 80%;
+      margin: 10%;
+      background: hsla(35, 33%, 90%, 0.8);
+
+      h2 {
+        font-family: "Gwendolyn";
+        font-size: 2rem;
+      }
+      img {
+        margin: -30px 0 -50px;
+        width: 60%;
+      }
     }
-    img {
-      margin: -30px 0 -50px;
-      width: 60%;
-    }
+
     .reveal {
       position: relative;
       opacity: 0;
       transition: 1.5s all ease;
-      transition-delay: 0.5s;
+      transition-delay: 1s;
     }
     .reveal.active {
       opacity: 1;
     }
   }
   .faq {
-    width: 100%;
+    width: 80%;
+    margin: 10%;
+    border-radius: 20px;
     text-align: center;
     padding: 2rem;
     background: url(${concrete});
