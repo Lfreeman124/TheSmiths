@@ -75,7 +75,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          {/* <Countdown /> */}
+          <Countdown />
         </section>
         <div className="button-container">
           <Link to="/rsvp">
