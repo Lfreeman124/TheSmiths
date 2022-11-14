@@ -14,7 +14,7 @@ import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands.png";
 import backgroundUpside from "../images/background-upside.jpg";
 import dancing from "../images/dancing2.webp";
-import dancing2 from "../images/dancing.webp";
+// import dancing2 from "../images/dancing.webp";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
 
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          {/* <Countdown /> */}
+          <Countdown />
         </section>
         <div className="button-container">
           <Link to="/rsvp">
