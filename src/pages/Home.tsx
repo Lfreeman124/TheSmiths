@@ -13,7 +13,7 @@ import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands.png";
 import backgroundUpside from "../images/background-upside.jpg";
-import dancing from "../images/dancing2.webp";
+// import dancing from "../images/dancing2.webp";
 // import dancing2 from "../images/dancing.webp";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -259,9 +259,9 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </section>
-      <section className="dancing">
+      {/* <section className="dancing">
         <img src={dancing} alt="dancing" />
-      </section>
+      </section> */}
       <section className="rsvp">
         <div className="inner-rsvp">
           <img className="reveal" src={hands} alt="love" />
