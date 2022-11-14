@@ -15,6 +15,7 @@ import hands from "../images/hands3.png";
 import backgroundUpside from "../images/background-upside.jpg";
 // import dancing from "../images/dancing2.webp";
 // import dancing2 from "../images/dancing.webp";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
 
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
     if (elementTop && elementTop < windowHeight) {
-      slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 80}px`);
+      slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 140}px`);
     } else {
       slidePic?.setAttribute("style", `left: -50px`);
     }
@@ -183,7 +184,7 @@ const Home: React.FC = () => {
                 variant="contained"
                 sx={{ borderRadius: "30px" }}
               >
-                Yes Please!
+                <KeyboardDoubleArrowRightIcon />
               </Button>
             </Link>
           </div>
@@ -212,7 +213,7 @@ const Home: React.FC = () => {
                     window.scroll(0, 0);
                   }}
                 >
-                  OK!
+                  <KeyboardDoubleArrowRightIcon />
                 </Button>
               </Link>
             </div>
@@ -236,7 +237,7 @@ const Home: React.FC = () => {
                     window.scroll(0, 0);
                   }}
                 >
-                  OK!
+                  <KeyboardDoubleArrowRightIcon />
                 </Button>
               </Link>
             </div>
@@ -266,6 +267,7 @@ const Home: React.FC = () => {
       </section>
       <section className="rsvp">
         <div className="inner-rsvp">
+          <div className="little-line"></div>
           <h2>So what are you waiting for?</h2>
           <div className="button-container">
             <Link to="/rsvp">
@@ -285,6 +287,7 @@ const Home: React.FC = () => {
               </Button>
             </Link>
           </div>
+          <div className="little-line"></div>
         </div>
       </section>
     </OuterContainer>
@@ -387,9 +390,12 @@ const OuterContainer = styled.div`
     font-size: 2.2rem;
     font-family: "Gwendolyn";
     color: #4b3b40;
+    p {
+      margin: 1rem;
+    }
     .line {
       width: 30%;
-      margin-left: 35%;
+      margin: 10% 35%;
       border-bottom: 1px solid #4b3b40;
     }
     .info {
@@ -672,6 +678,12 @@ const OuterContainer = styled.div`
       img {
         margin: -30px 0 -50px;
         width: 60%;
+      }
+      .little-line {
+        margin: 0 auto;
+        width: 10%;
+        height: 0;
+        border-bottom: 1px solid hsl(35, 33%, 90%);
       }
     }
   }
