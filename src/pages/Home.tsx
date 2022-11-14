@@ -11,7 +11,7 @@ import background from "../images/background.jpg";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
-import hands from "../images/hands2.png";
+import hands from "../images/hands3.png";
 import backgroundUpside from "../images/background-upside.jpg";
 // import dancing from "../images/dancing2.webp";
 // import dancing2 from "../images/dancing.webp";
@@ -259,12 +259,11 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </section>
-      {/* <section className="dancing">
-        <img src={dancing} alt="dancing" />
-      </section> */}
+      <section className="love">
+        <img className="reveal" src={hands} alt="love" />
+      </section>
       <section className="rsvp">
         <div className="inner-rsvp">
-          <img className="reveal" src={hands} alt="love" />
           <h2>So what are you waiting for?</h2>
           <div className="button-container">
             <Link to="/rsvp">
@@ -619,17 +618,21 @@ const OuterContainer = styled.div`
       font-size: 2.5rem;
     }
   }
-  .dancing {
+  .love {
     width: 100%;
-    height: 300px;
-    overflow: hidden;
-    display: flex;
-    background: hsla(230, 4%, 53%);
-    margin: -5px 0;
-
+    margin: -50px 0;
     img {
-      height: 100%;
-      opacity: 0.7;
+      width: 70%;
+      margin: 0 15%;
+    }
+    .reveal {
+      position: relative;
+      opacity: 0;
+      transition: 1.5s all ease;
+      transition-delay: 1s;
+    }
+    .reveal.active {
+      opacity: 1;
     }
   }
   .rsvp {
@@ -658,16 +661,6 @@ const OuterContainer = styled.div`
         margin: -30px 0 -50px;
         width: 60%;
       }
-    }
-
-    .reveal {
-      position: relative;
-      opacity: 0;
-      transition: 1.5s all ease;
-      transition-delay: 1s;
-    }
-    .reveal.active {
-      opacity: 1;
     }
   }
 `;
