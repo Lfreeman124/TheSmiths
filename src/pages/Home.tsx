@@ -75,7 +75,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          <Countdown />
+          {/* <Countdown /> */}
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -116,8 +116,8 @@ const Home: React.FC = () => {
           <h2>Venue</h2>
           <p>
             Wedderlie House is a beautiful country estate outside of Edinburgh,
-            the perfect balance between a luxurious estate and a laid-back
-            family cabin.
+            the perfect balance between a luxurious manse and a laid-back family
+            cabin.
           </p>
         </div>
         <div className="button-container venue-button">
@@ -139,8 +139,8 @@ const Home: React.FC = () => {
         <div className="where accommodation reveal">
           <h2>Accommodation</h2>
           <p>
-            We have arranged accommodation for most of our guests, and you can
-            let us know your preference when you RSVP.
+            We have arranged accommodation for most of our guests, please let us
+            know your preference when you RSVP.
           </p>
         </div>
         <div className="button-container accommodation-button">
@@ -545,7 +545,7 @@ const OuterContainer = styled.div`
   .fun {
     width: 86%;
     margin: 15% 7%;
-    border: 5px dotted #4b3b40;
+    border: 3px dotted #4b3b40;
     border-radius: 50%;
     height: 320px;
     padding: 1rem;
