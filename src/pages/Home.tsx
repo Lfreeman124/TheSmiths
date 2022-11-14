@@ -541,9 +541,9 @@ const OuterContainer = styled.div`
 
   .fun {
     width: 80%;
-    margin: 10%;
+    margin: 15% 10%;
     border: 5px dotted #4b3b40;
-    border-radius: 20px;
+    border-radius: 50%;
     height: 300px;
     /* background: #4b3b40; */
     display: flex;
@@ -551,7 +551,7 @@ const OuterContainer = styled.div`
     align-items: center;
     /* color: hsla(35, 33%, 90%); */
     color: #4b3b40;
-    box-shadow: 0px 0px 60px 90px #d8d6da;
+    box-shadow: 0px 0px 30px 100px #d8d6da;
 
     h2 {
       font-size: 2.5rem;
@@ -567,7 +567,7 @@ const OuterContainer = styled.div`
       .left,
       .right {
         width: 50%;
-        padding: 1rem;
+        padding: 0 1rem;
       }
       .line {
         height: 100%;
