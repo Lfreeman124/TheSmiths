@@ -13,7 +13,8 @@ import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands.png";
 import backgroundUpside from "../images/background-upside.jpg";
-
+import dancing from "../images/dancing2.webp";
+import dancing2 from "../images/dancing.webp";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
 
@@ -74,7 +75,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          <Countdown />
+          {/* <Countdown /> */}
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -98,7 +99,6 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="line"></div>
-        {/* <img src={star} alt="" /> */}
         <div className="info reveal">
           <div className="text">
             <p>Wedderlie House</p>
@@ -258,6 +258,9 @@ const Home: React.FC = () => {
             </Button>
           </Link>
         </div>
+      </section>
+      <section className="dancing">
+        <img src={dancing} />
       </section>
       <section className="rsvp">
         <div className="inner-rsvp">
@@ -545,9 +548,8 @@ const OuterContainer = styled.div`
     box-shadow: 0px 0px 60px 90px #d8d6da;
 
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-family: "Gwendolyn";
-      margin-bottom: 1rem;
     }
     .sides {
       width: 100%;
@@ -598,10 +600,35 @@ const OuterContainer = styled.div`
       opacity: 1;
     }
   }
+  .faq {
+    width: 80%;
+    margin: 10%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2rem;
+    background: url(${concrete});
+    background-size: cover;
+    h2 {
+      font-family: "Gwendolyn";
+      font-size: 2.5rem;
+    }
+  }
+  .dancing {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    background: hsla(230, 4%, 53%);
+    margin: -5px 0;
+
+    img {
+      height: 100%;
+      opacity: 0.7;
+    }
+  }
   .rsvp {
     width: 100%;
     height: 500px;
-    padding-top: 2rem;
     text-align: center;
     border-radius: 20px;
     background-image: url(${backgroundUpside});
@@ -634,19 +661,6 @@ const OuterContainer = styled.div`
     }
     .reveal.active {
       opacity: 1;
-    }
-  }
-  .faq {
-    width: 80%;
-    margin: 10%;
-    border-radius: 20px;
-    text-align: center;
-    padding: 2rem;
-    background: url(${concrete});
-    background-size: cover;
-    h2 {
-      font-family: "Gwendolyn";
-      font-size: 2.5rem;
     }
   }
 `;
