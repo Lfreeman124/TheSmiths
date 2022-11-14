@@ -260,7 +260,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="dancing">
-        <img src={dancing} />
+        <img src={dancing} alt="dancing" />
       </section>
       <section className="rsvp">
         <div className="inner-rsvp">
