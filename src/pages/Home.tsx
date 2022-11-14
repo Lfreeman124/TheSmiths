@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      if (elementTop < windowHeight - 150) {
+      if (elementTop < windowHeight - 250) {
         reveals[i].classList.add("active");
       } else {
         reveals[i].classList.remove("active");
@@ -542,8 +542,9 @@ const OuterContainer = styled.div`
   .fun {
     width: 80%;
     margin: 10%;
-    /* border-radius: 20px; */
-    height: 350px;
+    border: 5px dotted #4b3b40;
+    border-radius: 20px;
+    height: 300px;
     /* background: #4b3b40; */
     display: flex;
     flex-direction: column;
@@ -555,6 +556,7 @@ const OuterContainer = styled.div`
     h2 {
       font-size: 2.5rem;
       font-family: "Gwendolyn";
+      margin-bottom: 1rem;
     }
     .sides {
       width: 100%;
@@ -606,8 +608,8 @@ const OuterContainer = styled.div`
     }
   }
   .faq {
-    width: 80%;
-    margin: 10%;
+    width: 90%;
+    margin: 10% 5%;
     border-radius: 20px;
     text-align: center;
     padding: 2rem;
@@ -629,7 +631,6 @@ const OuterContainer = styled.div`
       position: relative;
       opacity: 0;
       transition: 1.5s all ease;
-      transition-delay: 1s;
     }
     .reveal.active {
       opacity: 1;
