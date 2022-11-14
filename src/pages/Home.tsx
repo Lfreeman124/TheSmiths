@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
+      if (elementTop < windowHeight - 70) {
         reveals[i].classList.add("active");
       } else {
         reveals[i].classList.remove("active");
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
     if (elementTop && elementTop < windowHeight) {
-      slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 110}px`);
+      slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 80}px`);
     } else {
       slidePic?.setAttribute("style", `left: -50px`);
     }
@@ -382,9 +382,9 @@ const OuterContainer = styled.div`
     }
   }
   .details {
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-family: "Gwendolyn";
     color: #4b3b40;
     .line {
