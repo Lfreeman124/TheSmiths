@@ -1,5 +1,5 @@
 import React from "react";
-import us from "../images/us.jpg";
+import us from "../images/us2.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
     if (elementTop && elementTop < windowHeight) {
-      slidePic?.setAttribute("style", `left: ${scrollValue * 0.05 - 80}px`);
+      slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 110}px`);
     } else {
       slidePic?.setAttribute("style", `left: -50px`);
     }
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
         <section className="banner">
           <div className="header">
             <h3>The best day of our lives</h3>
-            <h2>-- Mr & Mrs --</h2>
+            <h2>Mr & Mrs</h2>
           </div>
 
           {!isMobile && (
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
               className="button"
               size="large"
               fullWidth
-              variant="outlined"
+              variant="contained"
               sx={{ borderRadius: "30px" }}
             >
               RSVP
@@ -244,19 +244,21 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="faq">
-        <h2>Any Questions?</h2>
-        <div className="button-container">
-          <Link to="/faq">
-            <Button
-              className="button"
-              size="large"
-              fullWidth
-              variant="outlined"
-              sx={{ borderRadius: "30px" }}
-            >
-              FAQ
-            </Button>
-          </Link>
+        <div className="faq-inside">
+          <h2>Any Questions?</h2>
+          <div className="button-container">
+            <Link to="/faq">
+              <Button
+                className="button"
+                size="large"
+                fullWidth
+                variant="outlined"
+                sx={{ borderRadius: "30px" }}
+              >
+                FAQ
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
       <section className="love">
@@ -296,7 +298,7 @@ const OuterContainer = styled.div`
   background: #d8d6da;
   background-image: url(${background});
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 170%;
   color: #4b3b40;
   overflow: hidden;
   @media only screen and (min-width: 600px) {
@@ -318,8 +320,9 @@ const OuterContainer = styled.div`
   }
 
   .container {
+    color: #4b3b40;
     margin: 1rem 10% 0;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -348,15 +351,18 @@ const OuterContainer = styled.div`
     }
     h3 {
       font-family: "Gwendolyn";
+      font-size: 1.5rem;
     }
     h2 {
       margin: 0;
-      font-size: 2.5rem;
-      font-weight: 200;
+      font-size: 3rem;
+      font-weight: 400;
     }
     img {
       margin: 1rem;
       width: 60%;
+      opacity: 0.8;
+      border-radius: 10px;
     }
     nav {
       width: 100%;
@@ -378,15 +384,13 @@ const OuterContainer = styled.div`
   .details {
     padding: 3rem 0;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-family: "Gwendolyn";
+    color: #4b3b40;
     .line {
       width: 30%;
       margin-left: 35%;
       border-bottom: 1px solid #4b3b40;
-    }
-    img {
-      width: 20px;
     }
     .info {
     }
@@ -403,7 +407,7 @@ const OuterContainer = styled.div`
   }
   .wedderlie-image {
     width: 100%;
-    height: 300px;
+    height: 320px;
     position: relative;
     margin-bottom: 5rem;
     .border {
@@ -411,7 +415,7 @@ const OuterContainer = styled.div`
       z-index: 5;
     }
     .wedderlie-container {
-      border-radius: 20px;
+      border-radius: 10px;
       width: 80%;
       height: 100%;
       margin: 0 10%;
@@ -419,8 +423,7 @@ const OuterContainer = styled.div`
       position: absolute;
       #wedderlie {
         position: absolute;
-        margin-left: 10px;
-        width: 130%;
+        width: 140%;
         opacity: 0.6;
       }
     }
@@ -540,11 +543,12 @@ const OuterContainer = styled.div`
   }
 
   .fun {
-    width: 80%;
-    margin: 15% 10%;
+    width: 86%;
+    margin: 15% 7%;
     border: 5px dotted #4b3b40;
     border-radius: 50%;
-    height: 300px;
+    height: 320px;
+    padding: 1rem;
     /* background: #4b3b40; */
     display: flex;
     flex-direction: column;
@@ -610,11 +614,19 @@ const OuterContainer = styled.div`
   .faq {
     width: 90%;
     margin: 10% 5%;
-    border-radius: 20px;
+    border-radius: 10px;
+    border: 2px solid hsl(35, 33%, 90%);
     text-align: center;
-    padding: 2rem;
     background: url(${concrete});
     background-size: cover;
+    .faq-inside {
+      padding: 2rem;
+
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: hsla(35, 33%, 90%, 0.3);
+    }
     h2 {
       font-family: "Gwendolyn";
       font-size: 2.5rem;
@@ -640,7 +652,6 @@ const OuterContainer = styled.div`
     width: 100%;
     height: 500px;
     text-align: center;
-    border-radius: 20px;
     background-image: url(${backgroundUpside});
     background-repeat: no-repeat;
     background-size: cover;
@@ -648,7 +659,7 @@ const OuterContainer = styled.div`
     color: hsla(35, 33%, 90%);
     .inner-rsvp {
       padding: 2rem;
-      border-radius: 20px;
+      border-radius: 10px;
       width: 80%;
       margin: 10%;
       /* background: #4b3b40; */
