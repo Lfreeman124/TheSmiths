@@ -164,86 +164,88 @@ const Home: React.FC = () => {
         </div>
       </section>
       <div className="fade"></div>
-      <section className="edinburgh">
-        <div className="info">
-          <h2 className="reveal first">Just Visiting?</h2>
-          <p className="reveal second">
-            Check out our Edinburgh and Scotland tips!
-          </p>
-          <div className="button-container reveal third">
-            <Link
-              to="/edinburgh"
-              onClick={() => {
-                window.scroll(0, 0);
-              }}
-            >
-              <Button
-                className="button"
-                size="large"
-                fullWidth
-                variant="contained"
-                sx={{ borderRadius: "30px" }}
+      <div className="desktop-flex">
+        <section className="edinburgh">
+          <div className="info">
+            <h2 className="reveal first">Just Visiting?</h2>
+            <p className="reveal second">
+              Check out our Edinburgh and Scotland tips!
+            </p>
+            <div className="button-container reveal third">
+              <Link
+                to="/edinburgh"
+                onClick={() => {
+                  window.scroll(0, 0);
+                }}
               >
-                <KeyboardDoubleArrowRightIcon />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="fun">
-        <h2 className="reveal still">Don't be shy...</h2>
-        <div className="sides">
-          <div className="reveal reverse left">
-            <p>Vote for our honeymoon</p>
-            <div className="button-container">
-              <Link to="/honeymoon">
                 <Button
                   className="button"
                   size="large"
                   fullWidth
-                  variant="outlined"
-                  style={{
-                    color: "#4b3b40",
-                    border: "1px solid #4b3b40",
-                  }}
-                  sx={{
-                    borderRadius: "30px",
-                  }}
-                  onClick={() => {
-                    window.scroll(0, 0);
-                  }}
-                >
-                  <KeyboardDoubleArrowRightIcon />
-                </Button>
-              </Link>
-            </div>
-          </div>
-          <div className="reveal up line"></div>
-          <div className="reveal right">
-            <p>Request a song</p>
-            <div className="button-container">
-              <Link to="/request">
-                <Button
-                  className="button"
-                  size="large"
-                  fullWidth
-                  variant="outlined"
-                  style={{
-                    color: "#4b3b40",
-                    border: "1px solid #4b3b40",
-                  }}
+                  variant="contained"
                   sx={{ borderRadius: "30px" }}
-                  onClick={() => {
-                    window.scroll(0, 0);
-                  }}
                 >
                   <KeyboardDoubleArrowRightIcon />
                 </Button>
               </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <section className="fun">
+          <h2 className="reveal still">Don't be shy...</h2>
+          <div className="sides">
+            <div className="reveal reverse left">
+              <p>Vote for our honeymoon</p>
+              <div className="button-container">
+                <Link to="/honeymoon">
+                  <Button
+                    className="button"
+                    size="large"
+                    fullWidth
+                    variant="outlined"
+                    style={{
+                      color: "#4b3b40",
+                      border: "1px solid #4b3b40",
+                    }}
+                    sx={{
+                      borderRadius: "30px",
+                    }}
+                    onClick={() => {
+                      window.scroll(0, 0);
+                    }}
+                  >
+                    <KeyboardDoubleArrowRightIcon />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="reveal up line"></div>
+            <div className="reveal right">
+              <p>Request a song</p>
+              <div className="button-container">
+                <Link to="/request">
+                  <Button
+                    className="button"
+                    size="large"
+                    fullWidth
+                    variant="outlined"
+                    style={{
+                      color: "#4b3b40",
+                      border: "1px solid #4b3b40",
+                    }}
+                    sx={{ borderRadius: "30px" }}
+                    onClick={() => {
+                      window.scroll(0, 0);
+                    }}
+                  >
+                    <KeyboardDoubleArrowRightIcon />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
       <section className="faq">
         <div className="faq-inside">
           <h2>Any Questions?</h2>
@@ -383,6 +385,11 @@ const OuterContainer = styled.div`
         border-right: none;
       }
     }
+    @media screen and (min-width: 600px) {
+      img {
+        width: 40%;
+      }
+    }
   }
   .details {
     padding: 2rem 0;
@@ -410,16 +417,23 @@ const OuterContainer = styled.div`
       transform: translateY(0);
       opacity: 1;
     }
+    @media screen and (min-width: 600px) {
+      width: 100%;
+      margin: 5rem 0;
+      display: flex;
+      justify-content: center;
+      .line {
+        width: 0;
+        border-right: 1px solid #4b3b40;
+        margin: 3%;
+      }
+    }
   }
   .wedderlie-image {
     width: 100%;
     height: 320px;
     position: relative;
     margin-bottom: 5rem;
-    .border {
-      width: 100%;
-      z-index: 5;
-    }
     .wedderlie-container {
       border-radius: 10px;
       width: 80%;
@@ -431,6 +445,14 @@ const OuterContainer = styled.div`
         position: absolute;
         width: 140%;
         opacity: 0.6;
+      }
+    }
+    @media screen and (min-width: 600px) {
+      height: 450px;
+      width: 100%;
+      .wedderlie-container {
+        width: 40%;
+        margin: 0 30%;
       }
     }
   }
@@ -493,13 +515,45 @@ const OuterContainer = styled.div`
       transform: translateX(0);
       opacity: 1;
     }
+    @media screen and (min-width: 600px) {
+      width: 70%;
+      margin: 0 15%;
+      .where {
+        width: 60%;
+        margin: 3rem 0;
+      }
+      .venue {
+        border-left: 5px solid #4b3b40;
+      }
+      .accommodation {
+        margin-left: 40%;
+        border-right: 5px solid #4b3b40;
+      }
+      .venue-button {
+        width: 15%;
+        margin-right: 35%;
+        margin-top: -3rem;
+      }
+      .accommodation-button {
+        width: 15%;
+        margin-left: 35%;
+        margin-top: -3rem;
+      }
+    }
   }
   .fade {
     height: 50px;
     width: 100%;
     position: relative;
     z-index: 5;
-    background: linear-gradient(#d8d6da, #d9d8da);
+    background: linear-gradient(#d8d6da, #d9d6da);
+  }
+  .desktop-flex {
+    @media only screen and (min-width: 600px) {
+      display: flex;
+      justify-content: center;
+      height: 600px;
+    }
   }
   .edinburgh {
     margin-top: -5px;
@@ -517,7 +571,7 @@ const OuterContainer = styled.div`
       width: 100%;
       height: 600px;
       text-align: center;
-      background: hsla(250, 5%, 81%, 0.7);
+      background: hsla(290, 5%, 80%, 0.7);
       h2 {
         font-size: 3rem;
         font-family: "Gwendolyn";
@@ -546,20 +600,27 @@ const OuterContainer = styled.div`
     .reveal.active {
       opacity: 1;
     }
+    @media screen and (min-width: 600px) {
+      width: 40%;
+      background-size: cover;
+      .info {
+        p {
+          padding: 0 15%;
+        }
+      }
+    }
   }
 
   .fun {
     width: 86%;
+    height: 320px;
     margin: 15% 7%;
     border: 3px dotted #4b3b40;
     border-radius: 50%;
-    height: 320px;
     padding: 1rem;
-    /* background: #4b3b40; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* color: hsla(35, 33%, 90%); */
     color: #4b3b40;
     box-shadow: 0px 0px 30px 100px #d8d6da;
 
@@ -616,7 +677,15 @@ const OuterContainer = styled.div`
       transform: translateX(0);
       opacity: 1;
     }
+    @media screen and (min-width: 600px) {
+      width: 400px;
+      height: 400px;
+      .sides {
+        font-size: 1.5rem;
+      }
+    }
   }
+
   .faq {
     width: 90%;
     margin: 10% 5%;
@@ -637,6 +706,13 @@ const OuterContainer = styled.div`
       font-family: "Gwendolyn";
       font-size: 2.5rem;
     }
+    @media screen and (min-width: 600px) {
+      width: 50%;
+      margin: 10% 25%;
+      .button-container {
+        width: 20%;
+      }
+    }
   }
   .love {
     width: 100%;
@@ -653,6 +729,13 @@ const OuterContainer = styled.div`
     .reveal.active {
       opacity: 1;
     }
+    @media screen and (min-width: 600px) {
+      margin: -100px 0;
+      img {
+        width: 30%;
+        margin: 0 35%;
+      }
+    }
   }
   .rsvp {
     width: 100%;
@@ -668,7 +751,6 @@ const OuterContainer = styled.div`
       border-radius: 10px;
       width: 80%;
       margin: 10%;
-      /* background: #4b3b40; */
       background: hsla(342, 12%, 26%, 0.7);
 
       h2 {
@@ -684,6 +766,17 @@ const OuterContainer = styled.div`
         width: 10%;
         height: 0;
         border-bottom: 1px solid hsl(35, 33%, 90%);
+      }
+    }
+    @media screen and (min-width: 600px) {
+      background-size: 50%;
+      background-position: right bottom;
+      .inner-rsvp {
+        width: 50%;
+        margin: 10% 25%;
+      }
+      .button-container {
+        width: 30%;
       }
     }
   }
