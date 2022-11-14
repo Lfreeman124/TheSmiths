@@ -11,7 +11,7 @@ import background from "../images/background.jpg";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
-import hands from "../images/hands.png";
+import hands from "../images/hands2.png";
 import backgroundUpside from "../images/background-upside.jpg";
 // import dancing from "../images/dancing2.webp";
 // import dancing2 from "../images/dancing.webp";
@@ -202,8 +202,8 @@ const Home: React.FC = () => {
                   fullWidth
                   variant="outlined"
                   style={{
-                    color: "hsla(35, 33%, 90%)",
-                    border: "1px solid hsla(35, 33%, 90%)",
+                    color: "#4b3b40",
+                    border: "1px solid #4b3b40",
                   }}
                   sx={{
                     borderRadius: "30px",
@@ -228,8 +228,8 @@ const Home: React.FC = () => {
                   fullWidth
                   variant="outlined"
                   style={{
-                    color: "hsla(35, 33%, 90%)",
-                    border: "1px solid hsla(35, 33%, 90%)",
+                    color: "#4b3b40",
+                    border: "1px solid #4b3b40",
                   }}
                   sx={{ borderRadius: "30px" }}
                   onClick={() => {
@@ -274,6 +274,11 @@ const Home: React.FC = () => {
                 fullWidth
                 variant="contained"
                 sx={{ borderRadius: "30px" }}
+                style={{
+                  color: "#4b3b40",
+                  // border: "1px solid hsl(35, 33%, 90%)",
+                  background: "hsl(35, 33%, 90%)",
+                }}
               >
                 RSVP
               </Button>
@@ -538,13 +543,14 @@ const OuterContainer = styled.div`
   .fun {
     width: 80%;
     margin: 10%;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     height: 350px;
-    background: #4b3b40;
+    /* background: #4b3b40; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: hsla(35, 33%, 90%);
+    /* color: hsla(35, 33%, 90%); */
+    color: #4b3b40;
     box-shadow: 0px 0px 60px 90px #d8d6da;
 
     h2 {
@@ -564,7 +570,7 @@ const OuterContainer = styled.div`
       }
       .line {
         height: 100%;
-        border-right: 1px solid hsla(35, 33%, 90%);
+        border-right: 1px solid #4b3b40;
       }
       .button-container {
         margin: 0 auto 3rem;
@@ -635,13 +641,14 @@ const OuterContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-
+    color: hsla(35, 33%, 90%);
     .inner-rsvp {
       padding: 2rem;
       border-radius: 20px;
       width: 80%;
       margin: 10%;
-      background: hsla(35, 33%, 90%, 0.8);
+      /* background: #4b3b40; */
+      background: hsla(342, 12%, 26%, 0.7);
 
       h2 {
         font-family: "Gwendolyn";
