@@ -34,7 +34,8 @@ const Home: React.FC = () => {
   useEffect(() => {
     const onPageLoad = () => {
       setDifference(
-        document.getElementById("wedderlie")?.getBoundingClientRect().top
+        document.getElementById("wedderlie-homepage")?.getBoundingClientRect()
+          .top
       );
     };
 
@@ -52,7 +53,6 @@ const Home: React.FC = () => {
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
     const fromZero = scrollValue - below - 100;
-    console.log(fromZero - 100);
     if (elementTop && elementTop < windowHeight - 100) {
       slidePic?.setAttribute(
         "style",
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
       </section>
       <section className="wedderlie-image">
         <div className="wedderlie-container">
-          <img id="wedderlie" src={wedderlie} alt="wedderlie" />
+          <img id="wedderlie-homepage" src={wedderlie} alt="wedderlie" />
         </div>
       </section>
       <section className="venue-accom">
@@ -326,7 +326,7 @@ const OuterContainer = styled.div`
   background: #d8d6da;
   background-image: url(${background});
   background-repeat: no-repeat;
-  background-size: 170%;
+  background-size: 120%;
   color: #4b3b40;
   overflow: hidden;
   @media only screen and (min-width: 600px) {
@@ -468,7 +468,7 @@ const OuterContainer = styled.div`
       margin: 0 10%;
       overflow: hidden;
       position: absolute;
-      #wedderlie {
+      #wedderlie-homepage {
         width: 100%;
         position: absolute;
         opacity: 0.6;
@@ -480,7 +480,7 @@ const OuterContainer = styled.div`
       .wedderlie-container {
         width: 40%;
         margin: 0 30%;
-        #wedderlie {
+        #wedderlie-homepage {
           width: 100%;
         }
       }
