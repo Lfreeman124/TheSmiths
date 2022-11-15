@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import us from "../images/us2.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -16,6 +16,7 @@ import backgroundUpside from "../images/background-upside.jpg";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
+  const [difference, setDifference] = useState<any>(0);
   var windowHeight = window.innerHeight;
 
   function reveal() {
@@ -30,25 +31,42 @@ const Home: React.FC = () => {
     }
   }
 
+  useEffect(() => {
+    const onPageLoad = () => {
+      setDifference(
+        document.getElementById("wedderlie")?.getBoundingClientRect().top
+      );
+    };
+
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
+  const below = difference - windowHeight;
+
   function slideLeft() {
     const scrollValue = window.scrollY;
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
-
-    if (elementTop && elementTop < windowHeight) {
+    const fromZero = scrollValue - below - 100;
+    console.log(fromZero - 100);
+    if (elementTop && elementTop < windowHeight - 100) {
       slidePic?.setAttribute(
         "style",
-        `width: ${scrollValue * 0.05 + 100}%; 
-        margin-left: -${scrollValue * 0.05}px; 
-        margin-top: -${scrollValue * 0.05}px`
+        `width: ${fromZero * 0.05 + 100}%; 
+        margin-left: -${fromZero * 0.05}px; 
+        margin-top: -${fromZero * 0.05}px`
       );
     } else {
       slidePic?.setAttribute("style", `width: 100%`);
     }
   }
   window.addEventListener("scroll", reveal);
-  isMobile && window.addEventListener("scroll", slideLeft);
   reveal();
+  isMobile && window.addEventListener("scroll", slideLeft);
   isMobile && slideLeft();
 
   return showMenu ? (
@@ -451,8 +469,8 @@ const OuterContainer = styled.div`
       overflow: hidden;
       position: absolute;
       #wedderlie {
+        width: 100%;
         position: absolute;
-        width: 140%;
         opacity: 0.6;
       }
     }
