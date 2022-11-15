@@ -35,7 +35,7 @@ const OnTheDay: React.FC = () => {
         <div className="line line8"></div>
       </div>
       <div className="dance">
-        <img src={dancing} />
+        <img src={dancing} alt="dance" />
       </div>
       <div className="cover"></div>
     </Container>
