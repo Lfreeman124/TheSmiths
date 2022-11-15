@@ -22,6 +22,13 @@ const theme = createTheme({
   },
 });
 
+export const colors = {
+  red: "#4b3b40",
+  beige: "hsl(35, 33%, 90%)",
+  grey: "#d8d6da",
+  green: "#70877f",
+};
+
 function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +53,8 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  background: #eee7dd;
+  /* background: #eee7dd; */
+  background: #d8d6da;
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;

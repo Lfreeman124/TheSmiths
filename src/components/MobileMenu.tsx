@@ -63,7 +63,7 @@ const NavBar: React.FC = () => {
 export default NavBar;
 
 const StyledMenu = styled.div`
-  background: #e0c6b3;
+  background: hsl(35, 33%, 90%);
   min-height: 100vh;
   width: 100%;
   z-index: 99;
@@ -83,11 +83,12 @@ const StyledMenu = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      color: black;
+      color: #4b3b40;
       text-decoration: none;
       width: 100%;
       height: 3rem;
       font-size: 1rem;
+      font-weight: 300;
     }
   }
 `;

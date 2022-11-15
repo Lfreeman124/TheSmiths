@@ -7,6 +7,12 @@ import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
 import { useGlobalContext } from "../State";
 
+const colors = {
+  red: "#4b3b40",
+  beige: "hsl(35, 33%, 90%)",
+  grey: "#d8d6da",
+  green: "#70877f",
+};
 const Accommodation: React.FC = () => {
   const { showMenu } = useGlobalContext();
 
@@ -95,7 +101,7 @@ export default Accommodation;
 
 const Container = styled.div`
   width: 100%;
-  color: black;
+  color: ${colors.red};
   text-decoration: none;
   padding: 0 1rem 1rem;
   /* border-top: 5px solid #70877f; */
@@ -108,7 +114,8 @@ const Container = styled.div`
     padding-top: 1rem;
     .header-inside {
       padding: 1rem 2rem;
-      background: hsla(25, 42%, 79%, 0.5);
+      background: ${colors.beige};
+      border-radius: 10px;
     }
 
     h1 {
