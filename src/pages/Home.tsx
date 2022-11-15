@@ -50,15 +50,14 @@ const Home: React.FC = () => {
 
   function slideLeft() {
     const scrollValue = window.scrollY;
-    const slidePic = document.getElementById("wedderlie");
+    const slidePic = document.getElementById("wedderlie-homepage");
     var elementTop = slidePic?.getBoundingClientRect().top;
     const fromZero = scrollValue - below - 100;
     if (elementTop && elementTop < windowHeight - 100) {
       slidePic?.setAttribute(
         "style",
         `width: ${fromZero * 0.05 + 100}%; 
-        margin-left: -${fromZero * 0.05}px; 
-        margin-top: -${fromZero * 0.05}px`
+        margin-left: -${fromZero * 0.08}px;`
       );
     } else {
       slidePic?.setAttribute("style", `width: 100%`);
@@ -436,7 +435,7 @@ const OuterContainer = styled.div`
     }
     .reveal {
       position: relative;
-      transform: translateY(150px);
+      transform: translateY(100px);
       opacity: 0;
       transition: 1s all ease;
     }
@@ -458,7 +457,7 @@ const OuterContainer = styled.div`
   }
   .wedderlie-image {
     width: 100%;
-    height: 290px;
+    height: 280px;
     position: relative;
     margin-bottom: 5rem;
     .wedderlie-container {
@@ -774,6 +773,7 @@ const OuterContainer = styled.div`
       position: relative;
       opacity: 0;
       transition: 1.5s all ease;
+      transition-delay: 0.5s;
     }
     .reveal.active {
       opacity: 1;
