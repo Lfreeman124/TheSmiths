@@ -330,6 +330,7 @@ const OuterContainer = styled.div`
     width: 80%;
     background: hsla(35, 33%, 90%, 0.8);
     padding: 0 0 2rem;
+    border-radius: 10px;
     @media only screen and (min-width: 600px) {
       display: flex;
       flex-direction: column;

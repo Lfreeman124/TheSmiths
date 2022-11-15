@@ -32,6 +32,7 @@ const Home: React.FC = () => {
   }
 
   useEffect(() => {
+    window.scroll(0, 0);
     const onPageLoad = () => {
       setDifference(
         document.getElementById("wedderlie-homepage")?.getBoundingClientRect()
@@ -489,8 +490,8 @@ const OuterContainer = styled.div`
   .venue-accom {
     height: 580px;
     .where {
-      margin: 1rem 10%;
-      width: 80%;
+      margin: 1rem 5%;
+      width: 90%;
       background: hsla(35, 33%, 90%, 0.7);
       padding: 5px;
       h2 {
@@ -518,7 +519,7 @@ const OuterContainer = styled.div`
     }
     .accommodation {
       text-align: right;
-      margin-left: 10%;
+      margin-left: 5%;
       border-top-left-radius: 100px;
       border-bottom-left-radius: 100px;
       border-right: 5px solid #4b3b40;

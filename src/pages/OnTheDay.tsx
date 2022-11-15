@@ -96,7 +96,7 @@ const Container = styled.div`
 
       h1 {
         font-family: "Gwendolyn";
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
       p {
         width: 100%;
@@ -106,7 +106,7 @@ const Container = styled.div`
   }
 
   .dance {
-    margin-top: 280px;
+    margin-top: 270px;
     width: 100%;
     background: hsl(270, 10%, 25%);
     img {

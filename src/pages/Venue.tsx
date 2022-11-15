@@ -123,6 +123,7 @@ const Container = styled.div`
   .blurb-and-links {
     margin: 2rem 10%;
     width: 80%;
+
     background: hsla(35, 33%, 90%, 0.8);
     background-size: cover;
     display: flex;
