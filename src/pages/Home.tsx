@@ -37,16 +37,26 @@ const Home: React.FC = () => {
     var windowHeight = window.innerHeight;
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
-    if (elementTop && elementTop < windowHeight) {
-      slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 140}px`);
+    // if (elementTop && elementTop < windowHeight) {
+    //   slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 140}px`);
+    // } else {
+    //   slidePic?.setAttribute("style", `left: -50px`);
+    // }
+    if (elementTop && elementTop < windowHeight - 100) {
+      slidePic?.setAttribute(
+        "style",
+        `width: ${scrollValue * 0.05 + 100}%; margin-left: -${
+          scrollValue * 0.05
+        }px; margin-top: -${scrollValue * 0.05}px`
+      );
     } else {
-      slidePic?.setAttribute("style", `left: -50px`);
+      slidePic?.setAttribute("style", `width: 100%`);
     }
   }
   window.addEventListener("scroll", reveal);
-  window.addEventListener("scroll", slideLeft);
+  isMobile && window.addEventListener("scroll", slideLeft);
   reveal();
-  slideLeft();
+  isMobile && slideLeft();
 
   return showMenu ? (
     <MobileMenu />
@@ -192,55 +202,57 @@ const Home: React.FC = () => {
           </div>
         </section>
         <section className="fun">
-          <h2 className="reveal still">Don't be shy...</h2>
-          <div className="sides">
-            <div className="reveal reverse left">
-              <p>Vote for our honeymoon</p>
-              <div className="button-container">
-                <Link to="/honeymoon">
-                  <Button
-                    className="button"
-                    size="large"
-                    fullWidth
-                    variant="outlined"
-                    style={{
-                      color: "#4b3b40",
-                      border: "1px solid #4b3b40",
-                    }}
-                    sx={{
-                      borderRadius: "30px",
-                    }}
-                    onClick={() => {
-                      window.scroll(0, 0);
-                    }}
-                  >
-                    <KeyboardDoubleArrowRightIcon />
-                  </Button>
-                </Link>
+          <div className="circle">
+            <h2 className="reveal still">Don't be shy...</h2>
+            <div className="sides">
+              <div className="reveal reverse left">
+                <p>Vote for our honeymoon</p>
+                <div className="button-container">
+                  <Link to="/honeymoon">
+                    <Button
+                      className="button"
+                      size="large"
+                      fullWidth
+                      variant="outlined"
+                      style={{
+                        color: "#4b3b40",
+                        border: "1px solid #4b3b40",
+                      }}
+                      sx={{
+                        borderRadius: "30px",
+                      }}
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <KeyboardDoubleArrowRightIcon />
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="reveal up line"></div>
-            <div className="reveal right">
-              <p>Request a song</p>
-              <div className="button-container">
-                <Link to="/request">
-                  <Button
-                    className="button"
-                    size="large"
-                    fullWidth
-                    variant="outlined"
-                    style={{
-                      color: "#4b3b40",
-                      border: "1px solid #4b3b40",
-                    }}
-                    sx={{ borderRadius: "30px" }}
-                    onClick={() => {
-                      window.scroll(0, 0);
-                    }}
-                  >
-                    <KeyboardDoubleArrowRightIcon />
-                  </Button>
-                </Link>
+              <div className="reveal up line"></div>
+              <div className="reveal right">
+                <p>Request a song</p>
+                <div className="button-container">
+                  <Link to="/request">
+                    <Button
+                      className="button"
+                      size="large"
+                      fullWidth
+                      variant="outlined"
+                      style={{
+                        color: "#4b3b40",
+                        border: "1px solid #4b3b40",
+                      }}
+                      sx={{ borderRadius: "30px" }}
+                      onClick={() => {
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <KeyboardDoubleArrowRightIcon />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -335,62 +347,66 @@ const OuterContainer = styled.div`
     padding: 0 1rem;
     background: hsla(35, 33%, 90%, 0.8);
 
+    .banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .header {
+        padding: 1rem 0 0;
+        width: 100%;
+        text-align: center;
+
+        opacity: 0.8;
+      }
+      h3 {
+        font-family: "Gwendolyn";
+        font-size: 1.5rem;
+      }
+      h2 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 400;
+      }
+      img {
+        margin: 1rem;
+        width: 60%;
+        opacity: 0.8;
+        border-radius: 10px;
+      }
+      nav {
+        width: 100%;
+        margin: 20px;
+        text-align: center;
+        > a {
+          margin: 10px;
+          padding-right: 20px;
+          text-decoration: none;
+          color: #4b3b40;
+          border-right: 1px solid #4b3b40;
+          font-size: 0.8rem;
+        }
+        .last {
+          border-right: none;
+        }
+      }
+    }
     @media only screen and (min-width: 600px) {
       padding-top: 2rem;
-      margin: 0 auto;
-      min-height: 100vh;
-    }
-  }
-  .banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    .header {
-      padding: 1rem 0 0;
-      width: 100%;
-      text-align: center;
-
-      opacity: 0.8;
-    }
-    h3 {
-      font-family: "Gwendolyn";
-      font-size: 1.5rem;
-    }
-    h2 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 400;
-    }
-    img {
-      margin: 1rem;
+      margin: 5rem auto;
       width: 60%;
-      opacity: 0.8;
-      border-radius: 10px;
-    }
-    nav {
-      width: 100%;
-      margin: 20px;
-      text-align: center;
-      > a {
-        margin: 10px;
-        padding-right: 20px;
-        text-decoration: none;
-        color: #4b3b40;
-        border-right: 1px solid #4b3b40;
-        font-size: 0.8rem;
+      .banner {
+        img {
+          width: 40%;
+        }
       }
-      .last {
-        border-right: none;
-      }
-    }
-    @media screen and (min-width: 600px) {
-      img {
-        width: 40%;
+      .button-container {
+        width: 20%;
       }
     }
   }
+
   .details {
     padding: 2rem 0;
     text-align: center;
@@ -431,7 +447,7 @@ const OuterContainer = styled.div`
   }
   .wedderlie-image {
     width: 100%;
-    height: 320px;
+    height: 310px;
     position: relative;
     margin-bottom: 5rem;
     .wedderlie-container {
@@ -448,20 +464,23 @@ const OuterContainer = styled.div`
       }
     }
     @media screen and (min-width: 600px) {
-      height: 450px;
+      height: 360px;
       width: 100%;
       .wedderlie-container {
         width: 40%;
         margin: 0 30%;
+        #wedderlie {
+          width: 100%;
+        }
       }
     }
   }
 
   .venue-accom {
-    height: 550px;
+    height: 580px;
     .where {
-      margin: 1rem 0;
-      width: 90%;
+      margin: 1rem 10%;
+      width: 80%;
       background: hsla(35, 33%, 90%, 0.7);
       padding: 5px;
       h2 {
@@ -476,13 +495,14 @@ const OuterContainer = styled.div`
     .venue {
       border-top-right-radius: 100px;
       border-bottom-right-radius: 100px;
+      border-left: 5px solid #4b3b40;
       box-shadow: 0px 0px 10px 10px hsla(35, 33%, 90%, 0.7);
       p {
         padding: 0 1rem 1rem 5px;
       }
     }
     .venue-button {
-      width: 40%;
+      width: 30%;
       margin-top: -2rem;
       margin-right: 40px;
     }
@@ -491,6 +511,7 @@ const OuterContainer = styled.div`
       margin-left: 10%;
       border-top-left-radius: 100px;
       border-bottom-left-radius: 100px;
+      border-right: 5px solid #4b3b40;
       box-shadow: 0px 0px 10px 10px hsla(35, 33%, 90%, 0.7);
       p {
         text-align: right;
@@ -498,7 +519,7 @@ const OuterContainer = styled.div`
       }
     }
     .accommodation-button {
-      width: 40%;
+      width: 30%;
       margin-top: -2rem;
       margin-left: 30px;
     }
@@ -518,26 +539,24 @@ const OuterContainer = styled.div`
     @media screen and (min-width: 600px) {
       width: 70%;
       margin: 0 15%;
+      height: 550px;
       .where {
         width: 60%;
         margin: 3rem 0;
       }
-      .venue {
-        border-left: 5px solid #4b3b40;
-      }
+
       .accommodation {
         margin-left: 40%;
-        border-right: 5px solid #4b3b40;
       }
       .venue-button {
         width: 15%;
         margin-right: 35%;
-        margin-top: -3rem;
+        margin-top: -4rem;
       }
       .accommodation-button {
         width: 15%;
         margin-left: 35%;
-        margin-top: -3rem;
+        margin-top: -4rem;
       }
     }
   }
@@ -550,6 +569,7 @@ const OuterContainer = styled.div`
   }
   .desktop-flex {
     @media only screen and (min-width: 600px) {
+      width: 100%;
       display: flex;
       justify-content: center;
       height: 600px;
@@ -582,6 +602,9 @@ const OuterContainer = styled.div`
         font-weight: 500;
         margin-bottom: 2rem;
       }
+      .button-container {
+        width: 30%;
+      }
     }
     .reveal {
       position: relative;
@@ -603,85 +626,99 @@ const OuterContainer = styled.div`
     @media screen and (min-width: 600px) {
       width: 40%;
       background-size: cover;
+      max-height: 700px;
       .info {
+        max-height: 700px;
         p {
-          padding: 0 15%;
+          padding: 0 20%;
         }
       }
     }
   }
-
   .fun {
-    width: 86%;
-    height: 320px;
-    margin: 15% 7%;
-    border: 3px dotted #4b3b40;
-    border-radius: 50%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #4b3b40;
-    box-shadow: 0px 0px 30px 100px #d8d6da;
-
-    h2 {
-      font-size: 2.5rem;
-      font-family: "Gwendolyn";
-      margin-bottom: 1rem;
-    }
-    .sides {
-      width: 100%;
-      height: 50%;
+    .circle {
+      width: 86%;
+      height: 320px;
+      margin: 15% 7%;
+      border: 3px dotted #4b3b40;
+      border-radius: 50%;
+      padding: 1rem;
       display: flex;
-      font-size: 1.2rem;
-      text-align: center;
-      .left,
-      .right {
-        width: 50%;
-        padding: 0 1rem;
-      }
-      .line {
-        height: 100%;
-        border-right: 1px solid #4b3b40;
-      }
-      .button-container {
-        margin: 0 auto 3rem;
-        width: 50%;
+      flex-direction: column;
+      align-items: center;
+      color: #4b3b40;
+      box-shadow: 0px 0px 30px 100px #d8d6da;
 
-        .button:active {
-          background: #70877f;
-          position: relative;
-          top: 2px;
+      h2 {
+        font-size: 2.5rem;
+        font-family: "Gwendolyn";
+        margin-bottom: 1rem;
+      }
+      .sides {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        font-size: 1.2rem;
+        text-align: center;
+        .left,
+        .right {
+          width: 50%;
+          padding: 0 1rem;
         }
-        a {
-          text-decoration: none;
+        .line {
+          height: 100%;
+          border-right: 1px solid #4b3b40;
+        }
+        .button-container {
+          margin: 0 auto 3rem;
+          width: 50%;
+
+          .button:active {
+            background: #70877f;
+            position: relative;
+            top: 2px;
+          }
+          a {
+            text-decoration: none;
+          }
         }
       }
-    }
-    .reveal {
-      position: relative;
-      opacity: 0;
-      transition: 1s all ease;
-      transform: translateX(150px);
-    }
-    .reverse {
-      transform: translateX(-150px);
-    }
-    .up {
-      transform: translateY(150px);
-    }
-    .still {
-      transform: translateY(10px);
-    }
-    .reveal.active {
-      transform: translateX(0);
-      opacity: 1;
+      .reveal {
+        position: relative;
+        opacity: 0;
+        transition: 1s all ease;
+        transform: translateX(150px);
+      }
+      .reverse {
+        transform: translateX(-150px);
+      }
+      .up {
+        transform: translateY(150px);
+      }
+      .still {
+        transform: translateY(10px);
+      }
+      .reveal.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
     @media screen and (min-width: 600px) {
-      width: 400px;
-      height: 400px;
-      .sides {
-        font-size: 1.5rem;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-shadow: 0px 0px 30px 50px #d8d6da;
+
+      .circle {
+        padding-top: 2rem;
+        width: 400px;
+        height: 400px;
+        margin: 0 0;
+        .sides {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -708,7 +745,8 @@ const OuterContainer = styled.div`
     }
     @media screen and (min-width: 600px) {
       width: 50%;
-      margin: 10% 25%;
+      margin: 100px 25%;
+
       .button-container {
         width: 20%;
       }
