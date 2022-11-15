@@ -53,6 +53,8 @@ const Container = styled.div`
     justify-content: center;
     position: absolute;
     z-index: 5;
+    background: #d8d6da;
+    box-shadow: 0px 10px 10px 10px #d8d6da;
     .line {
       background: #4b3b40;
       width: 2px;
