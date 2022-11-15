@@ -13,16 +13,14 @@ import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands3.png";
 import backgroundUpside from "../images/background-upside.jpg";
-// import dancing from "../images/dancing2.webp";
-// import dancing2 from "../images/dancing.webp";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
+  var windowHeight = window.innerHeight;
 
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
       if (elementTop < windowHeight - 70) {
         reveals[i].classList.add("active");
@@ -34,20 +32,15 @@ const Home: React.FC = () => {
 
   function slideLeft() {
     const scrollValue = window.scrollY;
-    var windowHeight = window.innerHeight;
     const slidePic = document.getElementById("wedderlie");
     var elementTop = slidePic?.getBoundingClientRect().top;
-    // if (elementTop && elementTop < windowHeight) {
-    //   slidePic?.setAttribute("style", `left: ${scrollValue * 0.1 - 140}px`);
-    // } else {
-    //   slidePic?.setAttribute("style", `left: -50px`);
-    // }
-    if (elementTop && elementTop < windowHeight - 100) {
+
+    if (elementTop && elementTop < windowHeight) {
       slidePic?.setAttribute(
         "style",
-        `width: ${scrollValue * 0.05 + 100}%; margin-left: -${
-          scrollValue * 0.05
-        }px; margin-top: -${scrollValue * 0.05}px`
+        `width: ${scrollValue * 0.05 + 100}%; 
+        margin-left: -${scrollValue * 0.05}px; 
+        margin-top: -${scrollValue * 0.05}px`
       );
     } else {
       slidePic?.setAttribute("style", `width: 100%`);
@@ -447,7 +440,7 @@ const OuterContainer = styled.div`
   }
   .wedderlie-image {
     width: 100%;
-    height: 310px;
+    height: 290px;
     position: relative;
     margin-bottom: 5rem;
     .wedderlie-container {
