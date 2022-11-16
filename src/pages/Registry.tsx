@@ -3,20 +3,12 @@ import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import amazon from "../images/amazon.svg";
 import beach from "../images/beach.jpg";
-import ellos from "../images/ellos.png";
 import restaurant from "../images/restaurant.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 
 const Registry: React.FC = () => {
   const { showMenu } = useGlobalContext();
-
-  const colors = {
-    red: "#4b3b40",
-    beige: "hsl(35, 33%, 90%)",
-    grey: "#d8d6da",
-    green: "#70877f",
-  };
 
   const options = [
     {
