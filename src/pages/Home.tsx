@@ -30,9 +30,9 @@ const Home: React.FC = () => {
       }
     }
   }
+  window.scroll(0, 0);
 
   useEffect(() => {
-    window.scroll(0, 0);
     const onPageLoad = () => {
       setDifference(
         document.getElementById("wedderlie-homepage")?.getBoundingClientRect()

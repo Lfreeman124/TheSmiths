@@ -39,15 +39,17 @@ const RequestForm: React.FC<Props> = (props: any) => {
         onChange={handleInputRequest}
         sx={{ m: "0.5rem 0" }}
       />
-      <Button
-        variant="contained"
-        size="large"
-        fullWidth
-        onClick={sendRequest}
-        className="button"
-      >
-        Request
-      </Button>
+      <div className="button-container">
+        <Button
+          variant="contained"
+          size="large"
+          fullWidth
+          onClick={sendRequest}
+          className="button"
+        >
+          Request
+        </Button>
+      </div>
     </Container>
   );
 };
@@ -57,6 +59,10 @@ export default RequestForm;
 const Container = styled.div`
   .button {
     margin: 1rem 0 2rem;
+  }
+  .button-container {
+    width: 40%;
+    margin: 0 30%;
   }
   .button:active {
     background: #70877f;

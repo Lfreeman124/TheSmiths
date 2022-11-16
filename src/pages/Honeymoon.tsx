@@ -11,9 +11,16 @@ import {
   doc,
   increment,
 } from "firebase/firestore";
-import NavBar from "./NavBar";
-import MobileMenu from "./MobileMenu";
+import NavBar from "../components/NavBar";
+import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
+
+const colors = {
+  red: "#4b3b40",
+  beige: "hsl(35, 33%, 90%)",
+  grey: "#d8d6da",
+  green: "#70877f",
+};
 
 const Honeymoon: React.FC = () => {
   const [currentVote, setCurrentVote] = useState("");
@@ -91,7 +98,7 @@ const Honeymoon: React.FC = () => {
               variant="contained"
               onClick={voteNow}
             >
-              Vote!
+              Vote
             </Button>
           </div>
         </div>
@@ -124,13 +131,14 @@ const Container = styled.div`
   h2 {
     font-family: "Gwendolyn";
     padding: 1rem;
-    width: 80%;
-    font-size: 1.5rem;
+    width: 90%;
+    font-size: 2rem;
     font-weight: 300;
     margin: 0 auto 1rem;
     text-align: center;
-    background: #70877f;
-    color: #eee7dd;
+    background: ${colors.red};
+    color: ${colors.beige};
+    border-radius: 10px;
   }
   .options-container {
     .options {
@@ -164,7 +172,7 @@ const Container = styled.div`
       }
     }
     .button-container {
-      width: 50%;
+      width: 40%;
       margin: 1rem auto 2rem;
       .vote-button:active {
         background: #70877f;
@@ -180,11 +188,13 @@ const Container = styled.div`
     }
     .results-bar {
       border: 1px solid black;
+      border-radius: 20px;
       width: 100%;
       height: 2rem;
       .results-filling {
         height: 100%;
         background: #70877f;
+        border-radius: 20px;
       }
     }
   }

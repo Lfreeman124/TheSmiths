@@ -82,6 +82,7 @@ const Venue: React.FC = () => {
 export default Venue;
 
 const Container = styled.div`
+  overflow: hidden;
   width: 100%;
   padding: 0 1rem 3rem;
   display: flex;
@@ -101,25 +102,28 @@ const Container = styled.div`
       width: 70%;
     }
   }
-  .header {
-    color: ${colors.red};
-    width: 100%;
-    display: flex;
-    header {
+  .desktop-layout {
+    .header {
+      color: ${colors.red};
       width: 100%;
       display: flex;
-      align-items: center;
-      text-align: center;
-      h1 {
+      header {
         width: 100%;
+        display: flex;
+        align-items: center;
         text-align: center;
-        font-family: "Gwendolyn";
-        background: ${colors.beige};
-        border-radius: 10px;
-        padding: 1rem 0;
+        h1 {
+          width: 100%;
+          text-align: center;
+          font-family: "Gwendolyn";
+          background: ${colors.beige};
+          border-radius: 10px;
+          padding: 1rem 0;
+        }
       }
     }
   }
+
   .blurb-and-links {
     margin: 2rem 10%;
     width: 80%;

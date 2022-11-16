@@ -6,6 +6,13 @@ import { useGlobalContext } from "../State";
 import RequestsList from "../components/RequestsList";
 import RequestForm from "../components/RequestForm";
 
+const colors = {
+  red: "#4b3b40",
+  beige: "hsl(35, 33%, 90%)",
+  grey: "#d8d6da",
+  green: "#70877f",
+};
+
 const Requests: React.FC = () => {
   const { showMenu } = useGlobalContext();
   const [hasBeenUpdated, setHasBeenUpdated] = useState(true);
@@ -20,7 +27,7 @@ const Requests: React.FC = () => {
     <React.Fragment>
       <NavBar />
       <Container>
-        <h1>Request a Song!</h1>
+        <h1>Request a Song</h1>
         <RequestForm onUpdate={onUpdate} />
         <RequestsList hasBeenUpdated={hasBeenUpdated} onUpdate={onUpdate} />
       </Container>
@@ -37,9 +44,12 @@ const Container = styled.div`
     width: 100%;
     text-align: center;
     font-family: "Gwendolyn";
-    background: hsla(25, 42%, 79%, 0.5);
+    background: ${colors.red};
+    color: ${colors.beige};
     padding: 1rem;
+    border-radius: 10px;
   }
+
   @media only screen and (min-width: 600px) {
     padding: 2rem 20% 4rem;
   }

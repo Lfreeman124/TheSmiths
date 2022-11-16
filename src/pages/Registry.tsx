@@ -8,8 +8,15 @@ import restaurant from "../images/restaurant.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 
-const OnTheDay: React.FC = () => {
+const Registry: React.FC = () => {
   const { showMenu } = useGlobalContext();
+
+  const colors = {
+    red: "#4b3b40",
+    beige: "hsl(35, 33%, 90%)",
+    grey: "#d8d6da",
+    green: "#70877f",
+  };
 
   const options = [
     {
@@ -23,12 +30,6 @@ const OnTheDay: React.FC = () => {
       name: "Amazon.com Gift Card",
       image: amazon,
       link: "https://www.amazon.com/Amazon-eGift-Card-Logo/dp/B07PCMWTSG/ref=sr_1_1?adgrpid=81403773503&gclid=Cj0KCQjw166aBhDEARIsAMEyZh555howLLzetDSHn27DWltE_ga6Hu-n5Lnh-JDcuD2pTiHCLn5e8g0aAlqpEALw_wcB&hvadid=585412561882&hvdev=c&hvlocint=1010826&hvlocphy=9062455&hvnetw=g&hvqmt=b&hvrand=14939444062267236933&hvtargid=kwd-315218542453&hydadcr=22339_13333066&keywords=amazon+e+gift+card&qid=1665935825&qu=eyJxc2MiOiIyLjgyIiwicXNhIjoiMS43OCIsInFzcCI6IjEuNjMifQ%3D%3D&sr=8-1",
-    },
-    {
-      id: "ellos",
-      name: "Ellos Gift Card",
-      image: ellos,
-      link: "https://www.ellos.se/presentkort",
     },
     {
       id: "honeymoon",
@@ -90,7 +91,7 @@ const OnTheDay: React.FC = () => {
         </div>
         <div className="notes">
           <p>
-            When navigating to a Swedish website, use Chrome and&nbsp;
+            When navigating to Amazon.se, use Chrome to&nbsp;
             <a
               href="https://support.google.com/chrome/answer/173424?hl=en&co=GENIE.Platform%3DDesktop#:~:text=Translate%20webpages%20in%20Chrome&text=On%20your%20computer%2C%20open%20Chrome,will%20translate%20your%20current%20webpage."
               target="_blank"
@@ -98,7 +99,7 @@ const OnTheDay: React.FC = () => {
             >
               translate the page
             </a>
-            . Amazon and Ellos should accept foreign cards.
+            . They should accept foreign cards.
           </p>
         </div>
       </Container>
@@ -106,7 +107,14 @@ const OnTheDay: React.FC = () => {
   );
 };
 
-export default OnTheDay;
+export default Registry;
+
+const colors = {
+  red: "#4b3b40",
+  beige: "hsl(35, 33%, 90%)",
+  grey: "#d8d6da",
+  green: "#70877f",
+};
 
 const Container = styled.div`
   width: 100%;
@@ -119,8 +127,9 @@ const Container = styled.div`
     font-size: 2rem;
   }
   .header {
-    background: #70877f;
-    color: #eee7dd;
+    background: ${colors.beige};
+    color: ${colors.red};
+    border-radius: 10px;
   }
 
   .header,
@@ -130,6 +139,9 @@ const Container = styled.div`
     width: 100%;
     margin: 1rem auto;
     text-align: center;
+  }
+  .notes {
+    font-weight: 400;
   }
   .header p {
     font-size: 1rem;
@@ -142,12 +154,12 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     .options-tile {
+      width: 250px;
       margin: 1rem;
-      width: 150px;
       .image-container {
         margin: 0 auto;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         border: 2px solid black;
         overflow: hidden;
@@ -155,7 +167,7 @@ const Container = styled.div`
     }
     h2 {
       width: 100%;
-      font-size: 1rem;
+      font-size: 1.3rem;
       font-weight: 500;
       text-align: center;
       color: black;
@@ -165,22 +177,13 @@ const Container = styled.div`
     a:link {
       text-decoration: none;
     }
-    #amazon1,
-    #amazon2 {
-      background: rgb(255, 153, 0);
-    }
-    #ellos {
-      background: rgb(123, 57, 52);
-    }
+
     #amazon1 img,
     #amazon2 img {
       height: 50%;
-      margin: 30px 22px;
+      margin: 50px 40px;
     }
-    #ellos img {
-      width: 100%;
-      margin-top: 20px;
-    }
+
     #honeymoon img {
       height: 100%;
       margin-left: -70px;
@@ -191,6 +194,8 @@ const Container = styled.div`
     .description {
       margin-top: 0.5rem;
       text-align: center;
+      line-height: 2rem;
+      font-size: 1.3rem;
     }
   }
   @media only screen and (min-width: 600px) {

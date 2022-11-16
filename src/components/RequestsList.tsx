@@ -42,7 +42,13 @@ const SongList: React.FC<Props> = (props: any) => {
 
   return (
     <TableContainer
-      style={{ width: "100%", padding: "0.5rem", margin: "0 auto" }}
+      style={{
+        width: "100%",
+        padding: "0.5rem",
+        margin: "0 auto",
+        borderRadius: "10px",
+        background: "hsl(35, 33%, 90%, 0.5)",
+      }}
       component={Paper}
     >
       <Table sx={{ width: "100%" }} aria-label="simple table">
