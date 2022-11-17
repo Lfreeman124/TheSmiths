@@ -230,6 +230,7 @@ const Container = styled.div`
     width: 100%;
     height: 250px;
     margin: 1rem 0 5rem;
+    position: relative;
     #map {
       border-top: 5px solid ${colors.green};
       border-bottom: 5px solid ${colors.green};
@@ -237,10 +238,10 @@ const Container = styled.div`
     }
     .reveal {
       color: ${colors.red};
-      position: relative;
+      position: absolute;
       width: 40px;
-      left: 65%;
-      top: 85%;
+      left: 68%;
+      top: 65%;
       transform: translate(-150px, -150px) rotate(-20deg);
       opacity: 0;
       transition: 0.5s all ease-in;
@@ -252,15 +253,16 @@ const Container = styled.div`
     }
     .hearts {
       position: relative;
-      top: 180px;
+      width: 20px;
+      height: 20px;
       left: 72%;
+      top: 64%;
       .heart {
         width: 20px;
-        position: absolute;
-
         opacity: 0;
-        /* transition: 0.5s all ease-in;
-      transition-delay: 1.5s; */
+        position: absolute;
+        left: 0;
+        top: 0;
       }
 
       #heart1.active {
