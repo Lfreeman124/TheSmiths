@@ -8,6 +8,8 @@ import { Instagram, Language } from "@mui/icons-material";
 import crest from "../images/crest.png";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
+import flowers from "../images/flowers.png";
+import paper from "../images/paper.jpg";
 
 const colors = {
   red: "#4b3b40",
@@ -23,46 +25,52 @@ const Venue: React.FC = () => {
     <MobileMenu />
   ) : (
     <React.Fragment>
-      <MobileNavBar />
-
       <Container>
-        <div className="desktop-layout">
-          <div className="header">
-            <div className="crest-container">
-              <img src={crest} alt="crest" />
+        <MobileNavBar />
+        <div className="paper">
+          <div className="desktop-layout">
+            <div className="header">
+              <div className="crest-container">
+                <img src={crest} alt="crest" />
+              </div>
+              <header>
+                <h1>Wedderlie House</h1>
+              </header>
             </div>
-            <header>
-              <h1>Wedderlie House</h1>
-            </header>
-          </div>
-          <div className="wedderlie-container">
-            <img id="wedderlie" src={wedderlie} alt="" />
+            <div className="wedderlie-container">
+              <img id="wedderlie" src={wedderlie} alt="" />
+            </div>
+
+            <div className="blurb-and-links">
+              <div className="blurb">
+                <p>
+                  We are so excited to get married here. Wedderlie is a gorgeous
+                  estate with a rich history and a beautifully restored
+                  interior. Check out their website and social media for a sneak
+                  peek!
+                </p>
+              </div>
+              <div className="links">
+                <a
+                  href="https://www.instagram.com/wedderliehouse/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Instagram sx={{ color: "black" }} />
+                </a>
+                <a
+                  href="https://wedderliehouse.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Language sx={{ color: "black" }} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="blurb-and-links">
-          <div className="blurb">
-            <p>
-              We are so excited to get married here. Wedderlie is a gorgeous
-              estate with a rich history and a beautifully restored interior.
-              Check out their website and social media for a sneak peek!
-            </p>
-          </div>
-          <div className="links">
-            <a
-              href="https://www.instagram.com/wedderliehouse/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Instagram sx={{ color: "black" }} />
-            </a>
-            <a
-              href="https://wedderliehouse.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Language sx={{ color: "black" }} />
-            </a>
-          </div>
+        <div className="image-container">
+          <img src={flowers} alt="flowers" />
         </div>
         <a
           href="https://www.google.com/maps/place/Wedderlie+House/@55.9058629,-3.3056523,9z/data=!4m5!3m4!1s0x4887738e9ab230db:0x1083b8feb46b265e!8m2!3d55.7562332!4d-2.5751903"
@@ -83,11 +91,12 @@ export default Venue;
 
 const Container = styled.div`
   overflow: hidden;
+  border-radius: 10px;
   width: 100%;
-  padding: 0 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3rem;
 
   .crest-container {
     @media only screen and (max-width: 600px) {
@@ -102,66 +111,94 @@ const Container = styled.div`
       width: 70%;
     }
   }
-  .desktop-layout {
-    .header {
-      color: ${colors.red};
+  .paper {
+    background-image: url(${paper});
+    background-size: 50%;
+    width: 90%;
+    margin: 0 5%;
+    border-radius: 10px;
+
+    .desktop-layout {
       width: 100%;
-      display: flex;
-      header {
+      height: 100%;
+      background: hsla(35, 33%, 70%, 0.3);
+      border-radius: 10px;
+      padding-bottom: 2rem;
+      .header {
+        color: ${colors.red};
         width: 100%;
         display: flex;
-        align-items: center;
-        text-align: center;
-        h1 {
+        header {
           width: 100%;
+          display: flex;
+          align-items: center;
           text-align: center;
-          font-family: "Gwendolyn";
-          background: ${colors.beige};
-          border-radius: 10px;
-          padding: 1rem 0;
+          h1 {
+            width: 100%;
+            text-align: center;
+            font-family: "Gwendolyn";
+            margin: 2rem 0 0;
+          }
+        }
+      }
+      .wedderlie-container {
+        width: 80%;
+        margin: 0 10%;
+        height: 200px;
+        /* background: hsla(342, 12%, 26%, 0.5); */
+        overflow: hidden;
+        padding: 1rem;
+        opacity: 0.8;
+
+        #wedderlie {
+          margin-left: -25%;
+          height: 100%;
+        }
+      }
+      .blurb-and-links {
+        margin: 1rem 10% 0;
+        width: 80%;
+        background: hsla(342, 12%, 26%, 0.1);
+        border: 1px dotted ${colors.red};
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        .blurb {
+          margin: 1rem 1rem 0.5rem;
+          text-align: center;
+          line-height: 1.5rem;
+        }
+        .links {
+          * {
+            color: ${colors.red};
+            margin: 5px;
+          }
+          margin-bottom: 1rem;
         }
       }
     }
   }
 
-  .blurb-and-links {
-    margin: 2rem 10%;
-    width: 80%;
-
-    background: hsla(35, 33%, 90%, 0.8);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    .blurb {
-      margin: 1rem 1rem 0.5rem;
-      text-align: center;
-    }
-    .links {
-      * {
-        color: ${colors.red};
-        margin: 5px;
-      }
-      margin-bottom: 1rem;
-    }
-  }
-
-  .wedderlie-container {
+  .image-container {
     width: 100%;
-    background: hsla(342, 12%, 26%, 0.7);
+    display: flex;
+    background: hsl(270, 10%, 25%);
 
-    padding: 1rem;
-    border-radius: 10px;
-    #wedderlie {
+    img {
       width: 100%;
+      opacity: 0.8;
     }
   }
+
   .map-container {
-    width: 120%;
-    margin-bottom: 3rem;
+    width: 100%;
+    margin: 1rem 0;
     #map {
-      border: 5px solid ${colors.red};
+      border-top: 5px solid ${colors.green};
+      border-bottom: 5px solid ${colors.green};
+
       width: 100%;
     }
   }

@@ -56,7 +56,7 @@ const Container = styled.div`
     background: #d8d6da;
     box-shadow: 0px 10px 10px 10px #d8d6da;
     .line {
-      background: #4b3b40;
+      background: #70877f;
       width: 2px;
       margin: 0 2px;
     }

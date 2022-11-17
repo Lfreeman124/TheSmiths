@@ -6,6 +6,8 @@ import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
 import { useGlobalContext } from "../State";
+import flowers from "../images/flowers.png";
+import paper from "../images/paper.jpg";
 
 const colors = {
   red: "#4b3b40",
@@ -56,16 +58,22 @@ const Accommodation: React.FC = () => {
     <React.Fragment>
       <MobileNavBar />
       <Container>
-        <div className="header">
-          <div className="header-inside">
-            <h1>Accommodation</h1>
-            <p>
-              Our hope is to offer everyone the option to stay either at
-              Wedderlie House or The Black Bull. If you can't find the
-              information you need here or on the venue websites, or if you have
-              any concerns, please reach out and we can find a solution.
-            </p>
+        <div className="green-line"></div>
+        <div className="paper">
+          <div className="header">
+            <div className="header-inside">
+              <h1>Accommodation</h1>
+              <p>
+                Our hope is to offer everyone the option to stay either at
+                Wedderlie House or The Black Bull. If you can't find the
+                information you need here or on the venue websites, or if you
+                have any concerns, please reach out and we can find a solution.
+              </p>
+            </div>
           </div>
+        </div>
+        <div className="flowers-container">
+          <img src={flowers} alt="flowers" />
         </div>
         {options.map((each, index) => {
           return (
@@ -109,19 +117,39 @@ const Container = styled.div`
   p {
     line-height: 1.5rem;
   }
-  .header {
+  .green-line {
+    width: 100%;
+    margin-bottom: 1rem;
     border-top: 5px solid #70877f;
-    padding-top: 1rem;
-    .header-inside {
-      padding: 1rem 2rem;
-      background: ${colors.beige};
-      border-radius: 10px;
-    }
+  }
+  .paper {
+    background-image: url(${paper});
+    background-size: 50%;
+    border-radius: 10px;
 
-    h1 {
-      font-family: "Gwendolyn";
-      margin-bottom: 1rem;
-      font-size: 2rem;
+    .header {
+      .header-inside {
+        padding: 1rem 2rem;
+        background: hsla(35, 33%, 70%, 0.3);
+        border-radius: 10px;
+      }
+
+      h1 {
+        font-family: "Gwendolyn";
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .flowers-container {
+    width: 100%;
+    display: flex;
+    background: hsl(270, 10%, 25%);
+    margin-bottom: -2rem;
+    img {
+      width: 100%;
+      opacity: 0.8;
     }
   }
   .accommodation-container {

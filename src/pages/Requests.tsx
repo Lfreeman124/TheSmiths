@@ -5,6 +5,7 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import RequestsList from "../components/RequestsList";
 import RequestForm from "../components/RequestForm";
+import flowers from "../images/flowers.png";
 
 const colors = {
   red: "#4b3b40",
@@ -29,6 +30,9 @@ const Requests: React.FC = () => {
       <Container>
         <h1>Request a Song</h1>
         <RequestForm onUpdate={onUpdate} />
+        <div className="flowers-container">
+          <img src={flowers} alt="flowers" />
+        </div>
         <RequestsList hasBeenUpdated={hasBeenUpdated} onUpdate={onUpdate} />
       </Container>
     </React.Fragment>
@@ -44,10 +48,20 @@ const Container = styled.div`
     width: 100%;
     text-align: center;
     font-family: "Gwendolyn";
-    background: ${colors.red};
-    color: ${colors.beige};
+    background: ${colors.beige};
+    color: ${colors.red};
     padding: 1rem;
     border-radius: 10px;
+  }
+  .flowers-container {
+    width: 100%;
+    display: flex;
+    background: hsl(270, 10%, 25%);
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
+      opacity: 0.8;
+    }
   }
 
   @media only screen and (min-width: 600px) {

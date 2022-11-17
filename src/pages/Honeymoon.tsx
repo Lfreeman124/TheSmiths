@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button } from "@mui/material";
 import car from "../images/car.jpg";
-import beach from "../images/beach.jpg";
+import beach from "../images/beach-min.png";
 import { db } from "../firebase";
 import {
   collection,
@@ -136,8 +136,8 @@ const Container = styled.div`
     font-weight: 300;
     margin: 0 auto 1rem;
     text-align: center;
-    background: ${colors.red};
-    color: ${colors.beige};
+    background: ${colors.beige};
+    color: ${colors.red};
     border-radius: 10px;
   }
   .options-container {

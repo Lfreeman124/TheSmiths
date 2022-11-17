@@ -37,7 +37,11 @@ rows.sort((a, b) => a.distance - b.distance);
 const DistancesTable: React.FC = () => {
   return (
     <TableContainer
-      style={{ width: "100%", background: "hsl(35, 33%, 90%, 0.5)" }}
+      style={{
+        width: "90%",
+        margin: "0 5%",
+        background: "hsl(35, 33%, 90%, 0.5)",
+      }}
       component={Paper}
     >
       <Table sx={{ width: "100%" }} aria-label="simple table">
