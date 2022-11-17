@@ -100,6 +100,7 @@ const Venue: React.FC = () => {
             width="480"
             height="480"
             frameBorder="0"
+            title="hearts"
             className="giphy reveal"
             allowFullScreen
           ></iframe>
