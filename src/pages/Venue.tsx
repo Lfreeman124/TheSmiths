@@ -11,6 +11,7 @@ import MobileNavBar from "../components/NavBar";
 import flowers from "../images/flowers.png";
 import paper from "../images/paper.jpg";
 import arrow from "../images/arrow.png";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 const colors = {
   red: "#4b3b40",
   beige: "hsl(35, 33%, 90%)",
@@ -30,6 +31,16 @@ const Venue: React.FC = () => {
         reveals[i].classList.add("active");
       } else {
         reveals[i].classList.remove("active");
+      }
+    }
+    var animations = ["heart1", "heart2", "heart3", "heart4", "heart5"];
+    for (var j = 0; j < animations.length; j++) {
+      var element = document.getElementById(animations[j]);
+      var heartTop = element?.getBoundingClientRect().top;
+      if (heartTop && heartTop < windowHeight - 200) {
+        element?.classList.add("active");
+      } else {
+        element?.classList.remove("active");
       }
     }
   }
@@ -94,16 +105,14 @@ const Venue: React.FC = () => {
           className="map-container"
         >
           <img src={arrow} alt="arrow" className="reveal" />
+          <div className="hearts">
+            <FavoriteIcon className="heart" id="heart1" />
+            <FavoriteIcon className="heart" id="heart2" />
+            <FavoriteIcon className="heart" id="heart3" />
+            <FavoriteIcon className="heart" id="heart4" />
+            <FavoriteIcon className="heart" id="heart5" />
+          </div>
           <img id="map" src={map} alt="" />
-          <iframe
-            src="https://giphy.com/embed/pctSgguhp2F0bgBg6r"
-            width="480"
-            height="480"
-            frameBorder="0"
-            title="hearts"
-            className="giphy reveal"
-            allowFullScreen
-          ></iframe>
         </a>
         <div className="table-container">
           <DistancesTable />
@@ -232,23 +241,131 @@ const Container = styled.div`
       width: 40px;
       left: 65%;
       top: 85%;
-      transform: translate(-150px, -150px);
+      transform: translate(-150px, -150px) rotate(-20deg);
       opacity: 0;
       transition: 0.5s all ease-in;
       transition-delay: 1s;
     }
     .reveal.active {
-      transform: translate(0, 0);
+      transform: translate(0, 0) rotate(20deg);
       opacity: 1;
     }
-    .giphy {
-      width: 50%;
+    .hearts {
       position: relative;
-      top: -390px;
-      left: 50%;
-      opacity: 0;
-      transition-delay: 2s;
-      transform: translate(0, 0);
+      top: 180px;
+      left: 72%;
+      .heart {
+        width: 20px;
+        position: absolute;
+
+        opacity: 0;
+        /* transition: 0.5s all ease-in;
+      transition-delay: 1.5s; */
+      }
+
+      #heart1.active {
+        color: #dba4a4;
+        /* color: red; */
+        animation: heart1 2s linear;
+        animation-delay: 1.5s;
+      }
+      #heart2.active {
+        color: #d39090;
+        /* color: orange; */
+
+        animation: heart2 2s linear;
+        animation-delay: 1.6s;
+      }
+      #heart3.active {
+        color: #cb7d7d;
+        /* color: yellow; */
+
+        animation: heart3 2s linear;
+        animation-delay: 1.8s;
+      }
+      #heart4.active {
+        color: #c36969;
+        /* color: green; */
+
+        animation: heart4 2s linear;
+        animation-delay: 1.9s;
+      }
+      #heart5.active {
+        color: #bc5656;
+        /* color: blue; */
+
+        animation: heart5 2s linear;
+        animation-delay: 2.1s;
+      }
+      @keyframes heart1 {
+        30% {
+          transform: translate(-15px, -80px);
+          opacity: 1;
+        }
+        60% {
+          transform: translate(15px, -140px);
+        }
+        90% {
+          transform: translate(-20px, -190px);
+          opacity: 0;
+        }
+      }
+      @keyframes heart2 {
+        40% {
+          transform: translate(15px, -60px);
+          opacity: 1;
+        }
+        60% {
+          transform: translate(-30px, -130px);
+          width: 30px;
+        }
+        90% {
+          transform: translate(10px, -180px);
+          opacity: 0;
+          width: 20px;
+        }
+      }
+      @keyframes heart3 {
+        30% {
+          transform: translate(-20px, -40px);
+          opacity: 1;
+        }
+        70% {
+          transform: translate(25px, -145px);
+        }
+        90% {
+          transform: translate(-30px, -230px);
+          opacity: 0;
+        }
+      }
+      @keyframes heart4 {
+        20% {
+          transform: translate(20px, -20px);
+          opacity: 1;
+        }
+        60% {
+          transform: translate(-25px, -160px);
+          width: 30px;
+        }
+        90% {
+          transform: translate(0px, -240px);
+          opacity: 0;
+          width: 20px;
+        }
+      }
+      @keyframes heart5 {
+        30% {
+          transform: translate(-26px, -40px);
+          opacity: 1;
+        }
+        65% {
+          transform: translate(9px, -100px);
+        }
+        85% {
+          transform: translate(-35px, -200px);
+          opacity: 0;
+        }
+      }
     }
   }
   .table-container {
