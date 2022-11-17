@@ -1,6 +1,6 @@
 import React from "react";
 import wedderlie from "../images/wedderlie.png";
-import map from "../images/map.png";
+import map from "../images/map2.png";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import DistancesTable from "../components/DistancesTable";
@@ -10,7 +10,7 @@ import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
 import flowers from "../images/flowers.png";
 import paper from "../images/paper.jpg";
-
+import arrow from "../images/arrow.png";
 const colors = {
   red: "#4b3b40",
   beige: "hsl(35, 33%, 90%)",
@@ -20,6 +20,21 @@ const colors = {
 
 const Venue: React.FC = () => {
   const { showMenu } = useGlobalContext();
+  var windowHeight = window.innerHeight;
+
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      if (elementTop < windowHeight - 200) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+  window.addEventListener("scroll", reveal);
+  reveal();
 
   return showMenu ? (
     <MobileMenu />
@@ -78,7 +93,16 @@ const Venue: React.FC = () => {
           rel="noreferrer"
           className="map-container"
         >
+          <img src={arrow} alt="arrow" className="reveal" />
           <img id="map" src={map} alt="" />
+          <iframe
+            src="https://giphy.com/embed/pctSgguhp2F0bgBg6r"
+            width="480"
+            height="480"
+            frameBorder="0"
+            className="giphy reveal"
+            allowFullScreen
+          ></iframe>
         </a>
         <div className="table-container">
           <DistancesTable />
@@ -194,12 +218,36 @@ const Container = styled.div`
 
   .map-container {
     width: 100%;
-    margin: 1rem 0;
+    height: 250px;
+    margin: 1rem 0 5rem;
     #map {
       border-top: 5px solid ${colors.green};
       border-bottom: 5px solid ${colors.green};
-
-      width: 100%;
+      height: 100%;
+    }
+    .reveal {
+      color: ${colors.red};
+      position: relative;
+      width: 40px;
+      left: 65%;
+      top: 85%;
+      transform: translate(-150px, -150px);
+      opacity: 0;
+      transition: 0.5s all ease-in;
+      transition-delay: 1s;
+    }
+    .reveal.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    .giphy {
+      width: 50%;
+      position: relative;
+      top: -390px;
+      left: 50%;
+      opacity: 0;
+      transition-delay: 2s;
+      transform: translate(0, 0);
     }
   }
   .table-container {
