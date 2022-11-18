@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "./NavBar";
 
 const NavBar: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const { showMenu, setShowMenu } = useGlobalContext();
-  const matches = useMediaQuery("(max-width:600px)");
-  useEffect(() => {
-    setIsMobile(matches);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { showMenu, setShowMenu, isMobile } = useGlobalContext();
 
   const toggleMobileMenu = () => {
     setShowMenu((prev: any) => !prev);
