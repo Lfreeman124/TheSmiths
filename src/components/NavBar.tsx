@@ -4,7 +4,7 @@ import { useGlobalContext } from "../State";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
-const MobileNavBar: React.FC = () => {
+const NavBar: React.FC = () => {
   const { setShowMenu, isMobile } = useGlobalContext();
 
   const toggleMobileMenu = () => {
@@ -35,7 +35,7 @@ const MobileNavBar: React.FC = () => {
     </DesktopContainer>
   );
 };
-export default MobileNavBar;
+export default NavBar;
 
 const MobileContainer = styled.div`
   width: 100%;
