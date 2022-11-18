@@ -27,6 +27,8 @@ export const colors = {
   beige: "hsl(35, 33%, 90%)",
   grey: "#d8d6da",
   green: "#70877f",
+  cotton: "#b59c8b",
+  background: "#ebe8e4",
 };
 
 function App() {
@@ -54,7 +56,8 @@ export default App;
 
 const Container = styled.div`
   /* background: #eee7dd; */
-  background: #d8d6da;
+  /* background: #d8d6da; */
+  background: #ebe8e4;
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;

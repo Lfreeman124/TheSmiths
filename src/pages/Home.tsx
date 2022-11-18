@@ -7,12 +7,12 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
-import background from "../images/background.jpg";
+import background from "../images/babys-breath-min.png";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands3.png";
-import backgroundUpside from "../images/background-upside.jpg";
+import backgroundUpside from "../images/babys-breath-up.png";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
@@ -281,7 +281,7 @@ const Home: React.FC = () => {
                 variant="outlined"
                 sx={{ borderRadius: "30px" }}
               >
-                FAQ
+                Q & A
               </Button>
             </Link>
           </div>
@@ -323,10 +323,11 @@ export default Home;
 const OuterContainer = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: #d8d6da;
+  /* background: #d8d6da; */
   background-image: url(${background});
   background-repeat: no-repeat;
-  background-size: 120%;
+  background-size: 100%;
+  background-position: 0 -230px;
   color: #4b3b40;
   overflow: hidden;
   @media only screen and (min-width: 600px) {
@@ -356,7 +357,8 @@ const OuterContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 1rem;
-    background: hsla(35, 33%, 90%, 0.8);
+    /* background: hsla(35, 33%, 90%, 0.8); */
+    background: hsla(24, 22%, 75%, 0.7);
 
     .banner {
       display: flex;
@@ -492,8 +494,13 @@ const OuterContainer = styled.div`
     .where {
       margin: 1rem 5%;
       width: 90%;
-      background: hsla(35, 33%, 90%, 0.7);
+      /* background: hsla(35, 33%, 90%, 0.7); */
+      /* background: hsla(24, 22%, 75%, 0.5); */
+      background: hsla(159, 9%, 48%, 0.2);
+
       padding: 5px;
+      box-shadow: 0px 10px 15px 5px hsla(24, 22%, 75%, 0.8);
+
       h2 {
         font-family: "Gwendolyn";
         font-size: 2.5rem;
@@ -507,7 +514,6 @@ const OuterContainer = styled.div`
       border-top-right-radius: 100px;
       border-bottom-right-radius: 100px;
       border-left: 5px solid #4b3b40;
-      box-shadow: 0px 0px 10px 10px hsla(35, 33%, 90%, 0.7);
       p {
         padding: 0 1rem 1rem 5px;
       }
@@ -523,7 +529,6 @@ const OuterContainer = styled.div`
       border-top-left-radius: 100px;
       border-bottom-left-radius: 100px;
       border-right: 5px solid #4b3b40;
-      box-shadow: 0px 0px 10px 10px hsla(35, 33%, 90%, 0.7);
       p {
         text-align: right;
         padding: 0 5px 1rem 1rem;
@@ -576,7 +581,7 @@ const OuterContainer = styled.div`
     width: 100%;
     position: relative;
     z-index: 5;
-    background: linear-gradient(#d8d6da, #d9d6da);
+    background: #eae8e3;
   }
   .desktop-flex {
     @media only screen and (min-width: 600px) {
@@ -602,7 +607,8 @@ const OuterContainer = styled.div`
       width: 100%;
       height: 600px;
       text-align: center;
-      background: hsla(290, 5%, 80%, 0.7);
+      /* background: hsla(290, 5%, 80%, 0.7); */
+      background: hsla(34, 15%, 88.5%, 0.7);
       h2 {
         font-size: 3rem;
         font-family: "Gwendolyn";
@@ -658,7 +664,10 @@ const OuterContainer = styled.div`
       flex-direction: column;
       align-items: center;
       color: #4b3b40;
-      box-shadow: 0px 0px 30px 100px #d8d6da;
+      background: hsla(24, 22%, 75%, 0.7);
+      /* background: hsla(159, 9%, 48%, 0.3); */
+
+      box-shadow: 0px 0px 30px 100px #eae8e3;
 
       h2 {
         font-size: 2.5rem;
@@ -738,7 +747,7 @@ const OuterContainer = styled.div`
     width: 90%;
     margin: 10% 5%;
     border-radius: 10px;
-    border: 2px solid hsl(35, 33%, 90%);
+    /* border: 1px solid #4b3b40; */
     text-align: center;
     background: url(${concrete});
     background-size: cover;
@@ -748,7 +757,8 @@ const OuterContainer = styled.div`
       width: 100%;
       height: 100%;
       border-radius: 10px;
-      background: hsla(35, 33%, 90%, 0.3);
+      /* background: hsla(24, 22%, 75%, 0.3); */
+      /* background: hsla(159, 9%, 48%, 0.2); */
     }
     h2 {
       font-family: "Gwendolyn";
@@ -793,8 +803,8 @@ const OuterContainer = styled.div`
     text-align: center;
     background-image: url(${backgroundUpside});
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+    background-size: 100%;
+    background-position: 0 100px;
     color: hsla(35, 33%, 90%);
     .inner-rsvp {
       padding: 2rem;
