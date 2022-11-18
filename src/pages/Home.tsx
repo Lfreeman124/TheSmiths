@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import us from "../images/us2.jpg";
+import us from "../images/us3.jpeg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
@@ -7,7 +7,7 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
-import background from "../images/babys-breath-min.png";
+import background from "../images/babys-breath.png";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/thistle1.jpg";
 import concrete from "../images/concrete-min.jpg";
@@ -97,9 +97,9 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          <Countdown />
+          {/* <Countdown /> */}
         </section>
-        <div className="button-container">
+        {/* <div className="button-container">
           <Link to="/rsvp">
             <Button
               className="button"
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
               RSVP
             </Button>
           </Link>
-        </div>
+        </div> */}
       </section>
       <section className="details">
         <div className="info reveal">
@@ -327,7 +327,7 @@ const OuterContainer = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 0 -230px;
+  background-position: 0 -280px;
   color: #4b3b40;
   overflow: hidden;
   @media only screen and (min-width: 600px) {
@@ -350,7 +350,7 @@ const OuterContainer = styled.div`
 
   .container {
     color: #4b3b40;
-    margin: 1rem 10% 0;
+    margin: 5rem 10% 0;
     border-radius: 5px;
     width: 80%;
     display: flex;
@@ -358,7 +358,7 @@ const OuterContainer = styled.div`
     align-items: center;
     padding: 0 1rem;
     /* background: hsla(35, 33%, 90%, 0.8); */
-    background: hsla(24, 22%, 75%, 0.7);
+    /* background: hsla(24, 22%, 75%, 0.7); */
 
     .banner {
       display: flex;
@@ -384,7 +384,7 @@ const OuterContainer = styled.div`
       }
       img {
         margin: 1rem;
-        width: 60%;
+        width: 70%;
         opacity: 0.8;
         border-radius: 5px;
       }
@@ -421,11 +421,14 @@ const OuterContainer = styled.div`
   }
 
   .details {
+    width: 80%;
+    margin: 3rem 10% 0;
     padding: 2rem 0;
     text-align: center;
     font-size: 2.2rem;
     font-family: "Gwendolyn";
     color: #4b3b40;
+    border-top: 2px dotted #4b3b40;
     p {
       margin: 1rem;
     }
@@ -490,7 +493,7 @@ const OuterContainer = styled.div`
   }
 
   .venue-accom {
-    height: 580px;
+    height: 540px;
     .where {
       margin: 1rem 5%;
       width: 90%;
