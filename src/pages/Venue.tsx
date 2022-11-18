@@ -9,7 +9,7 @@ import crest from "../images/crest.png";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
 import flowers from "../images/flowers.png";
-import paper from "../images/paper.jpg";
+import paper from "../images/texture.png";
 import arrow from "../images/arrow.png";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 const colors = {
@@ -71,6 +71,8 @@ const Venue: React.FC = () => {
     <React.Fragment>
       <Container>
         <MobileNavBar />
+        <div className="green-line"></div>
+
         <div className="paper">
           <div className="desktop-layout">
             <div className="header">
@@ -116,6 +118,8 @@ const Venue: React.FC = () => {
         <div className="image-container">
           <img src={flowers} alt="flowers" />
         </div>
+        <div className="green-line"></div>
+
         <a
           href="https://www.google.com/maps/place/Wedderlie+House/@55.9058629,-3.3056523,9z/data=!4m5!3m4!1s0x4887738e9ab230db:0x1083b8feb46b265e!8m2!3d55.7562332!4d-2.5751903"
           target="_blank"
@@ -163,17 +167,23 @@ const Container = styled.div`
       width: 70%;
     }
   }
-  .paper {
-    background-image: url(${paper});
-    background-size: 50%;
+  .green-line {
     width: 90%;
     margin: 0 5%;
+    border-top: 5px solid #70877f;
+  }
+  .paper {
+    /* background-image: url(${paper});
+    background-size: 100%; */
+    width: 90%;
+    margin: 1rem 5% 0;
     border-radius: 10px;
 
     .desktop-layout {
       width: 100%;
       height: 100%;
-      background: hsla(35, 33%, 70%, 0.3);
+      /* background: hsla(35, 33%, 85%, 0.7); */
+      background: hsla(24, 22%, 65%, 0.3);
       border-radius: 10px;
       padding-bottom: 2rem;
       .header {
@@ -208,9 +218,9 @@ const Container = styled.div`
         }
       }
       .blurb-and-links {
-        margin: 1rem 10% 0;
+        margin: 1rem 10% 1rem;
         width: 80%;
-        background: hsla(342, 12%, 26%, 0.1);
+        background: hsla(34, 15%, 91%, 0.7);
         border: 1px dotted ${colors.red};
         background-size: cover;
         display: flex;
@@ -234,9 +244,11 @@ const Container = styled.div`
   }
 
   .image-container {
-    width: 100%;
+    width: 80%;
+    margin: 1rem 10% 0;
     display: flex;
-    background: hsl(270, 10%, 25%);
+    /* background: hsl(270, 10%, 25%); */
+    background: hsla(34, 15%, 56%);
 
     img {
       width: 100%;

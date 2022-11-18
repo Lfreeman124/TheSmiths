@@ -53,8 +53,7 @@ const Container = styled.div`
     justify-content: center;
     position: absolute;
     z-index: 5;
-    background: #d8d6da;
-    box-shadow: 0px 10px 10px 10px #d8d6da;
+    box-shadow: 0px 10px 10px 10px #eae8e3;
     .line {
       background: #70877f;
       width: 2px;
@@ -108,7 +107,7 @@ const Container = styled.div`
   .dance {
     margin-top: 270px;
     width: 100%;
-    background: hsl(270, 10%, 25%);
+    background: hsla(34, 15%, 56%);
     img {
       width: 100%;
       opacity: 0.8;
@@ -117,7 +116,7 @@ const Container = styled.div`
   .cover {
     width: 100%;
     height: 30px;
-    background: #d8d6da;
+    background: #eae8e3;
     position: relative;
     z-index: 10;
     margin-top: -5px;

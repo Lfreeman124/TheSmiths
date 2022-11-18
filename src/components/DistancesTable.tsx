@@ -40,7 +40,7 @@ const DistancesTable: React.FC = () => {
       style={{
         width: "90%",
         margin: "0 5%",
-        background: "hsl(35, 33%, 90%, 0.5)",
+        background: "hsla(24, 22%, 75%, 0.5)",
       }}
       component={Paper}
     >

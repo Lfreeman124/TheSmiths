@@ -43,11 +43,11 @@ const SongList: React.FC<Props> = (props: any) => {
   return (
     <TableContainer
       style={{
-        width: "100%",
+        width: "90%",
         padding: "0.5rem",
-        margin: "0 auto",
-        borderRadius: "10px",
-        background: "hsl(35, 33%, 90%, 0.5)",
+        margin: "3rem 5% 0",
+        borderRadius: "5px",
+        background: "hsla(24, 22%, 75%, 0.5)",
       }}
       component={Paper}
     >

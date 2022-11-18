@@ -351,7 +351,7 @@ const OuterContainer = styled.div`
   .container {
     color: #4b3b40;
     margin: 1rem 10% 0;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -386,7 +386,7 @@ const OuterContainer = styled.div`
         margin: 1rem;
         width: 60%;
         opacity: 0.8;
-        border-radius: 10px;
+        border-radius: 5px;
       }
       nav {
         width: 100%;
@@ -464,7 +464,7 @@ const OuterContainer = styled.div`
     position: relative;
     margin-bottom: 5rem;
     .wedderlie-container {
-      border-radius: 10px;
+      border-radius: 5px;
       width: 80%;
       height: 100%;
       margin: 0 10%;
@@ -494,9 +494,12 @@ const OuterContainer = styled.div`
     .where {
       margin: 1rem 5%;
       width: 90%;
+      //beige
       /* background: hsla(35, 33%, 90%, 0.7); */
-      /* background: hsla(24, 22%, 75%, 0.5); */
-      background: hsla(159, 9%, 48%, 0.2);
+      //pink
+      background: hsla(24, 22%, 75%, 0.5);
+      //green
+      /* background: hsla(159, 9%, 48%, 0.2); */
 
       padding: 5px;
       box-shadow: 0px 10px 15px 5px hsla(24, 22%, 75%, 0.8);
@@ -746,7 +749,7 @@ const OuterContainer = styled.div`
   .faq {
     width: 90%;
     margin: 10% 5%;
-    border-radius: 10px;
+    border-radius: 5px;
     /* border: 1px solid #4b3b40; */
     text-align: center;
     background: url(${concrete});
@@ -756,7 +759,7 @@ const OuterContainer = styled.div`
 
       width: 100%;
       height: 100%;
-      border-radius: 10px;
+      border-radius: 5px;
       /* background: hsla(24, 22%, 75%, 0.3); */
       /* background: hsla(159, 9%, 48%, 0.2); */
     }
@@ -808,7 +811,7 @@ const OuterContainer = styled.div`
     color: hsla(35, 33%, 90%);
     .inner-rsvp {
       padding: 2rem;
-      border-radius: 10px;
+      border-radius: 5px;
       width: 80%;
       margin: 10%;
       background: hsla(342, 12%, 26%, 0.7);

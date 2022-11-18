@@ -47,6 +47,8 @@ const Registry: React.FC = () => {
       <NavBar />
 
       <Container>
+        <div className="green-line"></div>
+
         <div className="paper">
           <div className="header">
             <h1>Registry</h1>
@@ -69,6 +71,8 @@ const Registry: React.FC = () => {
         <div className="flowers-container">
           <img src={flowers} alt="flowers" />
         </div>
+        <div className="green-line"></div>
+
         <div className="options">
           {options.map((each: any, index) => (
             <a
@@ -121,13 +125,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  .green-line {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-top: 5px solid #70877f;
+  }
   .paper {
-    background-image: url(${paper});
-    background-size: 50%;
+    /* background-image: url(${paper});
+    background-size: 50%; */
     border-radius: 10px;
     margin-bottom: 1rem;
     .header {
-      background: hsla(35, 33%, 70%, 0.3);
+      /* background: hsla(35, 33%, 70%, 0.3); */
+      background: hsla(24, 22%, 65%, 0.3);
+
       color: ${colors.red};
       border-radius: 10px;
       font-size: 20px;
@@ -154,11 +165,10 @@ const Container = styled.div`
   }
 
   .flowers-container {
-    width: 100%;
+    width: 80%;
     display: flex;
-    background: hsl(270, 10%, 25%);
-    margin-bottom: 2rem;
-    border-bottom: 5px solid #70877f;
+    background: hsl(34, 15%, 56%);
+    margin: 1rem 10%;
     img {
       width: 100%;
       opacity: 0.8;
@@ -169,6 +179,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 3rem;
     .options-tile {
       width: 250px;
       margin: 1rem;

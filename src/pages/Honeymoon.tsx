@@ -56,68 +56,74 @@ const Honeymoon: React.FC = () => {
   ) : (
     <React.Fragment>
       <NavBar />
+
       <Container>
-        <h2>Where should we go on our honeymoon?</h2>
-        <div className="options-container">
-          <div className="options">
-            <div id="road" className="option-container">
-              <div
-                style={{
-                  boxShadow:
-                    currentVote === "road"
-                      ? "0px 0px 10px 10px #d08d4e"
-                      : "none",
-                }}
-                className="circle"
-                onClick={() => setCurrentVote("road")}
-              >
-                <img src={car} alt="car" />
+        <div className="green-line"></div>
+
+        <div className="inner-window">
+          <h2>Where should we go on our honeymoon?</h2>
+          <div className="options-container">
+            <div className="options">
+              <div id="road" className="option-container">
+                <div
+                  style={{
+                    boxShadow:
+                      currentVote === "road"
+                        ? "0px 0px 10px 10px #d08d4e"
+                        : "none",
+                  }}
+                  className="circle"
+                  onClick={() => setCurrentVote("road")}
+                >
+                  <img src={car} alt="car" />
+                </div>
+                <div className="circle-label">Road Trip</div>
               </div>
-              <div className="circle-label">Road Trip</div>
+              <div id="bali" className="option-container">
+                <div
+                  style={{
+                    boxShadow:
+                      currentVote === "bali"
+                        ? "0px 0px 10px 10px #d08d4e"
+                        : "none",
+                  }}
+                  className="circle"
+                  onClick={() => setCurrentVote("bali")}
+                >
+                  <img src={beach} alt="beach" />
+                </div>
+                <div className="circle-label">Bali</div>
+              </div>
             </div>
-            <div id="bali" className="option-container">
-              <div
-                style={{
-                  boxShadow:
-                    currentVote === "bali"
-                      ? "0px 0px 10px 10px #d08d4e"
-                      : "none",
-                }}
-                className="circle"
-                onClick={() => setCurrentVote("bali")}
+            <div className="button-container">
+              <Button
+                className="vote-button"
+                fullWidth
+                variant="contained"
+                onClick={voteNow}
               >
-                <img src={beach} alt="beach" />
-              </div>
-              <div className="circle-label">Bali</div>
+                Vote
+              </Button>
             </div>
           </div>
-          <div className="button-container">
-            <Button
-              className="vote-button"
-              fullWidth
-              variant="contained"
-              onClick={voteNow}
-            >
-              Vote
-            </Button>
+          <div className="results-container">
+            <div className="results-label">Road Trip: {votes.road} </div>
+            <div className="results-bar">
+              <div
+                style={{ width: `${votes.road * 2}%` }}
+                className="results-filling"
+              ></div>
+            </div>
+            <div className="results-label">Bali: {votes.bali}</div>
+            <div className="results-bar">
+              <div
+                style={{ width: `${votes.bali * 2}%` }}
+                className="results-filling"
+              ></div>
+            </div>
           </div>
         </div>
-        <div className="results-container">
-          <div className="results-label">Road Trip: {votes.road} </div>
-          <div className="results-bar">
-            <div
-              style={{ width: `${votes.road * 2}%` }}
-              className="results-filling"
-            ></div>
-          </div>
-          <div className="results-label">Bali: {votes.bali}</div>
-          <div className="results-bar">
-            <div
-              style={{ width: `${votes.bali * 2}%` }}
-              className="results-filling"
-            ></div>
-          </div>
-        </div>
+        <div className="green-line"></div>
       </Container>
     </React.Fragment>
   );
@@ -127,16 +133,27 @@ export default Honeymoon;
 
 const Container = styled.div`
   width: 100%;
+  .green-line {
+    width: 90%;
+    margin: 0 5% 1rem;
+    border-top: 5px solid #70877f;
+  }
+  .inner-window {
+    width: 90%;
+    margin: 0 5% 1rem;
+    border-radius: 5px;
+    background: hsla(24, 22%, 65%, 0.3);
+  }
 
   h2 {
     font-family: "Gwendolyn";
     padding: 1rem;
     width: 90%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 300;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
     text-align: center;
-    background: ${colors.beige};
+    /* background: hsla(24, 22%, 65%, 0.3); */
     color: ${colors.red};
     border-radius: 10px;
   }

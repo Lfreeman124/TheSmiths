@@ -7,7 +7,7 @@ import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
 import { useGlobalContext } from "../State";
 import flowers from "../images/flowers.png";
-import paper from "../images/paper.jpg";
+import paper from "../images/texture.png";
 
 const colors = {
   red: "#4b3b40",
@@ -75,6 +75,7 @@ const Accommodation: React.FC = () => {
         <div className="flowers-container">
           <img src={flowers} alt="flowers" />
         </div>
+
         {options.map((each, index) => {
           return (
             <div key={index} className="accommodation-container">
@@ -123,14 +124,16 @@ const Container = styled.div`
     border-top: 5px solid #70877f;
   }
   .paper {
-    background-image: url(${paper});
-    background-size: 50%;
+    /* background-image: url(${paper});
+    background-size: 100%; */
     border-radius: 10px;
 
     .header {
       .header-inside {
         padding: 1rem 2rem;
-        background: hsla(35, 33%, 70%, 0.3);
+        /* background: hsla(35, 33%, 85%, 0.7); */
+        background: hsla(24, 22%, 65%, 0.3);
+
         border-radius: 10px;
       }
 
@@ -143,10 +146,10 @@ const Container = styled.div`
   }
 
   .flowers-container {
-    width: 100%;
+    width: 80%;
     display: flex;
-    background: hsl(270, 10%, 25%);
-    margin-bottom: -2rem;
+    background: hsla(34, 15%, 56%);
+    margin: 1rem 10% -2rem;
     img {
       width: 100%;
       opacity: 0.8;

@@ -24,11 +24,16 @@ const theme = createTheme({
 
 export const colors = {
   red: "#4b3b40",
-  beige: "hsl(35, 33%, 90%)",
+  redhsl: "hsl(342, 12%, 26%)",
+  beige: "hsl(35, 33%, 70%)",
   grey: "#d8d6da",
+  greyhsl: "",
   green: "#70877f",
-  cotton: "#b59c8b",
+  greenhsl: "hsl(159, 9%, 48%)",
+  pink: "#b59c8b",
+  pinkhsl: "hsl(24, 22%, 75%)",
   background: "#ebe8e4",
+  backgroundhsl: "hsl(34, 15%, 91%)",
 };
 
 function App() {

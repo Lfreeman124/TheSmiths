@@ -11,7 +11,7 @@ import emailjs from "emailjs-com";
 import plane from "../images/airplane.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
-import background from "../images/background.jpg";
+import background from "../images/babys-breath-min.png";
 
 import {
   FormControlLabel,
@@ -120,7 +120,7 @@ const RSVP: React.FC = () => {
         ) : (
           <div className="body">
             <FormLabel>
-              <h3 className="heading">Kindly RSVP before 31 January, 2023</h3>
+              <h3 className="heading">Will you join us?</h3>
             </FormLabel>
             <TextField
               value={formInfo.name}
@@ -131,9 +131,9 @@ const RSVP: React.FC = () => {
               sx={{ m: "1rem 0" }}
             />
             <FormControl sx={{ display: "flex" }}>
-              <FormLabel sx={{ textAlign: "center" }}>
+              {/* <FormLabel sx={{ textAlign: "center" }}>
                 <h4>Will you be attending?</h4>
-              </FormLabel>
+              </FormLabel> */}
               <RadioGroup
                 sx={{ m: "1rem auto" }}
                 id="rsvp"
@@ -165,30 +165,34 @@ const RSVP: React.FC = () => {
                 />
               </RadioGroup>
               {formInfo.rsvp === "yes" ? (
-                <Button
-                  className="button"
-                  style={{
-                    display: showing.accom1 ? "none" : "flex",
-                  }}
-                  sx={{ mr: 0 }}
-                  variant="contained"
-                  onClick={handleShowAccom1}
-                >
-                  Next
-                </Button>
+                <div className="button-container">
+                  <Button
+                    className="button"
+                    style={{
+                      display: showing.accom1 ? "none" : "flex",
+                    }}
+                    fullWidth
+                    variant="contained"
+                    onClick={handleShowAccom1}
+                  >
+                    Next
+                  </Button>
+                </div>
               ) : (
-                <Button
-                  className="button"
-                  style={{
-                    display: showing.accom1 ? "none" : "flex",
-                  }}
-                  sx={{ mr: 0 }}
-                  variant="contained"
-                  onClick={handleShowAccom1}
-                  endIcon={<SendIcon />}
-                >
-                  Send
-                </Button>
+                <div className="button-container">
+                  <Button
+                    className="button"
+                    style={{
+                      display: showing.accom1 ? "none" : "flex",
+                    }}
+                    fullWidth
+                    variant="contained"
+                    onClick={handleShowAccom1}
+                    endIcon={<SendIcon />}
+                  >
+                    Send
+                  </Button>
+                </div>
               )}
             </FormControl>
             <FormControl
@@ -292,19 +296,21 @@ const RSVP: React.FC = () => {
                 onChange={handleInputChange}
               />
             </FormControl>
-            <Button
-              className="button"
-              onClick={sendEmail}
-              fullWidth
-              style={{
-                display: showing.food ? "flex" : "none",
-                marginTop: "1rem",
-              }}
-              variant="contained"
-              endIcon={<SendIcon />}
-            >
-              Send
-            </Button>
+            <div className="button-container">
+              <Button
+                className="button"
+                onClick={sendEmail}
+                fullWidth
+                style={{
+                  display: showing.food ? "flex" : "none",
+                  marginTop: "1rem",
+                }}
+                variant="contained"
+                endIcon={<SendIcon />}
+              >
+                Send
+              </Button>
+            </div>
           </div>
         )}
       </div>
@@ -318,7 +324,6 @@ const OuterContainer = styled.div`
   padding: 0 0 3rem;
   width: 100%;
   min-height: 100vh;
-  background: #d8d6da;
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: contain;
@@ -328,7 +333,9 @@ const OuterContainer = styled.div`
   .container {
     margin: 1rem 10%;
     width: 80%;
-    background: hsla(35, 33%, 90%, 0.8);
+    /* background: hsla(35, 33%, 90%, 0.8); */
+    background: hsla(24, 22%, 80%, 0.8);
+
     padding: 0 0 2rem;
     border-radius: 10px;
     @media only screen and (min-width: 600px) {
@@ -339,10 +346,14 @@ const OuterContainer = styled.div`
   }
   .body {
     padding: 1rem;
-    color: #34434d;
+    color: #4b3b40;
     h3,
     h4 {
-      color: #34434d;
+      color: #4b3b40;
+    }
+    .button-container {
+      width: 60%;
+      margin: 1rem auto 0;
     }
     .button:active {
       background: #70877f;
@@ -350,8 +361,11 @@ const OuterContainer = styled.div`
       top: 2px;
     }
     h3 {
-      font-size: 1rem;
-      font-weight: 300;
+      width: 100%;
+      text-align: center;
+      font-family: "Gwendolyn";
+      font-size: 2rem;
+      font-weight: 200;
       margin-bottom: 1rem;
     }
     @media only screen and (min-width: 600px) {
