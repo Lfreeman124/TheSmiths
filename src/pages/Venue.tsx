@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import wedderlie from "../images/wedderlie.png";
 import map from "../images/map2.png";
 import styled from "styled-components";
@@ -23,21 +23,30 @@ const Venue: React.FC = () => {
   const { showMenu } = useGlobalContext();
   var windowHeight = window.innerHeight;
 
+  var animations = [
+    ".heart1",
+    ".heart2",
+    ".heart3",
+    ".heart4",
+    ".heart5",
+    ".reveal",
+  ];
+
   function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      if (elementTop < windowHeight - 200) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-    var animations = ["heart1", "heart2", "heart3", "heart4", "heart5"];
+    // var reveals = document.querySelectorAll(".reveal");
+    // for (var i = 0; i < reveals.length; i++) {
+    //   var elementTop = reveals[i].getBoundingClientRect().top;
+    //   if (elementTop < windowHeight - 100) {
+    //     reveals[i].classList.add("active");
+    //   } else {
+    //     reveals[i].classList.remove("active");
+    //   }
+    // }
+
     for (var j = 0; j < animations.length; j++) {
-      var element = document.getElementById(animations[j]);
+      var element = document.querySelector(animations[j]);
       var heartTop = element?.getBoundingClientRect().top;
-      if (heartTop && heartTop < windowHeight - 200) {
+      if (heartTop && heartTop < windowHeight - 100) {
         element?.classList.add("active");
       } else {
         element?.classList.remove("active");
@@ -45,7 +54,15 @@ const Venue: React.FC = () => {
     }
   }
   window.addEventListener("scroll", reveal);
-  reveal();
+
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      reveal();
+    } else {
+      window.addEventListener("load", reveal);
+      return () => window.removeEventListener("load", reveal);
+    }
+  }, []);
 
   return showMenu ? (
     <MobileMenu />
@@ -106,11 +123,11 @@ const Venue: React.FC = () => {
         >
           <img src={arrow} alt="arrow" className="reveal" />
           <div className="hearts">
-            <FavoriteIcon className="heart" id="heart1" />
-            <FavoriteIcon className="heart" id="heart2" />
-            <FavoriteIcon className="heart" id="heart3" />
-            <FavoriteIcon className="heart" id="heart4" />
-            <FavoriteIcon className="heart" id="heart5" />
+            <FavoriteIcon className="heart heart1" id="heart1" />
+            <FavoriteIcon className="heart heart2" id="heart2" />
+            <FavoriteIcon className="heart heart3" id="heart3" />
+            <FavoriteIcon className="heart heart4" id="heart4" />
+            <FavoriteIcon className="heart heart5" id="heart5" />
           </div>
           <img id="map" src={map} alt="" />
         </a>
@@ -265,34 +282,34 @@ const Container = styled.div`
         top: 0;
       }
 
-      #heart1.active {
+      .heart1.active {
         color: #dba4a4;
         /* color: red; */
         animation: heart1 2s linear;
         animation-delay: 1.5s;
       }
-      #heart2.active {
+      .heart2.active {
         color: #d39090;
         /* color: orange; */
 
         animation: heart2 2s linear;
         animation-delay: 1.6s;
       }
-      #heart3.active {
+      .heart3.active {
         color: #cb7d7d;
         /* color: yellow; */
 
         animation: heart3 2s linear;
         animation-delay: 1.8s;
       }
-      #heart4.active {
+      .heart4.active {
         color: #c36969;
         /* color: green; */
 
         animation: heart4 2s linear;
         animation-delay: 1.9s;
       }
-      #heart5.active {
+      .heart5.active {
         color: #bc5656;
         /* color: blue; */
 
