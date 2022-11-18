@@ -133,6 +133,7 @@ export default Honeymoon;
 
 const Container = styled.div`
   width: 100%;
+  padding-bottom: 3rem;
   .green-line {
     width: 90%;
     margin: 0 5% 1rem;

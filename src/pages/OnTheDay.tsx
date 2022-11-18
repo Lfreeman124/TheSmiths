@@ -55,8 +55,9 @@ const Container = styled.div`
     z-index: 5;
     box-shadow: 0px 10px 10px 10px #eae8e3;
     .line {
-      background: #70877f;
-      width: 2px;
+      /* background: #70877f; */
+      border-right: 2px dotted #70877f;
+      width: 1px;
       margin: 0 2px;
     }
     .line1 {
