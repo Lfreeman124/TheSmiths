@@ -167,7 +167,7 @@ const Container = styled.div`
   .flowers-container {
     width: 80%;
     display: flex;
-    background: hsl(34, 15%, 56%);
+    background: hsl(34, 15%, 54%);
     margin: 1rem 10%;
     img {
       width: 100%;

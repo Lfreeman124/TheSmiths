@@ -248,7 +248,7 @@ const Container = styled.div`
     margin: 1rem 10% 0;
     display: flex;
     /* background: hsl(270, 10%, 25%); */
-    background: hsla(34, 15%, 56%);
+    background: hsla(34, 15%, 54%);
 
     img {
       width: 100%;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
@@ -7,7 +7,7 @@ import dancing from "../images/dancing.webp";
 
 const OnTheDay: React.FC = () => {
   const { showMenu } = useGlobalContext();
-
+  const [loading, setLoading] = useState(true);
   return showMenu ? (
     <MobileMenu />
   ) : (
@@ -34,8 +34,13 @@ const OnTheDay: React.FC = () => {
         <div className="line line7"></div>
         <div className="line line8"></div>
       </div>
-      <div className="dance">
-        <img src={dancing} alt="dance" />
+      <div style={{ display: loading ? "none" : "block" }} className="dance">
+        <img
+          onLoad={() => setLoading(false)}
+          style={{ display: loading ? "hidden" : "block" }}
+          src={dancing}
+          alt="dance"
+        />
       </div>
       <div className="cover"></div>
     </Container>
@@ -108,7 +113,7 @@ const Container = styled.div`
   .dance {
     margin-top: 270px;
     width: 100%;
-    background: hsla(34, 15%, 56%);
+    background: hsla(34, 15%, 54%);
     img {
       width: 100%;
       opacity: 0.8;

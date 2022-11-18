@@ -11,7 +11,7 @@ import emailjs from "emailjs-com";
 import plane from "../images/airplane.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
-import background from "../images/babys-breath-min.png";
+import background from "../images/babys-breath.png";
 
 import {
   FormControlLabel,
