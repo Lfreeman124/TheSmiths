@@ -22,7 +22,7 @@ const NavBar: React.FC = () => {
     { link: "/honeymoon", text: "Honeymoon" },
     { link: "/request", text: "Song Requests" },
     { link: "/edinburgh", text: "Edinburgh" },
-    { link: "/faq", text: "FAQ" },
+    { link: "/faq", text: "Q&A" },
   ];
 
   const navLinks = (

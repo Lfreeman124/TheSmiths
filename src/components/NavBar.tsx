@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
         <Link to="/registry">Registry</Link>
         <Link to="/edinburgh">Edinburgh</Link>
         <Link className="last" to="/faq">
-          FAQ
+          Q&A
         </Link>
       </nav>
     </DesktopContainer>

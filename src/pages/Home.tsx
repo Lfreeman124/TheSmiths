@@ -327,7 +327,7 @@ const OuterContainer = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 0 -280px;
+  background-position: 0 -250px;
   color: #4b3b40;
   overflow: hidden;
   @media only screen and (min-width: 600px) {
@@ -350,7 +350,7 @@ const OuterContainer = styled.div`
 
   .container {
     color: #4b3b40;
-    margin: 5rem 10% 0;
+    margin: 2rem 10% 0;
     border-radius: 5px;
     width: 80%;
     display: flex;
@@ -358,14 +358,14 @@ const OuterContainer = styled.div`
     align-items: center;
     padding: 0 1rem;
     /* background: hsla(35, 33%, 90%, 0.8); */
-    /* background: hsla(24, 22%, 75%, 0.7); */
+    background: hsla(24, 22%, 75%, 0.5);
 
     .banner {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-
+      padding-bottom: 2rem;
       .header {
         padding: 1rem 0 0;
         width: 100%;
@@ -376,10 +376,12 @@ const OuterContainer = styled.div`
       h3 {
         font-family: "Gwendolyn";
         font-size: 1.5rem;
+        margin: 1rem auto;
       }
       h2 {
         margin: 0;
-        font-size: 3rem;
+        font-size: 3.5rem;
+        letter-spacing: 4px;
         font-weight: 400;
       }
       img {

@@ -1,0 +1,55 @@
+export const recommendations = [
+  {
+    title: "Graeme and Lauren recommend...",
+    data: [
+      { name: "Royal Botanic Garden", type: "Gardens" },
+      { name: "The Pantry", type: "Brunch" },
+      { name: "Herbie of Edinburgh", type: "Picnic Supplies" },
+      { name: "Holyrood 9A", type: "Drinks and Pizza" },
+      { name: "Bryant and Mac", type: "cocktails" },
+      { name: "Brew Dog", type: "Beer Pub" },
+      { name: "The Hanging Bat", type: "Beer Bar" },
+      { name: "La Casa Dalry", type: "Tapas" },
+      { name: "Dishoom", type: "Indian" },
+      { name: "Artisan Roast", type: "Coffee" },
+      { name: "Cairngorm Coffee", type: "Coffee" },
+      { name: "Victoria Street", type: "Shopping" },
+    ],
+  },
+  {
+    title: "James and Laura recommend...",
+    data: [
+      { name: "", type: "" },
+      { name: "", type: "" },
+      { name: "", type: "" },
+      { name: "", type: "" },
+      { name: "", type: "" },
+    ],
+  },
+  {
+    title: "Christopher and Julie recommend...",
+    data: [
+      { name: "", type: "" },
+      { name: "", type: "" },
+      { name: "", type: "" },
+      { name: "", type: "" },
+      { name: "", type: "" },
+    ],
+  },
+  {
+    title: "Jonathon and Sinead recommend...",
+    data: [
+      { name: "Piggs Wine Bar", type: "Wine, charcuterie, tapas" },
+      { name: "Raeburn Hotel", type: "Cocktails and Drinks" },
+      { name: "Scran & Scallie", type: "Gastropub (steak pie)" },
+      { name: "Hawksmoor", type: "Sunday lunch or steak" },
+      { name: "Leith Chop House", type: "Chateaubriand" },
+      { name: "Nor Loft", type: "Cocktails and a View" },
+      { name: "Dusit", type: "Authentic Thai" },
+      { name: "Cambridge Bar", type: "Burgers" },
+      { name: "Baba", type: "Lebanese" },
+      { name: "Ship on the Shore", type: "Seafood" },
+      { name: "New Chapter", type: "Scottish Staples" },
+    ],
+  },
+];
