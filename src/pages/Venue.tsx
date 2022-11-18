@@ -62,6 +62,7 @@ const Venue: React.FC = () => {
       window.addEventListener("load", reveal);
       return () => window.removeEventListener("load", reveal);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return showMenu ? (
