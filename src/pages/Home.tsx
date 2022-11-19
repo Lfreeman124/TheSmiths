@@ -62,7 +62,7 @@ const Home: React.FC = () => {
     if (fromZero >= 0) {
       slidePic?.setAttribute(
         "style",
-        `width: ${fromZero * 0.05 + 100}%; 
+        `width: ${fromZero * 0.04 + 100}%; 
         margin-left: -${fromZero * 0.08}px;`
       );
     } else {
