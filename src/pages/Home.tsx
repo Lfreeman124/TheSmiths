@@ -48,6 +48,7 @@ const Home: React.FC = () => {
       window.addEventListener("load", onPageLoad);
       return () => window.removeEventListener("load", onPageLoad);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const below = difference - windowHeight;
 

@@ -33,16 +33,6 @@ const Venue: React.FC = () => {
   ];
 
   function reveal() {
-    // var reveals = document.querySelectorAll(".reveal");
-    // for (var i = 0; i < reveals.length; i++) {
-    //   var elementTop = reveals[i].getBoundingClientRect().top;
-    //   if (elementTop < windowHeight - 100) {
-    //     reveals[i].classList.add("active");
-    //   } else {
-    //     reveals[i].classList.remove("active");
-    //   }
-    // }
-
     for (var j = 0; j < animations.length; j++) {
       var element = document.querySelector(animations[j]);
       var heartTop = element?.getBoundingClientRect().top;
