@@ -49,15 +49,17 @@ const Home: React.FC = () => {
       return () => window.removeEventListener("load", onPageLoad);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [document.readyState]);
   const below = difference - windowHeight;
 
   function slideLeft() {
     const scrollValue = window.scrollY;
     const slidePic = document.getElementById("wedderlie-homepage");
     var elementTop = slidePic?.getBoundingClientRect().top;
-    const fromZero = scrollValue - below - 100;
-    if (elementTop && elementTop < windowHeight - 100) {
+    const fromZero = scrollValue - (below + 100);
+    console.log(scrollValue, elementTop, fromZero, below);
+    // if (elementTop && elementTop < windowHeight - 100) {
+    if (fromZero >= 0) {
       slidePic?.setAttribute(
         "style",
         `width: ${fromZero * 0.05 + 100}%; 
@@ -93,7 +95,7 @@ const Home: React.FC = () => {
               <Link to="/edinburgh">Edinburgh</Link>
               <Link to="/registry">Registry</Link>
               <Link className="last" to="/faq">
-                FAQ
+                Q&A
               </Link>
             </nav>
           )}
