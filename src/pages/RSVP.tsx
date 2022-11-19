@@ -339,6 +339,8 @@ const OuterContainer = styled.div`
     padding: 0 0 2rem;
     border-radius: 10px;
     @media only screen and (min-width: 600px) {
+      width: 60%;
+      margin: 5rem 20%;
       display: flex;
       flex-direction: column;
       align-items: center;

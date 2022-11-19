@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
-import MobileNavBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import { recommendations } from "../components/Recommendations";
 import flowers from "../images/flowers4.png";
 
@@ -12,41 +12,43 @@ const OnTheDay: React.FC = () => {
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <Container>
-      <MobileNavBar />
-      <div className="green-line"></div>
+    <React.Fragment>
+      <NavBar />
+      <Container>
+        <div className="green-line"></div>
 
-      <header>
-        <h1>Welcome to Edinburgh!</h1>
-        <p>
-          We want you to see the best of Edinburgh, so we've put together a wee
-          list of locals' tips. If you are thinking of wandering farther outside
-          of the city, we can also recommend good hikes, castles, borders towns,
-          distilleries, scenic drives, and pubs.
-        </p>
-      </header>
-      <div className="flowers-container">
-        <img src={flowers} alt="flowers" />
-      </div>
-      <div className="green-line"></div>
+        <header>
+          <h1>Welcome to Edinburgh!</h1>
+          <p>
+            We want you to see the best of Edinburgh, so we've put together a
+            wee list of locals' tips. If you are thinking of wandering farther
+            outside of the city, we can also recommend good hikes, castles,
+            borders towns, distilleries, scenic drives, and pubs.
+          </p>
+        </header>
+        <div className="flowers-container">
+          <img src={flowers} alt="flowers" />
+        </div>
+        <div className="green-line"></div>
 
-      {recommendations.map((each: any, index: any) => {
-        return (
-          <div className="list" key={index}>
-            <h4>{each.title}</h4>
-            {each.data.map((every: any, index: any) => {
-              return (
-                <div className="items" key={index}>
-                  <p className="name">{every.name}</p>
-                  <p className="type">{every.type}</p>
-                </div>
-              );
-            })}
-            <div className="green-line longer"></div>
-          </div>
-        );
-      })}
-    </Container>
+        {recommendations.map((each: any, index: any) => {
+          return (
+            <div className="list" key={index}>
+              <h4>{each.title}</h4>
+              {each.data.map((every: any, index: any) => {
+                return (
+                  <div className="items" key={index}>
+                    <p className="name">{every.name}</p>
+                    <p className="type">{every.type}</p>
+                  </div>
+                );
+              })}
+              <div className="green-line longer"></div>
+            </div>
+          );
+        })}
+      </Container>
+    </React.Fragment>
   );
 };
 
@@ -102,5 +104,9 @@ const Container = styled.div`
         font-weight: 400;
       }
     }
+  }
+  @media only screen and (min-width: 600px) {
+    width: 70%;
+    margin: 0 15%;
   }
 `;

@@ -25,20 +25,23 @@ const Requests: React.FC = () => {
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <Container>
+    <div>
       <NavBar />
-      <div className="green-line"></div>
-      <div className="inner-window">
-        <h1>Request a Song</h1>
-        <RequestForm onUpdate={onUpdate} />
-      </div>
-      <div className="flowers-container">
-        <img src={flowers} alt="flowers" />
-      </div>
-      <div className="green-line"></div>
 
-      <RequestsList hasBeenUpdated={hasBeenUpdated} onUpdate={onUpdate} />
-    </Container>
+      <Container>
+        <div className="green-line"></div>
+        <div className="inner-window">
+          <h1>Request a Song</h1>
+          <RequestForm onUpdate={onUpdate} />
+        </div>
+        <div className="flowers-container">
+          <img src={flowers} alt="flowers" />
+        </div>
+        <div className="green-line"></div>
+
+        <RequestsList hasBeenUpdated={hasBeenUpdated} onUpdate={onUpdate} />
+      </Container>
+    </div>
   );
 };
 

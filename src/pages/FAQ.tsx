@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
-import MobileNavBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import { useGlobalContext } from "../State";
 import flowers from "../images/flowers5.png";
 import { questions } from "../components/Questions";
@@ -12,27 +12,30 @@ const FAQ: React.FC = () => {
   return showMenu ? (
     <MobileMenu />
   ) : (
-    <Container>
-      <MobileNavBar />
-      <div className="green-line"></div>
+    <React.Fragment>
+      <NavBar />
 
-      <div className="header">
-        <h1>Questions and Answers</h1>
-        <p>If you have any other questions or concerns, please reach out.</p>
-      </div>
-      <div className="flowers-container">
-        <img src={flowers} alt="flowers" />
-      </div>
-      <div className="green-line"></div>
-      {questions.map((each: any, index: any) => {
-        return (
-          <div className="main" key={index}>
-            <h4>{each.question}</h4>
-            <p>{each.answer}</p>
-          </div>
-        );
-      })}
-    </Container>
+      <Container>
+        <div className="green-line"></div>
+
+        <div className="header">
+          <h1>Questions and Answers</h1>
+          <p>If you have any other questions or concerns, please reach out.</p>
+        </div>
+        <div className="flowers-container">
+          <img src={flowers} alt="flowers" />
+        </div>
+        <div className="green-line"></div>
+        {questions.map((each: any, index: any) => {
+          return (
+            <div className="main" key={index}>
+              <h4>{each.question}</h4>
+              <p>{each.answer}</p>
+            </div>
+          );
+        })}
+      </Container>
+    </React.Fragment>
   );
 };
 
@@ -76,5 +79,9 @@ const Container = styled.div`
   .main {
     width: 90%;
     margin: 0 5%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 70%;
+    margin: 0 15%;
   }
 `;

@@ -7,7 +7,6 @@ import restaurant from "../images/restaurant.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import flowers from "../images/flowers3.png";
-import paper from "../images/paper.jpg";
 
 const Registry: React.FC = () => {
   const { showMenu } = useGlobalContext();
@@ -49,24 +48,22 @@ const Registry: React.FC = () => {
       <Container>
         <div className="green-line"></div>
 
-        <div className="paper">
-          <div className="header">
-            <h1>Registry</h1>
-            <p>
-              The best gift you can give us is your presence on our special day.
-              Many of you will spend a considerable amount just to get to
-              Scotland, and that is in itself a generous gift and we are honored
-              you take the time and commitment to travel and be with us.
-            </p>
+        <div className="header">
+          <h1>Registry</h1>
+          <p>
+            The best gift you can give us is your presence on our special day.
+            Many of you will spend a considerable amount just to get to
+            Scotland, and that is in itself a generous gift and we are honored
+            you take the time and commitment to travel and be with us.
+          </p>
 
-            <p>
-              If you're adamant about giving us a gift, here are some options to
-              give you some inspiration. Please don't bring anything
-              bigger/heavier than a greeting card. If none of these seem right
-              for you, just wait and someday years from now you might come
-              across the perfect gift.
-            </p>
-          </div>
+          <p>
+            If you're adamant about giving us a gift, here are some options to
+            give you some inspiration. Please don't bring anything
+            bigger/heavier than a greeting card. If none of these seem right for
+            you, just wait and someday years from now you might come across the
+            perfect gift.
+          </p>
         </div>
         <div className="flowers-container">
           <img src={flowers} alt="flowers" />
@@ -130,31 +127,27 @@ const Container = styled.div`
     margin-bottom: 1rem;
     border-top: 5px solid #70877f;
   }
-  .paper {
-    /* background-image: url(${paper});
-    background-size: 50%; */
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    .header {
-      /* background: hsla(35, 33%, 70%, 0.3); */
-      background: hsla(24, 22%, 65%, 0.3);
 
-      color: ${colors.red};
-      border-radius: 10px;
-      font-size: 20px;
-      width: 100%;
-      text-align: center;
-      padding: 1rem 1.5rem 2rem;
-      h1 {
-        font-family: "Gwendolyn";
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-      }
+  .header {
+    /* background: hsla(35, 33%, 70%, 0.3); */
+    background: hsla(24, 22%, 65%, 0.3);
+
+    color: ${colors.red};
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem 2rem;
+    h1 {
+      font-family: "Gwendolyn";
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
     }
   }
+
   .notes {
     font-size: 20px;
     width: 100%;
@@ -168,7 +161,7 @@ const Container = styled.div`
     width: 90%;
     display: flex;
     background: hsl(34, 15%, 54%);
-    margin: 1rem 5%;
+    margin: 1rem auto;
     img {
       width: 100%;
       opacity: 0.8;
@@ -222,16 +215,22 @@ const Container = styled.div`
       margin-top: 0.5rem;
       text-align: center;
       line-height: 2rem;
-      font-size: 1.3rem;
     }
   }
   @media only screen and (min-width: 600px) {
     .header {
+      width: 70%;
       padding: 2rem 10%;
       margin: 2rem auto;
     }
     .notes p {
       font-size: 1rem;
+    }
+    .flowers-container {
+      width: 50%;
+    }
+    .options {
+      max-width: 800px;
     }
   }
 `;

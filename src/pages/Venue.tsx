@@ -9,7 +9,6 @@ import crest from "../images/crest.png";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
 import flowers from "../images/flowers.png";
-import paper from "../images/texture.png";
 import arrow from "../images/arrow.png";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 const colors = {
@@ -63,49 +62,45 @@ const Venue: React.FC = () => {
         <MobileNavBar />
         <div className="green-line"></div>
 
-        <div className="paper">
-          <div className="desktop-layout">
-            <div className="header">
-              <div className="crest-container">
+        <div className="desktop-layout">
+          <h1>Wedderlie House</h1>
+          <div className="crest-and-pic">
+            <div className="crest-container">
+              <div className="image-container">
                 <img src={crest} alt="crest" />
               </div>
-              <header>
-                <h1>Wedderlie House</h1>
-              </header>
             </div>
             <div className="wedderlie-container">
               <img id="wedderlie" src={wedderlie} alt="" />
             </div>
-
-            <div className="blurb-and-links">
-              <div className="blurb">
-                <p>
-                  We are so excited to get married here. Wedderlie is a gorgeous
-                  estate with a rich history and a beautifully restored
-                  interior. Check out their website and social media for a sneak
-                  peek!
-                </p>
-              </div>
-              <div className="links">
-                <a
-                  href="https://www.instagram.com/wedderliehouse/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Instagram sx={{ color: "black" }} />
-                </a>
-                <a
-                  href="https://wedderliehouse.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Language sx={{ color: "black" }} />
-                </a>
-              </div>
+          </div>
+          <div className="blurb-and-links">
+            <div className="blurb">
+              <p>
+                We are so excited to get married here. Wedderlie is a gorgeous
+                estate with a rich history and a beautifully restored interior.
+                Check out their website and social media for a sneak peek!
+              </p>
+            </div>
+            <div className="links">
+              <a
+                href="https://www.instagram.com/wedderliehouse/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram sx={{ color: "black" }} />
+              </a>
+              <a
+                href="https://wedderliehouse.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Language sx={{ color: "black" }} />
+              </a>
             </div>
           </div>
         </div>
-        <div className="image-container">
+        <div className="flowers-container">
           <img src={flowers} alt="flowers" />
         </div>
         <div className="green-line"></div>
@@ -137,105 +132,80 @@ export default Venue;
 
 const Container = styled.div`
   overflow: hidden;
-  border-radius: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-bottom: 3rem;
 
-  .crest-container {
-    @media only screen and (max-width: 600px) {
-      display: none;
-    }
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    width: 35%;
-    img {
-      border: solid 5px ${colors.red};
-      width: 70%;
-    }
-  }
   .green-line {
     width: 90%;
     margin: 0 5%;
     border-top: 5px solid #70877f;
   }
-  .paper {
-    /* background-image: url(${paper});
-    background-size: 100%; */
+
+  .desktop-layout {
     width: 90%;
-    margin: 1rem 5% 0;
+    height: 100%;
+    /* background: hsla(35, 33%, 85%, 0.7); */
+    background: hsla(24, 22%, 65%, 0.3);
     border-radius: 10px;
-
-    .desktop-layout {
+    padding-bottom: 2rem;
+    margin: 1rem 5%;
+    h1 {
       width: 100%;
-      height: 100%;
-      /* background: hsla(35, 33%, 85%, 0.7); */
-      background: hsla(24, 22%, 65%, 0.3);
-      border-radius: 10px;
-      padding-bottom: 2rem;
-      .header {
-        color: ${colors.red};
-        width: 100%;
-        display: flex;
-        header {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          h1 {
-            width: 100%;
-            text-align: center;
-            font-family: "Gwendolyn";
-            margin: 2rem 0 0;
-          }
-        }
-      }
-      .wedderlie-container {
-        width: 80%;
-        margin: 0 10%;
-        height: 200px;
-        /* background: hsla(342, 12%, 26%, 0.5); */
-        overflow: hidden;
-        padding: 1rem;
-        opacity: 0.8;
+      text-align: center;
+      color: ${colors.red};
+      font-family: "Gwendolyn";
+      font-size: 2rem;
+      margin: 2rem auto 0;
+    }
 
-        #wedderlie {
-          margin-left: -25%;
-          height: 100%;
-        }
+    .crest-container {
+      display: none;
+    }
+
+    .wedderlie-container {
+      width: 80%;
+      margin: 0 10%;
+      height: 200px;
+      /* background: hsla(342, 12%, 26%, 0.5); */
+      overflow: hidden;
+      padding: 1rem;
+      opacity: 0.8;
+
+      #wedderlie {
+        margin-left: -25%;
+        height: 100%;
       }
-      .blurb-and-links {
-        margin: 1rem 10% 1rem;
-        width: 80%;
-        background: hsla(34, 15%, 91%, 0.7);
-        border: 1px dotted ${colors.red};
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 10px;
-        .blurb {
-          margin: 1rem 1rem 0.5rem;
-          text-align: center;
-          line-height: 1.5rem;
+    }
+    .blurb-and-links {
+      margin: 1rem 10% 1rem;
+      width: 80%;
+      background: hsla(34, 15%, 91%, 0.7);
+      border: 1px dotted ${colors.red};
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      .blurb {
+        margin: 1rem 1rem 0.5rem;
+        text-align: center;
+        line-height: 1.5rem;
+      }
+      .links {
+        * {
+          color: ${colors.red};
+          margin: 5px;
         }
-        .links {
-          * {
-            color: ${colors.red};
-            margin: 5px;
-          }
-          margin-bottom: 1rem;
-        }
+        margin-bottom: 1rem;
       }
     }
   }
 
-  .image-container {
+  .flowers-container {
     width: 80%;
-    margin: 1rem 10% 0;
+    margin: 1rem auto 0;
     display: flex;
     /* background: hsl(270, 10%, 25%); */
     background: hsla(34, 15%, 54%);
@@ -397,41 +367,79 @@ const Container = styled.div`
   @media only screen and (min-width: 600px) {
     padding-top: 2rem;
     .desktop-layout {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      .header {
-        flex-direction: column;
-        width: 15%;
-        align-items: center;
+      width: 70%;
+      margin: 3rem auto;
+      padding: 2rem;
+      h1 {
+        display: none;
+      }
+      .crest-and-pic {
+        width: 100%;
+        display: flex;
         justify-content: center;
-        header {
-          display: none;
-        }
+        align-items: center;
         .crest-container {
-          width: 100%;
+          display: flex;
+          justify-content: center;
+          width: 30%;
+          .image-container {
+            width: 80%;
+            height: auto;
+            background: hsla(24, 100%, 15%);
+            img {
+              opacity: 0.8;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .wedderlie-container {
+          width: 65%;
+          overflow: hidden;
+          margin: 0;
           padding: 0;
-          img {
+          height: auto;
+          border-radius: 5px;
+          #wedderlie {
+            border-radius: 5px;
+
             width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
           }
         }
       }
-      .wedderlie-container {
+
+      .blurb-and-links {
         width: 70%;
+        margin: 1rem auto;
       }
-      #wedderlie {
+    }
+    .flowers-container {
+      width: 50%;
+    }
+    .map-container {
+      width: 80%;
+      height: auto;
+      margin: 1rem 10%;
+      #map {
         width: 100%;
       }
+      .reveal {
+        left: 53%;
+        top: 74%;
+      }
+      .hearts {
+        position: absolute;
+        left: 55%;
+        bottom: -74%;
+      }
     }
-    .blurb {
-      width: 60%;
-    }
-    .image-container {
-      width: 70%;
-      margin: 1rem auto;
-    }
+
     .table-container {
-      width: 80%;
+      width: 70%;
+      margin: 1rem 15%;
     }
   }
 `;

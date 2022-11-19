@@ -55,10 +55,7 @@ const Home: React.FC = () => {
   function slideLeft() {
     const scrollValue = window.scrollY;
     const slidePic = document.getElementById("wedderlie-homepage");
-    var elementTop = slidePic?.getBoundingClientRect().top;
     const fromZero = scrollValue - (below + 100);
-    console.log(scrollValue, elementTop, fromZero, below);
-    // if (elementTop && elementTop < windowHeight - 100) {
     if (fromZero >= 0) {
       slidePic?.setAttribute(
         "style",
@@ -81,7 +78,7 @@ const Home: React.FC = () => {
         <section className="banner">
           <div className="header">
             <h3>The best day of our lives</h3>
-            <h2>Mr & Mrs</h2>
+            <h2>Mr. & Mrs.</h2>
           </div>
 
           {!isMobile && (
@@ -455,8 +452,8 @@ const OuterContainer = styled.div`
       opacity: 1;
     }
     @media screen and (min-width: 600px) {
-      width: 100%;
-      margin: 5rem 0;
+      width: 70%;
+      margin: 5rem auto 2rem;
       display: flex;
       justify-content: center;
       .line {
@@ -740,7 +737,7 @@ const OuterContainer = styled.div`
       justify-content: center;
       align-items: center;
 
-      box-shadow: 0px 0px 30px 50px #d8d6da;
+      box-shadow: 0px 0px 30px 50px #eae8e3;
 
       .circle {
         padding-top: 2rem;
@@ -841,7 +838,7 @@ const OuterContainer = styled.div`
     }
     @media screen and (min-width: 600px) {
       background-size: 50%;
-      background-position: right bottom;
+      background-position: right top;
       .inner-rsvp {
         width: 50%;
         margin: 10% 25%;

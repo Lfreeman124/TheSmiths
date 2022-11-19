@@ -58,7 +58,7 @@ const Container = styled.div`
     justify-content: center;
     position: absolute;
     z-index: 5;
-    box-shadow: 0px 10px 10px 10px #eae8e3;
+    /* box-shadow: 0px 10px 10px 10px #eae8e3; */
     .line {
       /* background: #70877f; */
       border-right: 2px dotted #70877f;
@@ -128,17 +128,25 @@ const Container = styled.div`
     margin-top: -5px;
   }
   @media only screen and (min-width: 600px) {
-    .schedule {
-      margin-top: 1rem;
-      background-size: 80% 700px;
-      padding: 2rem;
-      h1 {
-        padding-top: 2rem;
-        font-size: 2rem;
+    .schedule-container {
+      width: 70%;
+      margin: 0 15%;
+      .schedule {
+        margin-top: 1rem;
+        background-size: 80% 700px;
+        padding: 2rem;
+        h1 {
+          padding-top: 2rem;
+          font-size: 2rem;
+        }
+        p {
+          line-height: 2rem;
+        }
       }
     }
-    .schedule p {
-      line-height: 2rem;
+    .dance {
+      width: 70%;
+      margin: 350px 15% 0;
     }
   }
 `;

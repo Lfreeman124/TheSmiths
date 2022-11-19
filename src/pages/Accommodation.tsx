@@ -6,8 +6,7 @@ import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
 import { useGlobalContext } from "../State";
-import flowers from "../images/flowers2.png";
-import paper from "../images/texture.png";
+import flowers from "../images/flowers5.png";
 
 const colors = {
   red: "#4b3b40",
@@ -59,18 +58,14 @@ const Accommodation: React.FC = () => {
       <MobileNavBar />
       <Container>
         <div className="green-line"></div>
-        <div className="paper">
-          <div className="header">
-            <div className="header-inside">
-              <h1>Accommodation</h1>
-              <p>
-                Our hope is to offer everyone the option to stay either at
-                Wedderlie House or The Black Bull. If you can't find the
-                information you need here or on the venue websites, or if you
-                have any concerns, please reach out and we can find a solution.
-              </p>
-            </div>
-          </div>
+        <div className="header">
+          <h1>Accommodation</h1>
+          <p>
+            Our hope is to offer everyone the option to stay either at Wedderlie
+            House or The Black Bull. If you can't find the information you need
+            here or on the venue websites, or if you have any concerns, please
+            reach out and we can find a solution.
+          </p>
         </div>
         <div className="flowers-container">
           <img src={flowers} alt="flowers" />
@@ -88,16 +83,18 @@ const Accommodation: React.FC = () => {
                   <img src={each.image} alt="img" />
                 </div>
               </a>
-              <p>{each.message}</p>
-              <ul>
-                {each.distanceToEdinburgh && (
-                  <li>Distance to Edinburgh: {each.distanceToEdinburgh}</li>
-                )}
-                {each.distanceToWedderlie && (
-                  <li>Distance to Wedderlie: {each.distanceToWedderlie}</li>
-                )}
-                <li>Price: {each.price}</li>
-              </ul>
+              <div className="desktop-flex">
+                <p>{each.message}</p>
+                <ul>
+                  {each.distanceToEdinburgh && (
+                    <li>Distance to Edinburgh: {each.distanceToEdinburgh}</li>
+                  )}
+                  {each.distanceToWedderlie && (
+                    <li>Distance to Wedderlie: {each.distanceToWedderlie}</li>
+                  )}
+                  <li>Price: {each.price}</li>
+                </ul>
+              </div>
             </div>
           );
         })}
@@ -119,29 +116,21 @@ const Container = styled.div`
     line-height: 1.5rem;
   }
   .green-line {
-    width: 100%;
-    margin-bottom: 1rem;
+    width: 90%;
+    margin: 0 5%;
     border-top: 5px solid #70877f;
   }
-  .paper {
-    /* background-image: url(${paper});
-    background-size: 100%; */
+
+  .header {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    /* background: hsla(35, 33%, 85%, 0.7); */
+    background: hsla(24, 22%, 65%, 0.3);
     border-radius: 10px;
-
-    .header {
-      .header-inside {
-        padding: 1rem 2rem;
-        /* background: hsla(35, 33%, 85%, 0.7); */
-        background: hsla(24, 22%, 65%, 0.3);
-
-        border-radius: 10px;
-      }
-
-      h1 {
-        font-family: "Gwendolyn";
-        margin-bottom: 1rem;
-        font-size: 2rem;
-      }
+    h1 {
+      font-family: "Gwendolyn";
+      margin-bottom: 1rem;
+      font-size: 2rem;
     }
   }
 
@@ -149,7 +138,7 @@ const Container = styled.div`
     width: 80%;
     display: flex;
     background: hsla(34, 15%, 54%);
-    margin: 1rem 10% -2rem;
+    margin: 1rem auto -2rem;
     img {
       width: 100%;
       opacity: 0.8;
@@ -174,24 +163,50 @@ const Container = styled.div`
         font-weight: 300;
       }
     }
-  }
-  .image-container {
-    width: 100%;
-    margin: 1rem 0;
-    img {
+    .image-container {
       width: 100%;
+      margin: 1rem 0;
+      img {
+        border-radius: 5px;
+        width: 100%;
+      }
+    }
+    ul {
+      margin-top: 1rem;
+      li {
+        margin: 5px 0 5px -1rem;
+      }
     }
   }
-  ul {
-    margin-top: 1rem;
-    li {
-      margin: 5px 0 5px -1rem;
-    }
-  }
+
   @media only screen and (min-width: 600px) {
     padding: 2rem 0;
     .header {
-      padding: 2rem 20%;
+      width: 60%;
+      margin: 2rem auto 0;
+      padding: 2rem 10%;
+    }
+    .flowers-container {
+      width: 50%;
+      margin-bottom: 5rem;
+    }
+    .accommodation-container {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      a {
+        width: 40%;
+      }
+      .desktop-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+      }
+    }
+    .accommodation-container:nth-of-type(odd) {
+      flex-direction: row-reverse;
     }
   }
 `;
