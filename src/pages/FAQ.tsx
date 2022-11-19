@@ -3,7 +3,7 @@ import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
 import MobileNavBar from "../components/NavBar";
 import { useGlobalContext } from "../State";
-import flowers from "../images/flowers.png";
+import flowers from "../images/flowers5.png";
 import { questions } from "../components/Questions";
 
 const FAQ: React.FC = () => {

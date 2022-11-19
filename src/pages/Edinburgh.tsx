@@ -4,7 +4,7 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import MobileNavBar from "../components/NavBar";
 import { recommendations } from "../components/Recommendations";
-import flowers from "../images/flowers.png";
+import flowers from "../images/flowers4.png";
 
 const OnTheDay: React.FC = () => {
   const { showMenu } = useGlobalContext();

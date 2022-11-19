@@ -6,7 +6,7 @@ import beach from "../images/beach-min.png";
 import restaurant from "../images/restaurant.png";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
-import flowers from "../images/flowers.png";
+import flowers from "../images/flowers3.png";
 import paper from "../images/paper.jpg";
 
 const Registry: React.FC = () => {
@@ -165,10 +165,10 @@ const Container = styled.div`
   }
 
   .flowers-container {
-    width: 80%;
+    width: 90%;
     display: flex;
     background: hsl(34, 15%, 54%);
-    margin: 1rem 10%;
+    margin: 1rem 5%;
     img {
       width: 100%;
       opacity: 0.8;

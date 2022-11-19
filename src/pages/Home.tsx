@@ -42,6 +42,8 @@ const Home: React.FC = () => {
 
     if (document.readyState === "complete") {
       onPageLoad();
+      reveal();
+      isMobile && slideLeft();
     } else {
       window.addEventListener("load", onPageLoad);
       return () => window.removeEventListener("load", onPageLoad);
@@ -65,9 +67,7 @@ const Home: React.FC = () => {
     }
   }
   window.addEventListener("scroll", reveal);
-  reveal();
   isMobile && window.addEventListener("scroll", slideLeft);
-  isMobile && slideLeft();
 
   return showMenu ? (
     <MobileMenu />
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
           <img src={us} alt=""></img>
           <Countdown />
         </section>
-        {/* <div className="button-container">
+        <div className="button-container">
           <Link to="/rsvp">
             <Button
               className="button"
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
               RSVP
             </Button>
           </Link>
-        </div> */}
+        </div>
       </section>
       <section className="details">
         <div className="info reveal">

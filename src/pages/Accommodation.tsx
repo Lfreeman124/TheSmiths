@@ -6,7 +6,7 @@ import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
 import { useGlobalContext } from "../State";
-import flowers from "../images/flowers.png";
+import flowers from "../images/flowers2.png";
 import paper from "../images/texture.png";
 
 const colors = {
