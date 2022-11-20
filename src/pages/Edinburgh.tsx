@@ -89,7 +89,7 @@ const Container = styled.div`
     width: 80%;
     display: flex;
     background: hsla(34, 15%, 54%);
-    margin: 1rem 10%;
+    margin: 1rem auto;
     img {
       width: 100%;
       opacity: 0.8;
@@ -110,6 +110,9 @@ const Container = styled.div`
   @media only screen and (min-width: 600px) {
     width: 70%;
     margin: 0 15%;
+    .flowers-container {
+      width: 60%;
+    }
     .list {
       width: 80%;
       margin: 0 auto;

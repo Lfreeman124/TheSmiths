@@ -89,14 +89,14 @@ const Venue: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Instagram sx={{ color: "black" }} />
+                <Instagram sx={{ color: "#4b3b40" }} />
               </a>
               <a
                 href="https://wedderliehouse.com/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Language sx={{ color: "black" }} />
+                <Language sx={{ ccolor: "#4b3b40" }} />
               </a>
             </div>
           </div>
@@ -135,6 +135,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem 3rem;
+  color: #4b3b40;
 
   .green-line {
     width: 100%;
@@ -170,7 +171,7 @@ const Container = styled.div`
       overflow: hidden;
       border-radius: 5px;
 
-      box-shadow: 5px 5px 5px 5px ${colors.red};
+      box-shadow: 10px 10px 5px 0px ${colors.red};
 
       #wedderlie {
         border-radius: 5px;
@@ -412,6 +413,9 @@ const Container = styled.div`
         width: 70%;
         margin: 1rem auto;
       }
+    }
+    .flowers-container {
+      width: 60%;
     }
 
     .map-container {

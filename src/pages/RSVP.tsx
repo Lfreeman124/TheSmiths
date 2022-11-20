@@ -327,6 +327,7 @@ const OuterContainer = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: contain;
+  color: #4b3b40;
 
   .container {
     margin: 1rem 10%;
@@ -344,6 +345,9 @@ const OuterContainer = styled.div`
       .button-container {
         width: 60%;
         margin: 1rem auto 0;
+        button {
+          border-radius: 30px;
+        }
       }
       .button:active {
         background: #70877f;

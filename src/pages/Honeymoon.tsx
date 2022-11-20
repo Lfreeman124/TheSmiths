@@ -134,6 +134,8 @@ export default Honeymoon;
 const Container = styled.div`
   width: 100%;
   padding: 0 1rem 3rem;
+  color: #4b3b40;
+
   .green-line {
     width: 100%;
     margin: 1rem 0;
@@ -188,6 +190,9 @@ const Container = styled.div`
   .button-container {
     width: 40%;
     margin: 1rem auto 2rem;
+    button {
+      border-radius: 30px;
+    }
     .vote-button:active {
       background: #70877f;
       position: relative;
@@ -216,13 +221,16 @@ const Container = styled.div`
     width: 70%;
     margin: 0 15%;
     .options {
-      padding: 0 15%;
+      padding: 0 10%;
       .option-container {
         .circle {
           width: 10rem;
           height: 10rem;
         }
       }
+    }
+    .button-container {
+      width: 25%;
     }
     .results-container {
       padding: 0 15% 2rem;

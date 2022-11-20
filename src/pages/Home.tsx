@@ -7,7 +7,7 @@ import MobileMenu from "../components/MobileMenu";
 import { useGlobalContext } from "../State";
 import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
-import background from "../images/babys-breath.png";
+import background from "../images/babysbreath2down.png";
 import wedderlie from "../images/wedderlie3.png";
 import thistle from "../images/try2.png";
 import concrete from "../images/concrete-min.jpg";
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          <Countdown />
+          {/* <Countdown /> */}
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -328,11 +328,11 @@ const OuterContainer = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 0 -250px;
+  background-position: 0 -150px;
   color: #4b3b40;
   overflow: hidden;
   @media only screen and (min-width: 600px) {
-    background-size: 45%;
+    background-size: 50%;
   }
 
   .button-container {
@@ -393,10 +393,14 @@ const OuterContainer = styled.div`
       }
       nav {
         width: 100%;
-        margin: 20px;
+        margin: 20px 0;
         text-align: center;
+        white-space: normal;
+
         > a {
-          margin: 10px;
+          white-space: nowrap;
+          display: inline-block;
+          margin: 5px 10px;
           padding-right: 20px;
           text-decoration: none;
           color: #4b3b40;
@@ -418,7 +422,7 @@ const OuterContainer = styled.div`
         }
       }
       .button-container {
-        width: 20%;
+        width: 25%;
       }
     }
   }
@@ -477,6 +481,8 @@ const OuterContainer = styled.div`
       overflow: hidden;
       position: absolute;
       #wedderlie-homepage {
+        border-radius: 5px;
+
         width: 100%;
         position: absolute;
         opacity: 0.6;
@@ -485,8 +491,11 @@ const OuterContainer = styled.div`
     @media screen and (min-width: 600px) {
       height: 360px;
       width: 100%;
+      display: flex;
+      justify-content: center;
       .wedderlie-container {
         width: 40%;
+        max-width: 450px;
         margin: 0 30%;
         #wedderlie-homepage {
           width: 100%;

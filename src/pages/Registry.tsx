@@ -189,7 +189,7 @@ const Container = styled.div`
       font-size: 1.3rem;
       font-weight: 500;
       text-align: center;
-      color: black;
+      color: #4b3b40;
       text-decoration: none;
       margin: 1rem 0;
     }
@@ -219,7 +219,9 @@ const Container = styled.div`
   @media only screen and (min-width: 600px) {
     width: 70%;
     margin: 0 15%;
-
+    .flowers-container {
+      width: 60%;
+    }
     .notes p {
       font-size: 1rem;
     }

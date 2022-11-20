@@ -151,7 +151,8 @@ const Container = styled.div`
     border-top: 5px solid #70877f;
 
     a {
-      color: black;
+      color: ${colors.red};
+
       text-decoration: none;
     }
     .name-and-location {
@@ -185,6 +186,7 @@ const Container = styled.div`
 
     .flowers-container {
       margin-bottom: 1rem;
+      width: 60%;
     }
     .accommodation-container {
       width: 100%;

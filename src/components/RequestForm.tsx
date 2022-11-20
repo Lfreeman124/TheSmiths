@@ -62,11 +62,19 @@ const Container = styled.div`
   }
   .button-container {
     width: 40%;
-    margin: 0 30%;
+    margin: 0 auto;
+    button {
+      border-radius: 30px;
+    }
   }
   .button:active {
     background: #70877f;
     position: relative;
     top: 2px;
+  }
+  @media only screen and (min-width: 600px) {
+    .button-container {
+      width: 25%;
+    }
   }
 `;
