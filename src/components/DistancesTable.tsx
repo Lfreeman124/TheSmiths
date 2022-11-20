@@ -38,8 +38,9 @@ const DistancesTable: React.FC = () => {
   return (
     <TableContainer
       style={{
-        width: "90%",
-        margin: "0 5%",
+        width: "100%",
+        padding: "0.5rem",
+        borderRadius: "5px",
         background: "hsla(24, 22%, 75%, 0.5)",
       }}
       component={Paper}

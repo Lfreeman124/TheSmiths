@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import wedderlie from "../images/wedderlie.png";
+import wedderlie from "../images/wedderlie5.png";
 import map from "../images/map2.png";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
@@ -122,9 +122,7 @@ const Venue: React.FC = () => {
           </div>
           <img id="map" src={map} alt="" />
         </a>
-        <div className="table-container">
-          <DistancesTable />
-        </div>
+        <DistancesTable />
       </Container>
     </React.Fragment>
   );
@@ -166,15 +164,17 @@ const Container = styled.div`
 
     .wedderlie-container {
       width: 80%;
-      margin: 0 10%;
-      height: 200px;
-      /* background: hsla(342, 12%, 26%, 0.5); */
+      height: auto;
+      display: flex;
+      margin: 2rem 10%;
       overflow: hidden;
-      padding: 1rem;
-      opacity: 0.8;
+      border-radius: 5px;
+
+      box-shadow: 5px 5px 5px 5px ${colors.red};
 
       #wedderlie {
-        margin-left: -25%;
+        border-radius: 5px;
+        width: 100%;
         height: 100%;
       }
     }
@@ -219,7 +219,7 @@ const Container = styled.div`
   .map-container {
     width: 100%;
     height: 250px;
-    margin: 1rem 0 5rem;
+    margin: 1rem 0 5rem -5%;
     position: relative;
     #map {
       border-top: 5px solid ${colors.green};
@@ -230,8 +230,8 @@ const Container = styled.div`
       color: ${colors.red};
       position: absolute;
       width: 40px;
-      left: 68%;
-      top: 65%;
+      left: 69%;
+      top: 75%;
       transform: translate(-150px, -150px) rotate(-20deg);
       opacity: 0;
       transition: 0.5s all ease-in;
@@ -360,9 +360,6 @@ const Container = styled.div`
       }
     }
   }
-  .table-container {
-    width: 100%;
-  }
 
   @media only screen and (min-width: 600px) {
     width: 70%;
@@ -370,7 +367,8 @@ const Container = styled.div`
     .desktop-layout {
       padding: 2rem;
       h1 {
-        display: none;
+        margin: 1rem;
+        padding: 0;
       }
       .crest-and-pic {
         width: 100%;
@@ -380,7 +378,7 @@ const Container = styled.div`
         .crest-container {
           display: flex;
           justify-content: center;
-          width: 30%;
+          width: 25%;
           .image-container {
             width: 80%;
             height: auto;
@@ -393,10 +391,10 @@ const Container = styled.div`
           }
         }
         .wedderlie-container {
-          width: 65%;
+          width: 40%;
           overflow: hidden;
-          margin: 0;
           padding: 0;
+          margin: 2rem;
           height: auto;
           border-radius: 5px;
           #wedderlie {
@@ -433,11 +431,6 @@ const Container = styled.div`
         left: 55%;
         bottom: -74%;
       }
-    }
-
-    .table-container {
-      width: 70%;
-      margin: 1rem 15%;
     }
   }
 `;

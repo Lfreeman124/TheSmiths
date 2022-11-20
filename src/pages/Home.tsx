@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar";
 import { Button } from "@mui/material";
 import background from "../images/babys-breath.png";
 import wedderlie from "../images/wedderlie3.png";
-import thistle from "../images/thistle1.jpg";
+import thistle from "../images/try2.png";
 import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands3.png";
 import backgroundUpside from "../images/babys-breath-up.png";
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
   function slideLeft() {
     const scrollValue = window.scrollY;
     const slidePic = document.getElementById("wedderlie-homepage");
-    const fromZero = scrollValue - (below + 100);
+    const fromZero = scrollValue - (below + windowHeight / 3);
     if (fromZero >= 0) {
       slidePic?.setAttribute(
         "style",
@@ -190,7 +190,8 @@ const Home: React.FC = () => {
           <div className="info">
             <h2 className="reveal first">Just Visiting?</h2>
             <p className="reveal second">
-              Check out our Edinburgh and Scotland tips!
+              We've put together a list of our favorite spots and hidden gems,
+              with the help of some of some knowledgeable locals.
             </p>
             <div className="button-container reveal third">
               <Link
@@ -602,32 +603,30 @@ const OuterContainer = styled.div`
   .edinburgh {
     margin-top: -5px;
     width: 100%;
-    height: 600px;
+    height: 450px;
     background-image: url(${thistle});
-    background-size: cover;
+    background-size: 100%;
+    background-position: bottom 0 right -130px;
     background-repeat: no-repeat;
 
     .info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding-left: 10%;
       width: 100%;
       height: 600px;
-      text-align: center;
-      /* background: hsla(290, 5%, 80%, 0.7); */
-      background: hsla(34, 15%, 88.5%, 0.7);
+      text-align: left;
+      background: hsla(24, 11%, 91%, 0.3);
       h2 {
-        font-size: 3rem;
+        margin-top: 1rem;
+        font-size: 2.5rem;
         font-family: "Gwendolyn";
       }
       p {
-        padding: 0 10%;
-        font-size: 1.2rem;
-        font-weight: 500;
-        margin-bottom: 2rem;
+        width: 65%;
+        margin-bottom: 3rem;
+        line-height: 1.5rem;
       }
       .button-container {
+        margin: 0;
         width: 30%;
       }
     }
@@ -636,26 +635,26 @@ const OuterContainer = styled.div`
       opacity: 0;
       transition: 1s all ease;
     }
-    .first {
-      transition-delay: 0.3s;
-    }
+
     .second {
-      transition-delay: 0.9s;
+      transition-delay: 0.5s;
     }
     .third {
-      transition-delay: 1s;
+      transition-delay: 0.7s;
     }
     .reveal.active {
       opacity: 1;
     }
     @media screen and (min-width: 600px) {
-      width: 40%;
-      background-size: cover;
-      max-height: 700px;
+      width: 50%;
+      height: 100%;
+      background-size: 70%;
+      background-position: bottom right;
+      max-height: 600px;
       .info {
-        max-height: 700px;
+        height: 100%;
         p {
-          padding: 0 20%;
+          width: 60%;
         }
       }
     }
@@ -675,7 +674,7 @@ const OuterContainer = styled.div`
       background: hsla(24, 22%, 75%, 0.7);
       /* background: hsla(159, 9%, 48%, 0.3); */
 
-      box-shadow: 0px 0px 30px 100px #eae8e3;
+      /* box-shadow: 0px 0px 30px 100px #eae8e3; */
 
       h2 {
         font-size: 2.5rem;
@@ -737,13 +736,21 @@ const OuterContainer = styled.div`
       justify-content: center;
       align-items: center;
 
-      box-shadow: 0px 0px 30px 50px #eae8e3;
+      /* box-shadow: 0px 0px 30px 50px #eae8e3; */
 
       .circle {
         padding-top: 2rem;
         width: 400px;
         height: 400px;
         margin: 0 0;
+        @media screen and (max-width: 1000px) {
+          padding-top: 0;
+          width: 300px;
+          height: 300px;
+          p {
+            font-size: 1rem;
+          }
+        }
         .sides {
           font-size: 1.5rem;
         }

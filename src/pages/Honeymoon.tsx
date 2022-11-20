@@ -156,47 +156,45 @@ const Container = styled.div`
     color: ${colors.red};
     border-radius: 10px;
   }
-  .options-container {
-    .options {
-      width: 100%;
+  .options {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .option-container {
       display: flex;
-      justify-content: center;
-      .option-container {
-        margin: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .circle {
-          border: 2px solid black;
-          height: 9rem;
-          width: 9rem;
-          border-radius: 50%;
-          overflow: hidden;
-          margin-bottom: 0.5rem;
-        }
-      }
-      #road {
-        img {
-          width: 100%;
-        }
-      }
-      #bali {
-        img {
-          margin-left: -50%;
-          height: 100%;
-        }
+      flex-direction: column;
+      align-items: center;
+      .circle {
+        border: 2px solid black;
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
       }
     }
-    .button-container {
-      width: 40%;
-      margin: 1rem auto 2rem;
-      .vote-button:active {
-        background: #70877f;
-        position: relative;
-        top: 2px;
+    #road {
+      img {
+        width: 100%;
+      }
+    }
+    #bali {
+      img {
+        margin-left: -50%;
+        height: 100%;
       }
     }
   }
+  .button-container {
+    width: 40%;
+    margin: 1rem auto 2rem;
+    .vote-button:active {
+      background: #70877f;
+      position: relative;
+      top: 2px;
+    }
+  }
+
   .results-container {
     padding: 0 1rem 2rem;
     .results-label {
@@ -217,5 +215,17 @@ const Container = styled.div`
   @media only screen and (min-width: 600px) {
     width: 70%;
     margin: 0 15%;
+    .options {
+      padding: 0 15%;
+      .option-container {
+        .circle {
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+    }
+    .results-container {
+      padding: 0 15% 2rem;
+    }
   }
 `;

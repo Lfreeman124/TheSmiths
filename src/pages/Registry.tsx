@@ -149,7 +149,6 @@ const Container = styled.div`
   }
 
   .notes {
-    font-size: 20px;
     width: 100%;
     text-align: center;
     padding: 1rem;
