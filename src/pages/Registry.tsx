@@ -118,26 +118,26 @@ const colors = {
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 2rem 2rem;
+  color: #4b3b40;
+  padding: 0 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   .green-line {
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     border-top: 5px solid #70877f;
   }
 
   .header {
-    /* background: hsla(35, 33%, 70%, 0.3); */
     background: hsla(24, 22%, 65%, 0.3);
-
     color: ${colors.red};
     border-radius: 10px;
     font-size: 20px;
-    width: 100%;
+    width: 90%;
+    margin: 1rem 5% 0;
     text-align: center;
-    padding: 1rem 1.5rem 2rem;
+    padding: 1rem 2rem 2rem;
     h1 {
       font-family: "Gwendolyn";
       font-size: 2rem;
@@ -161,7 +161,7 @@ const Container = styled.div`
     width: 90%;
     display: flex;
     background: hsl(34, 15%, 54%);
-    margin: 1rem auto;
+    margin: 1rem auto 0;
     img {
       width: 100%;
       opacity: 0.8;
@@ -218,17 +218,13 @@ const Container = styled.div`
     }
   }
   @media only screen and (min-width: 600px) {
-    .header {
-      width: 70%;
-      padding: 2rem 10%;
-      margin: 2rem auto;
-    }
+    width: 70%;
+    margin: 0 15%;
+
     .notes p {
       font-size: 1rem;
     }
-    .flowers-container {
-      width: 50%;
-    }
+
     .options {
       max-width: 800px;
     }

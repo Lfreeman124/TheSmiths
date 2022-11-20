@@ -120,7 +120,7 @@ const RSVP: React.FC = () => {
         ) : (
           <div className="body">
             <FormLabel>
-              <h3 className="heading">Will you join us?</h3>
+              <h1 className="heading">Will you join us?</h1>
             </FormLabel>
             <TextField
               value={formInfo.name}
@@ -327,55 +327,57 @@ const OuterContainer = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: contain;
-  @media only screen and (min-width: 600px) {
-    background-size: 45%;
-  }
+
   .container {
     margin: 1rem 10%;
     width: 80%;
-    /* background: hsla(35, 33%, 90%, 0.8); */
     background: hsla(24, 22%, 80%, 0.8);
-
     padding: 0 0 2rem;
     border-radius: 10px;
-    @media only screen and (min-width: 600px) {
+    .body {
+      padding: 1rem;
+      color: #4b3b40;
+      h1,
+      h4 {
+        color: #4b3b40;
+      }
+      .button-container {
+        width: 60%;
+        margin: 1rem auto 0;
+      }
+      .button:active {
+        background: #70877f;
+        position: relative;
+        top: 2px;
+      }
+      h1 {
+        width: 100%;
+        text-align: center;
+        font-family: "Gwendolyn";
+        font-size: 2rem;
+        padding: 2rem 1rem 1rem;
+        margin: 0;
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    background-size: 45%;
+    .container {
       width: 60%;
       margin: 5rem 20%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      .body {
+        margin: 0 auto;
+        width: 80%;
+        .button-container {
+          width: 40%;
+        }
+      }
     }
   }
-  .body {
-    padding: 1rem;
-    color: #4b3b40;
-    h3,
-    h4 {
-      color: #4b3b40;
-    }
-    .button-container {
-      width: 60%;
-      margin: 1rem auto 0;
-    }
-    .button:active {
-      background: #70877f;
-      position: relative;
-      top: 2px;
-    }
-    h3 {
-      width: 100%;
-      text-align: center;
-      font-family: "Gwendolyn";
-      font-size: 2rem;
-      font-weight: 200;
-      margin-bottom: 1rem;
-    }
-    @media only screen and (min-width: 600px) {
-      margin: 0 auto;
-      padding-top: 4rem;
-      width: 45%;
-    }
-  }
+
   .body-sent {
     .image-container {
       width: 100%;

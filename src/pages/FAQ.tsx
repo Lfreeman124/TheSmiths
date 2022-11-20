@@ -53,10 +53,12 @@ const Container = styled.div`
   }
   .header {
     width: 90%;
-    margin: 0 5%;
+    margin: 2rem 5% 0;
     padding: 1rem 2rem;
     background: hsla(24, 22%, 65%, 0.3);
     border-radius: 10px;
+    text-align: center;
+
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;

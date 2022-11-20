@@ -61,7 +61,7 @@ const Honeymoon: React.FC = () => {
         <div className="green-line"></div>
 
         <div className="inner-window">
-          <h2>Where should we go on our honeymoon?</h2>
+          <h1>Where should we go on our honeymoon?</h1>
           <div className="options-container">
             <div className="options">
               <div id="road" className="option-container">
@@ -133,28 +133,26 @@ export default Honeymoon;
 
 const Container = styled.div`
   width: 100%;
-  padding-bottom: 3rem;
+  padding: 0 1rem 3rem;
   .green-line {
-    width: 90%;
-    margin: 0 5% 1rem;
+    width: 100%;
+    margin: 1rem 0;
     border-top: 5px solid #70877f;
   }
   .inner-window {
     width: 90%;
-    margin: 0 5% 1rem;
+    margin: 2rem 5% 2rem;
     border-radius: 5px;
     background: hsla(24, 22%, 65%, 0.3);
   }
 
-  h2 {
+  h1 {
     font-family: "Gwendolyn";
-    padding: 1rem;
-    width: 90%;
-    font-size: 2.5rem;
-    font-weight: 300;
+    padding: 2rem 1rem 1rem;
+    width: 100%;
+    font-size: 2rem;
     margin: 0 auto;
     text-align: center;
-    /* background: hsla(24, 22%, 65%, 0.3); */
     color: ${colors.red};
     border-radius: 10px;
   }
@@ -217,10 +215,7 @@ const Container = styled.div`
     }
   }
   @media only screen and (min-width: 600px) {
-    padding: 2rem 20%;
-    h2 {
-      width: 60%;
-      font-size: 2rem;
-    }
+    width: 70%;
+    margin: 0 15%;
   }
 `;

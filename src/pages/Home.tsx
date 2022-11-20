@@ -78,7 +78,7 @@ const Home: React.FC = () => {
         <section className="banner">
           <div className="header">
             <h3>The best day of our lives</h3>
-            <h2>Mr. & Mrs.</h2>
+            <h1>Mr. & Mrs.</h1>
           </div>
 
           {!isMobile && (
@@ -378,9 +378,9 @@ const OuterContainer = styled.div`
         font-size: 1.5rem;
         margin: 1rem auto;
       }
-      h2 {
+      h1 {
         margin: 0;
-        font-size: 3.5rem;
+        font-size: 3rem;
         letter-spacing: 4px;
         font-weight: 400;
       }

@@ -7,7 +7,7 @@ import DistancesTable from "../components/DistancesTable";
 import { Instagram, Language } from "@mui/icons-material";
 import crest from "../images/crest.png";
 import { useGlobalContext } from "../State";
-import MobileNavBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import flowers from "../images/flowers.png";
 import arrow from "../images/arrow.png";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -58,8 +58,9 @@ const Venue: React.FC = () => {
     <MobileMenu />
   ) : (
     <React.Fragment>
+      <NavBar />
+
       <Container>
-        <MobileNavBar />
         <div className="green-line"></div>
 
         <div className="desktop-layout">
@@ -135,18 +136,17 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 3rem;
+  padding: 0 1rem 3rem;
 
   .green-line {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    margin: 1rem 0;
     border-top: 5px solid #70877f;
   }
 
   .desktop-layout {
     width: 90%;
     height: 100%;
-    /* background: hsla(35, 33%, 85%, 0.7); */
     background: hsla(24, 22%, 65%, 0.3);
     border-radius: 10px;
     padding-bottom: 2rem;
@@ -365,10 +365,9 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    padding-top: 2rem;
+    width: 70%;
+    margin: 0 15%;
     .desktop-layout {
-      width: 70%;
-      margin: 3rem auto;
       padding: 2rem;
       h1 {
         display: none;
@@ -416,19 +415,18 @@ const Container = styled.div`
         margin: 1rem auto;
       }
     }
-    .flowers-container {
-      width: 50%;
-    }
+
     .map-container {
-      width: 80%;
+      width: 90%;
       height: auto;
-      margin: 1rem 10%;
+      margin: 1rem 5%;
       #map {
         width: 100%;
+        border: none;
       }
       .reveal {
         left: 53%;
-        top: 74%;
+        top: 70%;
       }
       .hearts {
         position: absolute;

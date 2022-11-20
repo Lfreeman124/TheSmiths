@@ -42,7 +42,7 @@ const OnTheDay: React.FC = () => {
           alt="dance"
         />
       </div>
-      <div className="cover"></div>
+      {/* <div className="cover"></div> */}
     </Container>
   );
 };
@@ -129,12 +129,12 @@ const Container = styled.div`
   }
   @media only screen and (min-width: 600px) {
     .schedule-container {
-      width: 70%;
-      margin: 0 15%;
+      width: 60%;
+      margin: 0;
       .schedule {
         margin-top: 1rem;
         background-size: 80% 700px;
-        padding: 2rem;
+        padding: 5% 10%;
         h1 {
           padding-top: 2rem;
           font-size: 2rem;
@@ -145,8 +145,8 @@ const Container = styled.div`
       }
     }
     .dance {
-      width: 70%;
-      margin: 350px 15% 0;
+      width: 40%;
+      margin: 0 0 0 50%;
     }
   }
 `;

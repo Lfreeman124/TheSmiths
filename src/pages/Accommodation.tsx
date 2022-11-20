@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
-import MobileNavBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import Wedderlie from "../images/wedderlie3.png";
 import Blackbull from "../images/blackbull.jpg";
 import Edinburgh from "../images/victoriastreet.jpg";
@@ -55,7 +55,7 @@ const Accommodation: React.FC = () => {
     <MobileMenu />
   ) : (
     <React.Fragment>
-      <MobileNavBar />
+      <NavBar />
       <Container>
         <div className="green-line"></div>
         <div className="header">
@@ -109,24 +109,24 @@ const Container = styled.div`
   width: 100%;
   color: ${colors.red};
   text-decoration: none;
-  padding: 0 1rem 1rem;
-  /* border-top: 5px solid #70877f; */
+  padding: 0 1rem 3rem;
 
+  .green-line {
+    width: 100%;
+    margin: 1rem 0;
+    border-top: 5px solid #70877f;
+  }
   p {
     line-height: 1.5rem;
   }
-  .green-line {
-    width: 90%;
-    margin: 0 5%;
-    border-top: 5px solid #70877f;
-  }
-
   .header {
-    margin-top: 1rem;
+    width: 90%;
+    margin: 2rem 5% 0;
     padding: 1rem 2rem;
-    /* background: hsla(35, 33%, 85%, 0.7); */
     background: hsla(24, 22%, 65%, 0.3);
     border-radius: 10px;
+    text-align: center;
+
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
@@ -180,23 +180,19 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    padding: 2rem 0;
-    .header {
-      width: 60%;
-      margin: 2rem auto 0;
-      padding: 2rem 10%;
-    }
+    width: 70%;
+    margin: 0 15%;
+
     .flowers-container {
-      width: 50%;
-      margin-bottom: 5rem;
+      margin-bottom: 1rem;
     }
     .accommodation-container {
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       a {
-        width: 40%;
+        width: 50%;
       }
       .desktop-flex {
         display: flex;

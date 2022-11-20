@@ -49,15 +49,15 @@ export default Requests;
 
 const Container = styled.div`
   width: 100%;
-  padding-bottom: 3rem;
+  padding: 0 1rem 3rem;
   .green-line {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    margin: 1rem 0;
     border-top: 5px solid #70877f;
   }
   .inner-window {
     width: 90%;
-    margin: 0 5%;
+    margin: 2rem 5% 0;
     padding: 0 2rem 1rem;
     border-radius: 5px;
     background: hsla(24, 22%, 65%, 0.3);
@@ -65,12 +65,13 @@ const Container = styled.div`
     h1 {
       width: 100%;
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 2rem;
       font-family: "Gwendolyn";
       color: ${colors.red};
       padding: 2rem 1rem 1rem;
       border-radius: 10px;
       margin-bottom: 0;
+      margin-top: 0;
     }
   }
   .flowers-container {
@@ -85,6 +86,7 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    padding: 2rem 20% 4rem;
+    width: 70%;
+    margin: 0 15%;
   }
 `;
