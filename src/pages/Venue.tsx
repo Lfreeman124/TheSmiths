@@ -190,7 +190,7 @@ const Container = styled.div`
       align-items: center;
       border-radius: 10px;
       .blurb {
-        margin: 1rem 1rem 0.5rem;
+        margin: 1rem 1rem 0;
         text-align: center;
         line-height: 1.5rem;
       }
@@ -372,14 +372,16 @@ const Container = styled.div`
         padding: 0;
       }
       .crest-and-pic {
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-top: 5px dotted hsla(342, 12%, 26%, 0.7);
         .crest-container {
           display: flex;
           justify-content: center;
-          width: 25%;
+          width: 35%;
           .image-container {
             width: 80%;
             height: auto;
@@ -392,7 +394,7 @@ const Container = styled.div`
           }
         }
         .wedderlie-container {
-          width: 40%;
+          width: 50%;
           overflow: hidden;
           padding: 0;
           margin: 2rem;

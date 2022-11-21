@@ -153,7 +153,7 @@ const Container = styled.div`
     text-align: center;
     padding: 1rem;
     margin: 1rem auto;
-    font-weight: 400;
+    /* font-weight: 400; */
   }
 
   .flowers-container {

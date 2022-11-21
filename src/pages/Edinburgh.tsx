@@ -75,7 +75,6 @@ const Container = styled.div`
     background: hsla(24, 22%, 65%, 0.3);
     border-radius: 10px;
     text-align: center;
-
     h1 {
       font-family: "Gwendolyn";
       margin-bottom: 1rem;
