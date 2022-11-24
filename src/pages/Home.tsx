@@ -336,7 +336,7 @@ const OuterContainer = styled.div`
   }
 
   .button-container {
-    margin: 0 auto 3rem;
+    margin: 0 auto;
     width: 50%;
 
     .button:active {
@@ -351,13 +351,13 @@ const OuterContainer = styled.div`
 
   .container {
     color: #4b3b40;
-    margin: 2rem 10% 0;
+    margin: 1rem 10% 0;
     border-radius: 5px;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 1rem 2rem;
     /* background: hsla(35, 33%, 90%, 0.8); */
     background: hsla(24, 22%, 75%, 0.5);
 
@@ -366,7 +366,7 @@ const OuterContainer = styled.div`
       flex-direction: column;
       align-items: center;
       width: 100%;
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
       .header {
         padding: 1rem 0 0;
         width: 100%;
@@ -377,13 +377,13 @@ const OuterContainer = styled.div`
       h3 {
         font-family: "Gwendolyn";
         font-size: 1.5rem;
-        margin: 1rem auto;
+        margin: 1rem auto 0.5rem;
       }
       h1 {
         margin: 0;
         font-size: 3rem;
         letter-spacing: 4px;
-        font-weight: 400;
+        font-weight: 300;
       }
       img {
         margin: 1rem;

@@ -41,7 +41,7 @@ const NavBar: React.FC = () => {
     showMenu ? (
       <StyledMenu>
         <div className="icon">
-          <CloseIcon onClick={toggleMobileMenu} />
+          <CloseIcon style={{ color: "#4b3b40" }} onClick={toggleMobileMenu} />
         </div>
         {navLinks}
       </StyledMenu>
@@ -66,7 +66,7 @@ const StyledMenu = styled.div`
     height: 3rem;
     * {
       margin-right: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
   }
   .links {

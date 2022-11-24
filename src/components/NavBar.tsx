@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
   return isMobile ? (
     <MobileContainer>
       <div className="icon">
-        <MenuIcon onClick={toggleMobileMenu} />
+        <MenuIcon style={{ color: "#4b3b40" }} onClick={toggleMobileMenu} />
       </div>
     </MobileContainer>
   ) : (
@@ -45,7 +45,7 @@ const MobileContainer = styled.div`
     height: 3rem;
     * {
       margin-right: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
   }
 `;

@@ -42,6 +42,7 @@ const RSVP: React.FC = () => {
     email: false,
     food: false,
     sent: false,
+    error: false,
   };
   const [showing, setShowing] = useState(initialState);
   const { showMenu } = useGlobalContext();
@@ -89,8 +90,7 @@ const RSVP: React.FC = () => {
     }
   };
 
-  const sendEmail = (e: any) => {
-    e.preventDefault();
+  const emailLauren = () => {
     emailjs.send(
       "service_4l8w96u",
       "template_m4rr5yt",
@@ -100,10 +100,36 @@ const RSVP: React.FC = () => {
     setShowing({ ...showing, sent: true });
   };
 
+  const flashError = () => {
+    window.scroll(0, 0);
+    setShowing({ ...showing, error: true });
+    setTimeout(() => {
+      setShowing({ ...showing, error: false });
+    }, 2000);
+  };
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    if (showing.email) {
+      if (formInfo.email !== "" && formInfo.name !== "") {
+        emailLauren();
+      } else {
+        flashError();
+      }
+    } else if (formInfo.name !== "") {
+      emailLauren();
+    } else {
+      flashError();
+    }
+  };
+
   return showMenu ? (
     <MobileMenu />
   ) : (
     <OuterContainer>
+      <Nope style={{ display: showing.error ? "block" : "none" }}>
+        <p>Nope, try again!</p>
+      </Nope>
       <NavBar />
       <div className="container">
         {showing.sent ? (
@@ -113,7 +139,7 @@ const RSVP: React.FC = () => {
             </div>
             <p>
               {formInfo.rsvp === "yes"
-                ? "Yay! \n \n We're so happy you'll join us! \n \nIf you've expressed interest in staying at Wedderlie or The Black Bull, we'll contact you with details. Please let us know if you have any other questions, and in the meantime, vote for our honeymoon, request a song, or check out our fun facts! \n\nLooking forward to the big day!"
+                ? "Yay! \n \n We're so happy you'll join us! \n \nIf you've expressed interest in staying at Wedderlie or The Black Bull, we'll contact you with details. Please let us know if you have any other questions, and in the meantime, vote for our honeymoon, request a song, or check out our venue! \n\nLooking forward to the big day!"
                 : "We're sorry to hear you won't join us, but completely understand. Hope you are well and that our paths cross soon, as you are special to us!"}
             </p>
           </div>
@@ -127,6 +153,7 @@ const RSVP: React.FC = () => {
               fullWidth
               id="name"
               label="Names"
+              required
               onChange={handleInputChange}
               sx={{ m: "1rem 0" }}
             />
@@ -270,6 +297,7 @@ const RSVP: React.FC = () => {
                 fullWidth
                 id="email"
                 label="Email"
+                required
                 onChange={handleInputChange}
               />
             </FormControl>
@@ -342,6 +370,9 @@ const OuterContainer = styled.div`
       h4 {
         color: #4b3b40;
       }
+      h4 {
+        font-weight: 400;
+      }
       .button-container {
         width: 60%;
         margin: 1rem auto 0;
@@ -383,24 +414,44 @@ const OuterContainer = styled.div`
   }
 
   .body-sent {
+    padding-top: 2rem;
     .image-container {
       width: 100%;
       text-align: center;
       img {
         margin: 2rem;
         width: 100px;
+        opacity: 0.7;
       }
     }
     p {
+      padding: 0 1rem;
       text-align: center;
       white-space: pre-line;
       margin: 1rem;
-      font-size: 1.3rem;
+      line-height: 1.5rem;
     }
     @media only screen and (min-width: 600px) {
       margin: 0 auto;
       padding-top: 4rem;
       width: 60%;
     }
+  }
+`;
+
+const Nope = styled.div`
+  background: #4b3b40;
+  border-radius: 10px;
+  color: #ebe8e4;
+  position: absolute;
+  z-index: 99;
+  width: 90%;
+  height: 100px;
+  top: 200px;
+  left: 5%;
+  font-size: 1.5rem;
+  text-align: center;
+  p {
+    margin-top: 2rem;
   }
 `;

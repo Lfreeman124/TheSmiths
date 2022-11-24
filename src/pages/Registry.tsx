@@ -125,7 +125,7 @@ const Container = styled.div`
   align-items: center;
   .green-line {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0 1rem;
     border-top: 5px solid #70877f;
   }
 
@@ -213,7 +213,7 @@ const Container = styled.div`
     .description {
       margin-top: 0.5rem;
       text-align: center;
-      line-height: 2rem;
+      line-height: 1.5rem;
     }
   }
   @media only screen and (min-width: 600px) {

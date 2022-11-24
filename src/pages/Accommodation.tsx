@@ -113,7 +113,7 @@ const Container = styled.div`
 
   .green-line {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0 0;
     border-top: 5px solid #70877f;
   }
   p {

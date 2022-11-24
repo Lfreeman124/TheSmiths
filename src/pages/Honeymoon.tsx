@@ -159,6 +159,7 @@ const Container = styled.div`
     border-radius: 10px;
   }
   .options {
+    margin-top: 1rem;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -189,7 +190,7 @@ const Container = styled.div`
   }
   .button-container {
     width: 40%;
-    margin: 1rem auto 2rem;
+    margin: 2rem auto 2rem;
     button {
       border-radius: 30px;
     }

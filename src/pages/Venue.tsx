@@ -139,7 +139,7 @@ const Container = styled.div`
 
   .green-line {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0 1rem;
     border-top: 5px solid #70877f;
   }
 
@@ -167,7 +167,7 @@ const Container = styled.div`
       width: 80%;
       height: auto;
       display: flex;
-      margin: 2rem 10%;
+      margin: 1rem 10% 2rem;
       overflow: hidden;
       border-radius: 5px;
 

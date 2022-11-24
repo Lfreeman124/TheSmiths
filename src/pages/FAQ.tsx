@@ -48,7 +48,7 @@ const Container = styled.div`
   padding: 0 1rem 3rem;
   .green-line {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0 1rem;
     border-top: 5px solid #70877f;
   }
   .header {
