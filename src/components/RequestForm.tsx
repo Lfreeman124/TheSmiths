@@ -72,7 +72,7 @@ const Container = styled.div`
     position: relative;
     top: 2px;
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 900px) {
     .button-container {
       width: 25%;
     }

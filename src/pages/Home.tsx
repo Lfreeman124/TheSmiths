@@ -184,7 +184,7 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </section>
-      <div className="fade"></div>
+      {/* <div className="fade"></div> */}
       <div className="desktop-flex">
         <section className="edinburgh">
           <div className="info">
@@ -324,14 +324,13 @@ export default Home;
 const OuterContainer = styled.div`
   width: 100%;
   min-height: 100vh;
-  /* background: #d8d6da; */
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0 -150px;
   color: #4b3b40;
   overflow: hidden;
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 900px) {
     background-size: 50%;
   }
 
@@ -357,8 +356,7 @@ const OuterContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem 2rem;
-    /* background: hsla(35, 33%, 90%, 0.8); */
+    padding: 0 1rem 3rem;
     background: hsla(24, 22%, 75%, 0.5);
 
     .banner {
@@ -412,7 +410,7 @@ const OuterContainer = styled.div`
         }
       }
     }
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 900px) {
       padding-top: 2rem;
       margin: 5rem auto;
       width: 60%;
@@ -456,7 +454,7 @@ const OuterContainer = styled.div`
       transform: translateY(0);
       opacity: 1;
     }
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 900px) {
       width: 70%;
       margin: 5rem auto 2rem;
       display: flex;
@@ -470,9 +468,9 @@ const OuterContainer = styled.div`
   }
   .wedderlie-image {
     width: 100%;
-    height: 280px;
+    height: 18rem;
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     .wedderlie-container {
       border-radius: 5px;
       width: 80%;
@@ -482,13 +480,17 @@ const OuterContainer = styled.div`
       position: absolute;
       #wedderlie-homepage {
         border-radius: 5px;
-
         width: 100%;
         position: absolute;
         opacity: 0.6;
       }
     }
-    @media screen and (min-width: 600px) {
+    @media only screen and (min-width: 600px) {
+      width: 80%;
+      margin: 0 auto 5rem;
+      height: 35rem;
+    }
+    @media screen and (min-width: 900px) {
       height: 360px;
       width: 100%;
       display: flex;
@@ -509,13 +511,7 @@ const OuterContainer = styled.div`
     .where {
       margin: 1rem 5%;
       width: 90%;
-      //beige
-      /* background: hsla(35, 33%, 90%, 0.7); */
-      //pink
       background: hsla(24, 22%, 75%, 0.5);
-      //green
-      /* background: hsla(159, 9%, 48%, 0.2); */
-
       padding: 5px;
       box-shadow: 0px 10px 15px 5px hsla(24, 22%, 75%, 0.8);
 
@@ -570,7 +566,18 @@ const OuterContainer = styled.div`
       transform: translateX(0);
       opacity: 1;
     }
-    @media screen and (min-width: 600px) {
+    @media only screen and (min-width: 600px) {
+      width: 70%;
+      margin: 0 15%;
+      .where {
+        width: 80%;
+      }
+      .accommodation {
+        margin-left: 20%;
+      }
+    }
+
+    @media screen and (min-width: 900px) {
       width: 70%;
       margin: 0 15%;
       height: 550px;
@@ -594,15 +601,15 @@ const OuterContainer = styled.div`
       }
     }
   }
-  .fade {
+  /* .fade {
     height: 50px;
     width: 100%;
     position: relative;
     z-index: 5;
-    background: #eae8e3;
-  }
+    background: blue;
+  } */
   .desktop-flex {
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 900px) {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -612,10 +619,10 @@ const OuterContainer = styled.div`
   .edinburgh {
     margin-top: -5px;
     width: 100%;
-    height: 450px;
+    height: 25rem;
     background-image: url(${thistle});
     background-size: 100%;
-    background-position: bottom 0 right -130px;
+    background-position: bottom 0 right -8rem;
     background-repeat: no-repeat;
 
     .info {
@@ -655,15 +662,24 @@ const OuterContainer = styled.div`
       opacity: 1;
     }
     @media screen and (min-width: 600px) {
+      height: 35rem;
+      background-size: 60%;
+      .info {
+        padding-left: 15%;
+        padding-top: 10%;
+      }
+    }
+    @media screen and (min-width: 900px) {
       width: 50%;
       height: 100%;
-      background-size: 70%;
+      margin-right: -5%;
+      background-size: 60%;
       background-position: bottom right;
       max-height: 600px;
       .info {
         height: 100%;
         p {
-          width: 60%;
+          width: 50%;
         }
       }
     }
@@ -671,7 +687,7 @@ const OuterContainer = styled.div`
   .fun {
     .circle {
       width: 86%;
-      height: 320px;
+      height: 20rem;
       margin: 15% 7%;
       border: 3px dotted #4b3b40;
       border-radius: 50%;
@@ -681,9 +697,6 @@ const OuterContainer = styled.div`
       align-items: center;
       color: #4b3b40;
       background: hsla(24, 22%, 75%, 0.7);
-      /* background: hsla(159, 9%, 48%, 0.3); */
-
-      /* box-shadow: 0px 0px 30px 100px #eae8e3; */
 
       h2 {
         font-size: 2.5rem;
@@ -739,19 +752,35 @@ const OuterContainer = styled.div`
         opacity: 1;
       }
     }
-    @media screen and (min-width: 600px) {
+    @media only screen and (min-width: 600px) {
+      width: 70%;
+      height: 30rem;
+      margin: 0 15%;
+      .circle {
+        height: 100%;
+        h2 {
+          margin: 3rem 0;
+        }
+        .sides {
+          align-items: center;
+        }
+      }
+    }
+    @media screen and (min-width: 900px) {
+      margin: 0;
       width: 40%;
       display: flex;
       justify-content: center;
       align-items: center;
-
-      /* box-shadow: 0px 0px 30px 50px #eae8e3; */
 
       .circle {
         padding-top: 2rem;
         width: 400px;
         height: 400px;
         margin: 0 0;
+        h2 {
+          margin: 2rem 0;
+        }
         @media screen and (max-width: 1000px) {
           padding-top: 0;
           width: 300px;
@@ -771,26 +800,39 @@ const OuterContainer = styled.div`
     width: 90%;
     margin: 10% 5%;
     border-radius: 5px;
-    /* border: 1px solid #4b3b40; */
     text-align: center;
     background: url(${concrete});
     background-size: cover;
     .faq-inside {
-      padding: 2rem;
-
+      padding: 2rem 2rem 3rem;
       width: 100%;
       height: 100%;
       border-radius: 5px;
-      /* background: hsla(24, 22%, 75%, 0.3); */
-      /* background: hsla(159, 9%, 48%, 0.2); */
     }
     h2 {
       font-family: "Gwendolyn";
       font-size: 2.5rem;
+      margin-top: 1rem;
     }
     @media screen and (min-width: 600px) {
+      width: 70%;
+      margin: 7rem 15% 2rem;
+      height: 20rem;
+      .faq-inside {
+        padding: 3rem;
+        h2 {
+          margin: 2rem;
+        }
+      }
+    }
+    @media screen and (min-width: 900px) {
       width: 50%;
       margin: 100px 25%;
+      .faq-inside {
+        h2 {
+          margin: 3rem;
+        }
+      }
 
       .button-container {
         width: 20%;
@@ -813,7 +855,7 @@ const OuterContainer = styled.div`
     .reveal.active {
       opacity: 1;
     }
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 900px) {
       margin: -100px 0;
       img {
         width: 30%;
@@ -853,6 +895,15 @@ const OuterContainer = styled.div`
       }
     }
     @media screen and (min-width: 600px) {
+      height: 800px;
+      .inner-rsvp {
+        padding-top: 5rem;
+        height: 20rem;
+        width: 70%;
+        margin: 10% 15%;
+      }
+    }
+    @media screen and (min-width: 900px) {
       background-size: 50%;
       background-position: right top;
       .inner-rsvp {

@@ -83,10 +83,14 @@ const Container = styled.div`
     margin: 0 5%;
   }
   @media only screen and (min-width: 600px) {
-    width: 70%;
-    margin: 0 15%;
+    width: 80%;
+    margin: 0 10%;
     .flowers-container {
       width: 60%;
     }
+  }
+  @media only screen and (min-width: 900px) {
+    width: 70%;
+    margin: 0 15%;
   }
 `;

@@ -220,7 +220,7 @@ const Container = styled.div`
   .map-container {
     width: 100%;
     height: 250px;
-    margin: 1rem 0 5rem -5%;
+    margin: 1rem 0 5rem -10%;
     position: relative;
     #map {
       border-top: 5px solid ${colors.green};
@@ -363,8 +363,12 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-    width: 70%;
-    margin: 0 15%;
+    width: 80%;
+    margin: 0 10%;
+    @media only screen and (min-width: 900px) {
+      width: 70%;
+      margin: 0 15%;
+    }
     .desktop-layout {
       padding: 2rem;
       h1 {
@@ -423,7 +427,7 @@ const Container = styled.div`
     .map-container {
       width: 90%;
       height: auto;
-      margin: 1rem 5%;
+      margin: 3rem 5%;
       #map {
         width: 100%;
         border: none;

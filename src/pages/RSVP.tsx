@@ -395,7 +395,7 @@ const OuterContainer = styled.div`
       }
     }
   }
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 900px) {
     background-size: 45%;
     .container {
       width: 60%;
@@ -431,7 +431,7 @@ const OuterContainer = styled.div`
       margin: 1rem;
       line-height: 1.5rem;
     }
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 900px) {
       margin: 0 auto;
       padding-top: 4rem;
       width: 60%;

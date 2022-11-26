@@ -129,6 +129,12 @@ const Container = styled.div`
   }
   @media only screen and (min-width: 600px) {
     .schedule-container {
+      width: 80%;
+      margin: 3rem 10% 0%;
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    .schedule-container {
       width: 60%;
       margin: 0;
       .schedule {

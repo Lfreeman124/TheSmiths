@@ -39,7 +39,7 @@ export const colors = {
 function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const matches = useMediaQuery("(max-width:600px)");
+  const matches = useMediaQuery("(max-width:900px)");
 
   useEffect(() => {
     setIsMobile(matches);
