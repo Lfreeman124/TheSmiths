@@ -60,8 +60,6 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  /* background: #eee7dd; */
-  /* background: #d8d6da; */
   background: #ebe8e4;
   min-height: 100vh;
   width: 100%;

@@ -154,7 +154,7 @@ const Home: React.FC = () => {
                 window.scroll(0, 0);
               }}
             >
-              More
+              <KeyboardDoubleArrowRightIcon />
             </Button>
           </Link>
         </div>
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
               variant="contained"
               sx={{ borderRadius: "30px" }}
             >
-              More
+              <KeyboardDoubleArrowRightIcon />
             </Button>
           </Link>
         </div>
@@ -493,8 +493,7 @@ const OuterContainer = styled.div`
     @media screen and (min-width: 900px) {
       height: 360px;
       width: 100%;
-      display: flex;
-      justify-content: center;
+
       .wedderlie-container {
         width: 40%;
         max-width: 450px;
@@ -533,7 +532,7 @@ const OuterContainer = styled.div`
       }
     }
     .venue-button {
-      width: 30%;
+      width: 20%;
       margin-top: -2rem;
       margin-right: 40px;
     }
@@ -549,7 +548,7 @@ const OuterContainer = styled.div`
       }
     }
     .accommodation-button {
-      width: 30%;
+      width: 20%;
       margin-top: -2rem;
       margin-left: 30px;
     }
@@ -590,12 +589,12 @@ const OuterContainer = styled.div`
         margin-left: 40%;
       }
       .venue-button {
-        width: 15%;
+        width: 10%;
         margin-right: 35%;
         margin-top: -4rem;
       }
       .accommodation-button {
-        width: 15%;
+        width: 10%;
         margin-left: 35%;
         margin-top: -4rem;
       }
@@ -835,7 +834,7 @@ const OuterContainer = styled.div`
       }
 
       .button-container {
-        width: 20%;
+        width: 30%;
       }
     }
   }

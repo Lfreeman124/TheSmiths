@@ -51,8 +51,11 @@ const MobileContainer = styled.div`
 `;
 
 const DesktopContainer = styled.div`
-  display: flex;
-  justify-content: right;
+  /* display: flex;
+  justify-content: right; */
+  padding: 1px 0;
+  text-align: right;
+  margin: 0;
   nav {
     margin: 20px;
     > a {
