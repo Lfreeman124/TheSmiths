@@ -41,6 +41,14 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
   const matches = useMediaQuery("(max-width:900px)");
 
+  (function () {
+    window.onpageshow = function (event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    };
+  })();
+
   useEffect(() => {
     setIsMobile(matches);
     // eslint-disable-next-line react-hooks/exhaustive-deps
