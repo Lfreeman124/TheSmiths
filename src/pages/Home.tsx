@@ -32,12 +32,6 @@ const Home: React.FC = () => {
   }
   window.scroll(0, 0);
 
-  window.onpageshow = function (event) {
-    if (event.persisted) {
-      window.location.reload();
-    }
-  };
-
   useEffect(() => {
     const onPageLoad = () => {
       setDifference(
@@ -54,6 +48,11 @@ const Home: React.FC = () => {
       window.addEventListener("load", onPageLoad);
       return () => window.removeEventListener("load", onPageLoad);
     }
+    window.onpageshow = function (event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [document.readyState]);
   const below = difference - windowHeight;
