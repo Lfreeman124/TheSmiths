@@ -32,18 +32,6 @@ const Home: React.FC = () => {
   }
   window.scroll(0, 0);
 
-  window.addEventListener(
-    "pageshow",
-    function (evt) {
-      if (evt.persisted) {
-        setTimeout(function () {
-          window.location.reload();
-        }, 10);
-      }
-    },
-    false
-  );
-
   useEffect(() => {
     const onPageLoad = () => {
       setDifference(
