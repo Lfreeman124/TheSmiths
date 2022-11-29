@@ -52,7 +52,7 @@ function App() {
 
   useEffect(() => {
     setIsMobile(matches);
-    onLoad;
+    onLoad();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
