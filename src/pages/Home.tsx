@@ -32,6 +32,12 @@ const Home: React.FC = () => {
   }
   window.scroll(0, 0);
 
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+
   useEffect(() => {
     const onPageLoad = () => {
       setDifference(
