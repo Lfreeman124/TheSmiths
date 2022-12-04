@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          {/* <Countdown /> */}
+          <Countdown />
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -412,7 +412,7 @@ const OuterContainer = styled.div`
       }
     }
     @media only screen and (min-width: 900px) {
-      padding-top: 2rem;
+      padding: 2rem 1rem 5rem;
       margin: 5rem auto;
       width: 60%;
       .banner {
@@ -490,22 +490,22 @@ const OuterContainer = styled.div`
       height: 38rem;
       margin-bottom: 5rem;
       .wedderlie-container {
-        width: 80%;
-        margin: 0 10%;
+        width: 70%;
+        margin: 0 15%;
       }
     }
     @media only screen and (min-width: 900px) {
-      height: 36rem;
-      .wedderlie-container {
-        width: 60%;
-        margin: 0 20%;
-      }
-    }
-    @media screen and (min-width: 1100px) {
-      height: 44rem;
+      height: 32rem;
       .wedderlie-container {
         width: 50%;
         margin: 0 25%;
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      height: 40rem;
+      .wedderlie-container {
+        width: 40%;
+        margin: 0 30%;
       }
     }
   }

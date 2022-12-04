@@ -98,6 +98,7 @@ const RSVP: React.FC = () => {
       "1q3_dbUeeoCs5TYLT"
     );
     setShowing({ ...showing, sent: true });
+    window.scroll(0, 0);
   };
 
   const flashError = () => {
@@ -158,9 +159,6 @@ const RSVP: React.FC = () => {
               sx={{ m: "1rem 0" }}
             />
             <FormControl sx={{ display: "flex" }}>
-              {/* <FormLabel sx={{ textAlign: "center" }}>
-                <h4>Will you be attending?</h4>
-              </FormLabel> */}
               <RadioGroup
                 sx={{ m: "1rem auto" }}
                 id="rsvp"
@@ -396,7 +394,7 @@ const OuterContainer = styled.div`
     }
   }
   @media only screen and (min-width: 900px) {
-    background-size: 45%;
+    background-size: 55%;
     .container {
       width: 60%;
       margin: 5rem 20%;
@@ -414,13 +412,13 @@ const OuterContainer = styled.div`
   }
 
   .body-sent {
-    padding-top: 2rem;
+    padding: 2rem 0;
     .image-container {
       width: 100%;
       text-align: center;
       img {
         margin: 2rem;
-        width: 100px;
+        width: 5rem;
         opacity: 0.7;
       }
     }
@@ -433,7 +431,7 @@ const OuterContainer = styled.div`
     }
     @media only screen and (min-width: 900px) {
       margin: 0 auto;
-      padding-top: 4rem;
+      padding: 4rem 0;
       width: 60%;
     }
   }
