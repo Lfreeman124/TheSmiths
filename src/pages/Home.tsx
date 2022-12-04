@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             </nav>
           )}
           <img src={us} alt=""></img>
-          <Countdown />
+          {/* <Countdown /> */}
         </section>
         <div className="button-container">
           <Link to="/rsvp">
@@ -391,7 +391,8 @@ const OuterContainer = styled.div`
       }
       nav {
         width: 100%;
-        margin: 20px 0;
+        max-width: 500px;
+        margin: 20px auto;
         text-align: center;
         white-space: normal;
 
