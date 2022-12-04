@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import us from "../images/us3.jpeg";
+import us from "../images/us4.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
@@ -385,7 +385,7 @@ const OuterContainer = styled.div`
       }
       img {
         margin: 1rem;
-        width: 70%;
+        width: 90%;
         opacity: 0.8;
         border-radius: 5px;
       }
@@ -416,7 +416,7 @@ const OuterContainer = styled.div`
       width: 60%;
       .banner {
         img {
-          width: 40%;
+          width: 50%;
         }
       }
       .button-container {

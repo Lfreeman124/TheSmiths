@@ -61,7 +61,7 @@ const Container = styled.div`
     width: 90%;
     margin: 2rem 5% 0;
     padding: 0 2rem 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     background: hsla(24, 22%, 65%, 0.3);
 
     h1 {

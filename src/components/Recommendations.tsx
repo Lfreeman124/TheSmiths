@@ -6,7 +6,7 @@ export const recommendations = [
       { name: "The Pantry", type: "Brunch" },
       { name: "Herbie of Edinburgh", type: "Picnic Supplies" },
       { name: "Holyrood 9A", type: "Drinks and Pizza" },
-      { name: "Bryant and Mac", type: "cocktails" },
+      { name: "Bryant and Mac", type: "Cocktails" },
       { name: "Brew Dog", type: "Beer Pub" },
       { name: "The Hanging Bat", type: "Beer Bar" },
       { name: "La Casa Dalry", type: "Tapas" },
@@ -19,11 +19,14 @@ export const recommendations = [
   {
     title: "James and Laura recommend...",
     data: [
-      { name: "", type: "" },
-      { name: "", type: "" },
-      { name: "", type: "" },
-      { name: "", type: "" },
-      { name: "", type: "" },
+      { name: "Leo's Beanery", type: "Coffee and Cake" },
+      { name: "Circus Lane", type: "Picturesque Street" },
+      { name: "Ensign Ewart", type: "Bar / Live Music" },
+      { name: "The Grain Store", type: "Sunday Roast" },
+      { name: "The Lookout", type: "Fine Dining with a View" },
+      { name: "Dirleton Castle", type: "Historic Ruined Castle" },
+      { name: "North Berwick", type: "Seaside Town" },
+      { name: "Stewarts Brewing", type: "Local Brewery" },
     ],
   },
   {

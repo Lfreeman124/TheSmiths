@@ -69,7 +69,7 @@ const Honeymoon: React.FC = () => {
                   style={{
                     boxShadow:
                       currentVote === "road"
-                        ? "0px 0px 10px 10px #d08d4e"
+                        ? "0px 0px 10px 10px hsla(342, 12%, 26%, 0.5)"
                         : "none",
                   }}
                   className="circle"
@@ -84,7 +84,7 @@ const Honeymoon: React.FC = () => {
                   style={{
                     boxShadow:
                       currentVote === "bali"
-                        ? "0px 0px 10px 10px #d08d4e"
+                        ? "0px 0px 10px 10px hsla(342, 12%, 26%, 0.5)"
                         : "none",
                   }}
                   className="circle"
@@ -144,7 +144,7 @@ const Container = styled.div`
   .inner-window {
     width: 90%;
     margin: 2rem 5% 2rem;
-    border-radius: 5px;
+    border-radius: 10px;
     background: hsla(24, 22%, 65%, 0.3);
   }
 
