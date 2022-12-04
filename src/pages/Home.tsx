@@ -391,7 +391,7 @@ const OuterContainer = styled.div`
       }
       nav {
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
         margin: 20px auto;
         text-align: center;
         white-space: normal;
