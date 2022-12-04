@@ -67,7 +67,7 @@ const Home: React.FC = () => {
     }
   }
   window.addEventListener("scroll", reveal);
-  isMobile && window.addEventListener("scroll", slideLeft);
+  window.addEventListener("scroll", slideLeft);
 
   return showMenu ? (
     <MobileMenu />
@@ -161,8 +161,8 @@ const Home: React.FC = () => {
         <div className="where accommodation reveal">
           <h2>Accommodation</h2>
           <p>
-            We have arranged accommodation for most of our guests, please let us
-            know your preference when you RSVP.
+            We have arranged accommodation for most of our guests, please RSVP
+            to let us know your preference.
           </p>
         </div>
         <div className="button-container accommodation-button">
@@ -351,7 +351,7 @@ const OuterContainer = styled.div`
   .container {
     color: #4b3b40;
     margin: 1rem 10% 0;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -416,7 +416,7 @@ const OuterContainer = styled.div`
       width: 60%;
       .banner {
         img {
-          width: 50%;
+          width: 70%;
         }
       }
       .button-container {
@@ -486,21 +486,25 @@ const OuterContainer = styled.div`
       }
     }
     @media only screen and (min-width: 600px) {
-      width: 80%;
-      margin: 0 auto 5rem;
-      height: 35rem;
-    }
-    @media screen and (min-width: 900px) {
-      height: 360px;
-      width: 100%;
-
+      height: 38rem;
+      margin-bottom: 5rem;
       .wedderlie-container {
-        width: 40%;
-        max-width: 450px;
-        margin: 0 30%;
-        #wedderlie-homepage {
-          width: 100%;
-        }
+        width: 80%;
+        margin: 0 10%;
+      }
+    }
+    @media only screen and (min-width: 900px) {
+      height: 36rem;
+      .wedderlie-container {
+        width: 60%;
+        margin: 0 20%;
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      height: 44rem;
+      .wedderlie-container {
+        width: 50%;
+        margin: 0 25%;
       }
     }
   }
@@ -891,6 +895,9 @@ const OuterContainer = styled.div`
         width: 10%;
         height: 0;
         border-bottom: 1px solid hsl(35, 33%, 90%);
+      }
+      .button-container {
+        margin-bottom: 2rem;
       }
     }
     @media screen and (min-width: 600px) {
