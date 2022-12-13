@@ -62,9 +62,12 @@ const Accommodation: React.FC = () => {
           <h1>Accommodation</h1>
           <p>
             Our hope is to offer everyone the option to stay either at Wedderlie
-            House or The Black Bull. If you can't find the information you need
-            here or on the venue websites, or if you have any concerns, please
-            reach out and we can find a solution.
+            House or The Black Bull. We have set aside all rooms at both venues
+            and will contact you individually with further information in
+            February. There's no need to contact/book/reserve at this time. If
+            you can't find the information you need here or on the venue
+            websites, or if you have any concerns, please reach out and we can
+            find a solution.
           </p>
         </div>
         <div className="flowers-container">

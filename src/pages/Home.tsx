@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import us from "../images/us4.jpg";
+import us from "../images/us6.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";

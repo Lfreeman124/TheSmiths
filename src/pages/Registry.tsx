@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MobileMenu from "../components/MobileMenu";
-import amazon from "../images/amazon.svg";
+//import amazon from "../images/amazon.svg";
 import beach from "../images/beach-min.png";
 import restaurant from "../images/restaurant.png";
 import { useGlobalContext } from "../State";
@@ -12,18 +12,18 @@ const Registry: React.FC = () => {
   const { showMenu } = useGlobalContext();
 
   const options = [
-    {
+    /*  {
       id: "amazon1",
       name: "Amazon.se Gift Card",
       image: amazon,
       link: "https://www.amazon.se/Amazon-307_SE_Email-E-presentkort-fr%C3%A5n-Amazon-se/dp/B089VNKFM7/ref=sr_1_3?crid=2CC2TWYN3I2PV&keywords=presentkort&qid=1665935765&qu=eyJxc2MiOiIwLjc0IiwicXNhIjoiMC4zMSIsInFzcCI6IjAuMjQifQ%3D%3D&sprefix=presentkort%2Caps%2C86&sr=8-3",
     },
     {
-      id: "amazon2",
-      name: "Amazon.com Gift Card",
+      id: "experience",
+      name: "Ex",
       image: amazon,
       link: "https://www.amazon.com/Amazon-eGift-Card-Logo/dp/B07PCMWTSG/ref=sr_1_1?adgrpid=81403773503&gclid=Cj0KCQjw166aBhDEARIsAMEyZh555howLLzetDSHn27DWltE_ga6Hu-n5Lnh-JDcuD2pTiHCLn5e8g0aAlqpEALw_wcB&hvadid=585412561882&hvdev=c&hvlocint=1010826&hvlocphy=9062455&hvnetw=g&hvqmt=b&hvrand=14939444062267236933&hvtargid=kwd-315218542453&hydadcr=22339_13333066&keywords=amazon+e+gift+card&qid=1665935825&qu=eyJxc2MiOiIyLjgyIiwicXNhIjoiMS43OCIsInFzcCI6IjEuNjMifQ%3D%3D&sr=8-1",
-    },
+    },*/
     {
       id: "honeymoon",
       name: "Honeymoon Fund",
@@ -60,7 +60,7 @@ const Registry: React.FC = () => {
           <p>
             If you're adamant about giving us a gift, here are some options to
             give you some inspiration. Please don't bring anything
-            bigger/heavier than a greeting card. If none of these seem right for
+            bigger/heavier than a greeting card. If these don't seem right for
             you, just wait and someday years from now you might come across the
             perfect gift.
           </p>
@@ -89,7 +89,7 @@ const Registry: React.FC = () => {
             </a>
           ))}
         </div>
-        <div className="notes">
+        {/* <div className="notes">
           <p>
             When navigating to Amazon.se, use Chrome to&nbsp;
             <a
@@ -101,7 +101,7 @@ const Registry: React.FC = () => {
             </a>
             . They should accept foreign cards.
           </p>
-        </div>
+        </div> */}
       </Container>
     </React.Fragment>
   );

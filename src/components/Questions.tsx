@@ -2,7 +2,7 @@ export const questions = [
   {
     question: "Transportation",
     answer:
-      "We plan to pre-arrange transportation between Wedderlie and The Black Bull in Lauder for Friday and Saturday, either with a few pre-booked taxis or a small bus. If you are staying in Edinburgh, please arrange your own transportation in advance, as there aren't many taxis that far outside of the city.",
+      "We plan to arrange transportation between Wedderlie and The Black Bull in Lauder. If you are staying in Edinburgh or elsewhere, please arrange your own transportation in advance, as there aren't many taxis that far outside of the city.",
   },
   {
     question: "Dress Code",

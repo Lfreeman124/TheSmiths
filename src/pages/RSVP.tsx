@@ -259,7 +259,7 @@ const RSVP: React.FC = () => {
                 <FormControlLabel
                   value="Edinburgh"
                   control={<Radio id="accom1" />}
-                  label="Edinburgh"
+                  label="Edinburgh/self-arranged"
                 />
               </RadioGroup>
             </FormControl>
@@ -278,7 +278,7 @@ const RSVP: React.FC = () => {
                 <FormControlLabel
                   value="Edinburgh"
                   control={<Radio id="accom2" />}
-                  label="Edinburgh"
+                  label="Edinburgh/self-arranged"
                 />
               </RadioGroup>
             </FormControl>
