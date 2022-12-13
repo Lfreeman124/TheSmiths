@@ -138,7 +138,7 @@ const Container = styled.div`
 
   .green-line {
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 1rem;
     border-top: 5px solid #70877f;
   }
   .inner-window {
