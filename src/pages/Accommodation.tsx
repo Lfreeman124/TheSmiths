@@ -37,7 +37,7 @@ const Accommodation: React.FC = () => {
       image: Blackbull,
       website: "https://blackbull-lauder.com/",
       message:
-        "For those who would like to stay nearby Wedderlie, the Black Bull is only 15 minutes away in the town of Lauder. We have all 13 rooms set aside for our guests, and this will make transportation easier to organize for everyone.",
+        "For those who would like to stay near Wedderlie, the Black Bull is only 15 minutes away in the town of Lauder. We have all 13 rooms set aside for our guests, and this will make transportation easier to organize for everyone.",
       price: "£115-145/nt",
     },
     {
@@ -48,7 +48,7 @@ const Accommodation: React.FC = () => {
         "https://www.booking.com/index.en-gb.html?label=gen173nr-1DCAEoggI46AdIM1gEaMgBiAEBmAEJuAEHyAEM2AED6AEBiAIBqAIDuALP16CbBsACAdICJDYwZTU4MGIxLWE0YzYtNDE5Ni1hMGI2LTQ3OWE3ODhjYjgxY9gCBOACAQ&sid=67efeac07628c652335a4c0938833593&sb_price_type=total&changed_currency=1&selected_currency=USD&top_currency=1",
       message:
         "Perhaps you prefer to stay in the the city to make the most of your weekend away. Check out the suggestions from our friends on the Edinburgh page!",
-      price: "£100-300/nt",
+      price: "£80-300/nt",
     },
   ];
   return showMenu ? (
@@ -62,12 +62,11 @@ const Accommodation: React.FC = () => {
           <h1>Accommodation</h1>
           <p>
             Our hope is to offer everyone the option to stay either at Wedderlie
-            House or The Black Bull. We have set aside all rooms at both venues
-            and will contact you individually with further information in
+            House or The Black Bull Hotel nearby. We have set aside all rooms at
+            both venues and will contact you with further information in
             February. There's no need to contact/book/reserve at this time. If
             you can't find the information you need here or on the venue
-            websites, or if you have any concerns, please reach out and we can
-            find a solution.
+            websites, please reach out and we can find a solution.
           </p>
         </div>
         <div className="flowers-container">

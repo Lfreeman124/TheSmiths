@@ -53,16 +53,15 @@ const Registry: React.FC = () => {
           <p>
             The best gift you can give us is your presence on our special day.
             Many of you will spend a considerable amount just to get to
-            Scotland, and that is in itself a generous gift and we are honored
-            you take the time and commitment to travel and be with us.
+            Scotland, and that is in itself a generous gift. We are honored you
+            take the time and commitment to travel and be with us.
           </p>
 
           <p>
             If you're adamant about giving us a gift, here are some options to
-            give you some inspiration. Please don't bring anything
-            bigger/heavier than a greeting card. If these don't seem right for
-            you, just wait and someday years from now you might come across the
-            perfect gift.
+            give you inspiration. Please don't bring anything bigger/heavier
+            than a greeting card. If these don't seem right for you, just wait
+            and someday years from now you might come across the perfect gift.
           </p>
         </div>
         <div className="flowers-container">

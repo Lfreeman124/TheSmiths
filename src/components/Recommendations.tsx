@@ -40,7 +40,7 @@ export const recommendations = [
     ],
   },
   {
-    title: "Jonathon and Sinead recommend...",
+    title: "Jonathan and Sinéad recommend...",
     data: [
       { name: "Piggs Wine Bar", type: "Wine, charcuterie, tapas" },
       { name: "Raeburn Hotel", type: "Cocktails and Drinks" },

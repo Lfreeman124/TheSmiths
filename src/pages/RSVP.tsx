@@ -141,7 +141,7 @@ const RSVP: React.FC = () => {
             <p>
               {formInfo.rsvp === "yes"
                 ? "Yay! \n \n We're so happy you'll join us! \n \nIf you've expressed interest in staying at Wedderlie or The Black Bull, we'll contact you with details. Please let us know if you have any other questions, and in the meantime, vote for our honeymoon, request a song, or check out our venue! \n\nLooking forward to the big day!"
-                : "We're sorry to hear you won't join us, but completely understand. Hope you are well and that our paths cross soon, as you are special to us!"}
+                : "We're sorry to hear you won't join us, but completely understand. We hope you are well and that our paths cross soon, as you are special to us!"}
             </p>
           </div>
         ) : (

@@ -12,7 +12,7 @@ function createData(location: string, distance: number, time: string) {
 }
 
 const rows = [
-  createData("Airport", 43, "54 minutes"),
+  createData("Edinburgh Airport", 43, "54 minutes"),
   createData("Edinburgh", 36, "1 hour"),
   createData("Lauder", 10, "16 minutes"),
   createData("Glasgow", 82, "1.5 hours"),
@@ -27,7 +27,7 @@ const rows = [
   createData("Shenzhen", 5887, "23 hours"),
   createData("Kuala Lumpur", 6588, "18 hours"),
   createData("Manchester", 152, "4 hours"),
-  createData("Ireland", 321, "5 hours"),
+  createData("Limerick", 321, "5 hours"),
   createData("Middlesbrough", 91, "3 hours"),
   createData("Oslo", 568, "3 hours"),
 ];
