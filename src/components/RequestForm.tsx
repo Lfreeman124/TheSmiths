@@ -100,4 +100,9 @@ const Nope = styled.div`
   p {
     margin-top: 2rem;
   }
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+    height: 120px;
+    left: 5%;
+  }
 `;
