@@ -33,7 +33,7 @@ export const recommendations = [
     title: "Christopher and Julie recommend...",
     data: [
       { name: "Holyrood Palace", type: "King's Residence" },
-      { name: "Arthur's Seat", type: "Central hike with a view" },
+      { name: "Arthur's Seat", type: "Hike with a view" },
       { name: "Cafe Andaluz", type: "Tapas" },
       { name: "Multress Walk/New St. James", type: "Shopping" },
       { name: "Hoot the Redeemer", type: "Cocktails" },
@@ -41,7 +41,7 @@ export const recommendations = [
       { name: "The Old Clubhouse Gullane", type: "Lunch/Dinner" },
       { name: "Gaucho", type: "Argentinian Steak" },
       { name: "Fazenda", type: "Brazillian Steak Buffet" },
-      { name: "Lane 7", type: "Bowling, Shuffleboard, Pool, Crazy Golf..." },
+      { name: "Lane 7", type: "Bowling, Shuffleboard, Pool..." },
     ],
   },
   {
