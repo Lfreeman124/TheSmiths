@@ -8,6 +8,7 @@ import flowers from "../images/flowers4.png";
 
 const OnTheDay: React.FC = () => {
   const { showMenu } = useGlobalContext();
+  window.scroll(0, 0);
 
   return showMenu ? (
     <MobileMenu />

@@ -21,6 +21,7 @@ const colors = {
 const Venue: React.FC = () => {
   const { showMenu } = useGlobalContext();
   var windowHeight = window.innerHeight;
+  window.scroll(0, 0);
 
   var animations = [
     ".heart1",
@@ -71,9 +72,14 @@ const Venue: React.FC = () => {
                 <img src={crest} alt="crest" />
               </div>
             </div>
-            <div className="wedderlie-container">
+            <a
+              href="https://wedderliehouse.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="wedderlie-container"
+            >
               <img id="wedderlie" src={wedderlie} alt="" />
-            </div>
+            </a>
           </div>
           <div className="blurb-and-links">
             <div className="blurb">

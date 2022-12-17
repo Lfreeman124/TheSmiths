@@ -10,6 +10,7 @@ import flowers from "../images/flowers3.png";
 
 const Registry: React.FC = () => {
   const { showMenu } = useGlobalContext();
+  window.scroll(0, 0);
 
   const options = [
     /*  {

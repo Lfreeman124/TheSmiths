@@ -11,7 +11,7 @@ interface Props {
 const RequestForm: React.FC<Props> = (props: any) => {
   const initialState = { song: "", artist: "", created: Timestamp.now() };
   const [song, setSong] = useState(initialState);
-
+  const [sent, setSent] = useState(false);
   const handleInputRequest = (e: any) => {
     setSong({ ...song, [e.target.id]: e.target.value });
   };
@@ -19,10 +19,17 @@ const RequestForm: React.FC<Props> = (props: any) => {
     await addDoc(collection(db, "requests"), song);
     setSong(initialState);
     props.onUpdate(true);
+    setSent(true);
+    setTimeout(() => {
+      setSent(false);
+    }, 2000);
   };
 
   return (
     <Container>
+      <Nope style={{ display: sent ? "block" : "none" }}>
+        <p>Nice, see you on the dance floor!</p>
+      </Nope>
       <TextField
         value={song.song}
         fullWidth
@@ -76,5 +83,21 @@ const Container = styled.div`
     .button-container {
       width: 25%;
     }
+  }
+`;
+const Nope = styled.div`
+  background: #4b3b40;
+  border-radius: 10px;
+  color: #ebe8e4;
+  position: absolute;
+  z-index: 99;
+  width: 60%;
+  height: 100px;
+  top: 200px;
+  left: 20%;
+  font-size: 1.5rem;
+  text-align: center;
+  p {
+    margin-top: 2rem;
   }
 `;

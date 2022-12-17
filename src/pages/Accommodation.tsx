@@ -16,6 +16,7 @@ const colors = {
 };
 const Accommodation: React.FC = () => {
   const { showMenu } = useGlobalContext();
+  window.scroll(0, 0);
 
   const options = [
     {

@@ -8,6 +8,7 @@ import { questions } from "../components/Questions";
 
 const FAQ: React.FC = () => {
   const { showMenu } = useGlobalContext();
+  window.scroll(0, 0);
 
   return showMenu ? (
     <MobileMenu />
