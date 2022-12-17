@@ -14,6 +14,15 @@ import concrete from "../images/concrete-min.jpg";
 import hands from "../images/hands3.png";
 import backgroundUpside from "../images/babys-breath-up.png";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+
+(function () {
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+})();
+
 const Home: React.FC = () => {
   const { showMenu, isMobile } = useGlobalContext();
   const [difference, setDifference] = useState<any>(0);
