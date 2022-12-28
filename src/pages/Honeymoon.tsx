@@ -211,10 +211,10 @@ const Container = styled.div`
       border-radius: 20px;
       width: 100%;
       height: 2rem;
+      overflow: hidden;
       .results-filling {
         height: 100%;
         background: #70877f;
-        border-radius: 20px;
       }
     }
   }
