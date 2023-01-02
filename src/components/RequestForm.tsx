@@ -16,13 +16,15 @@ const RequestForm: React.FC<Props> = (props: any) => {
     setSong({ ...song, [e.target.id]: e.target.value });
   };
   const sendRequest = async () => {
-    await addDoc(collection(db, "requests"), song);
-    setSong(initialState);
-    props.onUpdate(true);
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-    }, 2000);
+    if (song.song !== "") {
+      await addDoc(collection(db, "requests"), song);
+      setSong(initialState);
+      props.onUpdate(true);
+      setSent(true);
+      setTimeout(() => {
+        setSent(false);
+      }, 2000);
+    }
   };
 
   return (
