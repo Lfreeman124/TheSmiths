@@ -112,12 +112,16 @@ const RSVP: React.FC = () => {
   const sendEmail = (e: any) => {
     e.preventDefault();
     if (showing.email) {
-      if (formInfo.email !== "" && formInfo.name !== "") {
+      if (
+        formInfo.email !== "" &&
+        formInfo.name !== "" &&
+        formInfo.number !== ""
+      ) {
         emailLauren();
       } else {
         flashError();
       }
-    } else if (formInfo.name !== "") {
+    } else if (formInfo.name !== "" && formInfo.number !== "") {
       emailLauren();
     } else {
       flashError();
@@ -222,6 +226,7 @@ const RSVP: React.FC = () => {
             </FormControl>
             <FormControl
               fullWidth
+              required
               style={{ display: showing.accom1 ? "flex" : "none" }}
             >
               <InputLabel>Guests</InputLabel>
@@ -229,6 +234,7 @@ const RSVP: React.FC = () => {
                 id="number"
                 value={formInfo.number}
                 label="Guests"
+                required
                 onChange={handleNumberChange}
               >
                 <MenuItem value={"1"}>1</MenuItem>
